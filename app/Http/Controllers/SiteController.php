@@ -172,6 +172,13 @@ class SiteController extends Controller
         $plans           = Plan::with('timeSetting')->whereHas('timeSetting', function($time){
             $time->where('status', 1);
         })->where('status', 1)->get();
+
+        // echo "<pre>";
+        // foreach($plans as $item)
+        // {
+        //     print_r($item);
+        // }
+        // die;
         $sections        = Page::where('tempname', $this->activeTemplate)->where('slug', 'plans')->first();
         $layout          = 'frontend';
         $gatewayCurrency = null;

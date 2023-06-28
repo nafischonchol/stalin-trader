@@ -3,19 +3,7 @@
         <div class="plan-item style--two text-center mw-100 w-100 h-100">
             <div class="plan-item__header">
                 <h4 class="mb-1 plan-title">{{ __($plan->name) }}</h4>
-                <p class="mb-2">
-                    @if ($plan->lifetime == 0)
-                        @lang('Total')
-                        {{ __($plan->interest * $plan->repeat_time) }}{{ $plan->interest_type == 1 ? '%' : ' ' . __($general->cur_text) }}
-                        @lang('ROI')
-                    @else
-                        @lang('Unlimited')
-                    @endif
-                </p>
                 <div class="plan-rate">
-                    <h3 class="rate">
-                        {{ $plan->interest_type != 1 ? $general->cur_sym : '' }}{{ showAmount($plan->interest) }}{{ $plan->interest_type == 1 ? '%' : '' }}
-                    </h3>
                     <p>@lang('EVERY') {{ __(strtoupper($plan->timeSetting->name)) }} @lang('FOR') @if ($plan->lifetime == 0)
                             {{ __($plan->repeat_time) }} {{ __($plan->timeSetting->name) }}
                         @else
@@ -65,16 +53,22 @@
                         </span>
                     </li>
                     <li class="d-flex flex-wrap justify-content-between align-items-center">
+                        <span class="label">@lang('Repeats Time')</span>
+                        <span class="value">
+                            {{$plan->repeat_time}}
+                        </span>
+                    </li>
+                    <li class="d-flex flex-wrap justify-content-between align-items-center">
+                        <span class="label">@lang('Capital Back')</span>
+                        <span class="value">
+                          
+                            {{$plan->capital_back ==1 ? 'Yes': 'No'}}
+                        </span>
+                    </li>
+                    <li class="d-flex flex-wrap justify-content-between align-items-center">
                         <span class="label">@lang('Total Return')</span>
                         <span class="value">
-                            @if ($plan->lifetime == 0)
-                                @if ($plan->capital_back == 1)
-                                    @lang('capital') +
-                                @endif
-                                {{ __($plan->interest * $plan->repeat_time) }}{{ $plan->interest_type == 1 ? '%' : ' ' . __($general->cur_text) }}
-                            @else
-                                @lang('Unlimited')
-                            @endif
+                            1-6%
                         </span>
                     </li>
                 </ul>

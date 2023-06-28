@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> {{ $general->siteName(__($pageTitle)) }}</title>
     @include('partials.seo')
+
     <!-- font  -->
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400;1,500&family=Maven+Pro:wght@400;500;600&display=swap" rel="stylesheet">
 
@@ -71,7 +72,25 @@
         <!-- cookies dark version end -->
     @endif
 
-    <script src="{{ asset('assets/global/js/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ asset('assets/users/vendors/js/vendor.bundle.base.js')}}"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="{{ asset('assets/users/vendors/select2/select2.min.js')}}"></script>
+    <script src="{{ asset('assets/users/vendors/typeahead.js/typeahead.bundle.min.js')}}"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="{{ asset('assets/users/js/off-canvas.js')}}"></script>
+    <script src="{{ asset('assets/users/js/hoverable-collapse.js')}}"></script>
+    <script src="{{ asset('assets/users/js/misc.js')}}"></script>
+    <script src="{{ asset('assets/users/js/settings.js')}}"></script>
+    <script src="{{ asset('assets/users/js/todolist.js')}}"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="{{ asset('assets/users/js/file-upload.js')}}"></script>
+    <script src="{{ asset('assets/users/js/typeahead.js')}}"></script>
+    <script src="{{ asset('assets/users/js/select2.js')}}"></script>
+
+    {{-- <script src="{{ asset('assets/global/js/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('assets/global/js/bootstrap.bundle.min.js') }}"></script>
 
     <!-- Pluglin Link -->
@@ -82,7 +101,7 @@
     @stack('script-lib')
 
     <!-- Main js -->
-    <script src="{{ asset($activeTemplateTrue . 'js/main.js') }}"></script>
+    <script src="{{ asset($activeTemplateTrue . 'js/main.js') }}"></script> --}}
 
     @stack('script')
 

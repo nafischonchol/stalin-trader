@@ -45,7 +45,9 @@ Route::middleware('auth')->name('user.')->group(function () {
         Route::post('user-data-submit', 'User\UserController@userDataSubmit')->name('data.submit');
 
         Route::middleware('registration.complete')->namespace('User')->group(function () {
-
+            Route::get("theme",function(){
+                return view("templates.theme");
+            });
             Route::controller('UserController')->group(function(){
                 Route::get('dashboard', 'home')->name('home');
 

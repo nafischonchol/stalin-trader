@@ -1,8 +1,9 @@
 @foreach ($plans as $plan)
 <div class="col-lg-4 col-md-4 col-sm-6">
     <div class="plan-item style--two text-center mw-100 w-100 h-100">
-        <div class="plan-item__header">
-            <h4 class="mb-1 plan-title">{{ __($plan->name) }}</h4>
+        <div class="plan-item__header d-flex justify-content-between align-items-center">
+            <span class="mb-1 plan-title" style="font-size:30px;font-weight:800">{{ __($plan->name) }}</span>
+            <span class="text-right">Icon</span>
         </div>
 
             <div class="form-check form-switch investModal mt-2 investModal" data-plan="{{ $plan }}" data-bs-toggle="modal" data-bs-target="#investModal" style="margin: auto">

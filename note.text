@@ -1,0 +1,10 @@
+ public function referrals()
+    {
+        $pageTitle = 'Referrals';
+        $user      = auth()->user();
+        $maxLevel  = Referral::max('level');
+        return view($this->activeTemplate . 'user.referrals', compact('pageTitle', 'user', 'maxLevel'));
+    }
+
+
+    

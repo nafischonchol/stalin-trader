@@ -1,81 +1,20 @@
 @foreach ($plans as $plan)
-    <div class="col-lg-4 col-md-4 col-sm-6">
-        <div class="plan-item style--two text-center mw-100 w-100 h-100">
-            <div class="plan-item__header">
-                <h4 class="mb-1 plan-title">{{ __($plan->name) }}</h4>
-                <div class="plan-rate">
-                    <p>@lang('EVERY') {{ __(strtoupper($plan->timeSetting->name)) }} @lang('FOR') @if ($plan->lifetime == 0)
-                            {{ __($plan->repeat_time) }} {{ __($plan->timeSetting->name) }}
-                        @else
-                            @lang('LIFETIME')
-                        @endif
-                    </p>
-                </div>
-            </div>
-            <div class="plan-item__body my-4">
-                <ul class="list list-style-three text-start">
-                    <li class="d-flex flex-wrap justify-content-between align-items-center">
-                        <span class="label">@lang('Investment')</span>
-                        <span class="value">
-                            @if ($plan->fixed_amount == 0)
-                                {{ __($general->cur_sym) }}{{ showAmount($plan->minimum) }} -
-                                {{ __($general->cur_sym) }}{{ showAmount($plan->maximum) }}
-                            @else
-                                {{ __($general->cur_sym) }}{{ showAmount($plan->fixed_amount) }}
-                            @endif
-                        </span>
-                    </li>
-                    <li class="d-flex flex-wrap justify-content-between align-items-center">
-                        <span class="label">@lang('Max. Earn')</span>
-                        <span class="value">
-                            @php
-                                if ($plan->fixed_amount == 0) {
-                                    $investAmo = $plan->maximum;
-                                } else {
-                                    $investAmo = $plan->fixed_amount;
-                                }
-                                
-                                if ($plan->lifetime == 0) {
-                                    if ($plan->interest_type == 1) {
-                                        $interestAmo = (($investAmo * $plan->interest) / 100) * $plan->repeat_time;
-                                    } else {
-                                        $interestAmo = $plan->interest * $plan->repeat_time;
-                                    }
-                                } else {
-                                    $interestAmo = 'Unlimited';
-                                }
-                                
-                            @endphp
-
-                            {{ $interestAmo }} @if ($plan->lifetime == 0)
-                                {{ $general->cur_text }}
-                            @endif
-                        </span>
-                    </li>
-                    <li class="d-flex flex-wrap justify-content-between align-items-center">
-                        <span class="label">@lang('Repeats Time')</span>
-                        <span class="value">
-                            {{$plan->repeat_time}}
-                        </span>
-                    </li>
-                    <li class="d-flex flex-wrap justify-content-between align-items-center">
-                        <span class="label">@lang('Capital Back')</span>
-                        <span class="value">
-                          
-                            {{$plan->capital_back ==1 ? 'Yes': 'No'}}
-                        </span>
-                    </li>
-                    <li class="d-flex flex-wrap justify-content-between align-items-center">
-                        <span class="label">@lang('Total Return')</span>
-                        <span class="value">
-                            1-6%
-                        </span>
-                    </li>
-                </ul>
-            </div>
-            <button class="cmn--btn plan-btn btn mt-2 investModal" data-bs-toggle="modal" data-plan="{{ $plan }}" data-bs-target="#investModal" type="button">@lang('Invest Now')</button>
+<div class="col-lg-4 col-md-4 col-sm-6">
+    <div class="plan-item style--two text-center mw-100 w-100 h-100">
+        <div class="plan-item__header">
+            <h4 class="mb-1 plan-title">{{ __($plan->name) }}</h4>
         </div>
+
+            <div class="form-check form-switch investModal mt-2 investModal" data-plan="{{ $plan }}" data-bs-toggle="modal" data-bs-target="#investModal" style="margin: auto">
+                <input class="form-check-input form-control" type="checkbox" role="switch"
+                    id="flexSwitchCheckChecked" checked style="min-height: 30px; min-width:65px">
+            </div>
+
+        {{-- <button class="cmn--btn plan-btn btn mt-2 investModal" data-bs-toggle="modal"
+            data-plan="{{ $plan }}" data-bs-target="#investModal"
+            type="button">@lang('Invest Now')</button> --}}
     </div>
+</div>
 @endforeach
 
 

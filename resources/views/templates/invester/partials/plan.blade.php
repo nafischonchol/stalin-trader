@@ -3,7 +3,9 @@
     <div class="plan-item style--two text-center mw-100 w-100 h-100">
         <div class="plan-item__header d-flex justify-content-between align-items-center">
             <span class="mb-1 plan-title" style="font-size:30px;font-weight:800">{{ __($plan->name) }}</span>
-            <span class="text-right">Icon</span>
+            <span class="text-right"><i class="fas fa-info-circle fa-lg"></i>
+
+            </span>
         </div>
 
             <div class="form-check form-switch investModal mt-2 investModal" data-plan="{{ $plan }}" data-bs-toggle="modal" data-bs-target="#investModal" style="margin: auto">

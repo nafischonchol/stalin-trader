@@ -32,7 +32,7 @@
             <div class="uk-container uk-container-expand">
                 <div class="uk-grid" data-uk-height-viewport="expand: true">
                     <div class="uk-width-3-5@m uk-background-cover uk-background-center-right uk-visible@m uk-box-shadow-xlarge"
-                        style="background-image: url(img/in-signin-image.jpg);">
+                        style="background-image: url({{asset('assets/templates/landing_page/images/trade.jpg')}})">
                     </div>
                     <div class="uk-width-expand@m uk-flex uk-flex-middle">
                         <div class="uk-grid uk-flex-center">
@@ -40,8 +40,8 @@
                                 <div class="in-padding-horizontal@s">
                                     <!-- module logo begin -->
                                     <a class="uk-logo" href="index.html">
-                                        <img class="uk-margin-small-right in-offset-top-10" src="img/in-lazy.gif"
-                                            data-src="img/in-logo-2.svg" alt="wave" width="134" height="23"
+                                        <img class="uk-margin-small-right in-offset-top-10" src="will be logo"
+                                            data-src="will be logo" alt="wave" width="134" height="23"
                                             data-uk-img>
                                     </a>
                                     <!-- module logo begin -->

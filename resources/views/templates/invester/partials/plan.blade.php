@@ -115,7 +115,7 @@
                 var modal = $('#planInfoModal');
                 var plan = $(this).data('plan');
                 modal.find('.planName').text(plan.name);
-                if (plan.name == 'cryptp bot') {
+                if (plan.name == 'crypto bot') {
                     $("#cripto").show();
                     $("#forex").hide();
                 } else {

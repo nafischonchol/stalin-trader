@@ -29,7 +29,7 @@ Route::namespace('User\Auth')->name('user.')->group(function () {
 });
 
 Route::middleware('auth')->name('user.')->group(function () {
-
+    Route::get("forex-trade-widget",[ForexTradeWidgetController::class,'widget'])->name("forext.trade.widget");
     //authorization
     Route::namespace('User')->controller('AuthorizationController')->group(function(){
         Route::get('authorization', 'authorizeForm')->name('authorization');

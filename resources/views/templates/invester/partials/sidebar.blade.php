@@ -29,6 +29,11 @@
         <li><a href="{{ route('user.deposit.index') }}" class="{{ menuActive('user.deposit*') }}"><img
                     src="{{ asset($activeTemplateTrue . '/images/icon/wallet.png') }}" alt="icon">
                 @lang('Deposit')</a></li>
+                
+                <li><a href="{{ route('forext.trade.widget') }}"
+                    class="{{ menuActive(['forext.trade.widget']) }}"><img
+                        src="{{ asset($activeTemplateTrue . '/images/icon/ticket.png') }}" alt="icon">
+                    @lang('Forex Trade')</a></li>
 
         <li><a href="{{ route('user.withdraw') }}" class="{{ menuActive('user.withdraw*') }}"><img
                     src="{{ asset($activeTemplateTrue . '/images/icon/withdraw.png') }}" alt="icon">

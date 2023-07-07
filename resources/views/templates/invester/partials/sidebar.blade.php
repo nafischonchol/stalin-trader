@@ -3,8 +3,8 @@
 @endphp
 <div class="dashboard-sidebar" id="dashboard-sidebar">
     <button class="btn-close dash-sidebar-close d-xl-none"></button>
-    <a href="{{ route('home') }}" class="logo"><img src="{{ asset(getImage(getFilePath('logoIcon') . '/logo_2.png')) }}"
-            alt="images"></a>
+    <a href="{{ route('home') }}" class="logo"><img src="{{ asset('assets/images/logoIcon/logo_2.png') }}"
+        alt="images"></a>
     <div class="bg--lights">
         <div class="profile-info">
             <p class="fs--13px mb-3 fw-bold">@lang('ACCOUNT BALANCE')</p>

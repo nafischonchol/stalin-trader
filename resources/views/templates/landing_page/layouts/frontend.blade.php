@@ -12,8 +12,8 @@
                             <!-- module logo begin -->
                             <a class="uk-logo" href="#">
                                 <img class="uk-margin-small-right in-offset-top-10"
-                                    src="{{ asset(getImage(getFilePath('logoIcon') . '/logo.png')) }}"
-                                    data-src="{{ asset(getImage(getFilePath('logoIcon') . '/logo.png')) }}" alt="wave"
+                                    src="{{ asset('assets/images/logoIcon/logo.png') }}"
+                                    data-src="{{ asset('assets/images/logoIcon/logo.png') }}" alt="wave"
                                     width="134" height="23" data-uk-img>
                             </a>
                             <!-- module logo begin -->

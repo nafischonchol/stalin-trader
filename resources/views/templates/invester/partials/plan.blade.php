@@ -3,14 +3,13 @@
         <div class="plan-item style--two text-center mw-100 w-100 h-100">
             <div class="plan-item__header d-flex justify-content-between align-items-center">
                 <span class="mb-1 plan-title" style="font-size:30px;font-weight:800">{{ __($plan->name) }}</span>
-                <span class="text-right"><i class="fas fa-info-circle fa-lg infoModal" data-plan="{{ $plan }}"
-                        data-bs-toggle="modal" data-bs-target="#planInfoModal"></i>
+                <span class="text-right"><i class="fas fa-info-circle fa-lg infoModal" data-plan="{{ $plan }}"></i>
 
                 </span>
             </div>
 
-            <div class="form-check form-switch investModal mt-2 investModal" data-plan="{{ $plan }}"
-                data-bs-toggle="modal" data-bs-target="#investModal" style="margin: auto">
+            <div class="form-check form-switch investModal mt-2" data-plan="{{ $plan }}"
+                style="margin: auto">
                 <input class="form-check-input form-control" type="checkbox" role="switch" id="flexSwitchCheckChecked"
                     checked style="min-height: 30px; min-width:65px">
             </div>
@@ -52,6 +51,7 @@
                     $("#cripto").hide();
                     $("#forex").show();
                 }
+                modal.modal("show");
             });
             $('.investModal').click(function() {
                 var symbol = '{{ $general->cur_sym }}';
@@ -92,7 +92,7 @@
                     modal.find('.interestValidity').html(
                         `<strong>  Every ${plan.time_setting.time} hours for life time </strong>`);
                 }
-
+                modal.modal("show");
             });
 
             $('[name=amount]').on('input', function() {

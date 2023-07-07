@@ -51,15 +51,14 @@
                                         account? <a href="{{ route('user.register') }}">@lang('Create Account')</a></p>
                                     <!-- login form begin -->
                                     <form class="uk-grid uk-form" action="{{ route('user.login') }}" method="POST" >
-                                        @csrf
                                         <div class="uk-margin-small uk-width-1-1 uk-inline">
                                             <span class="uk-form-icon uk-form-icon-flip fas fa-user fa-sm"></span>
-                                            <input class="uk-input uk-border-rounded" id="username" name="username" value=""
+                                            <input class="uk-input uk-border-rounded" id="username" value=""
                                                 type="text" placeholder="Username">
                                         </div>
                                         <div class="uk-margin-small uk-width-1-1 uk-inline">
                                             <span class="uk-form-icon uk-form-icon-flip fas fa-lock fa-sm"></span>
-                                            <input class="uk-input uk-border-rounded" id="password" value=""  name="password" 
+                                            <input class="uk-input uk-border-rounded" id="password" value=""
                                                 type="password" placeholder="Password">
                                         </div>
                                         <div class="uk-margin-small uk-width-auto uk-text-small">

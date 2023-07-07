@@ -5,10 +5,9 @@
             <div class="mb-4">
                 <div class="row mb-4">
                     <div class="col-lg-8">
-                        <h3 class="mb-2">@lang('Forex Trade Widget')</h3>
+                        <h3 class="mb-2">@lang('Forex Trade')</h3>
                     </div>
                 </div>
-                <div class="row gy-4">
                     <!-- TradingView Widget BEGIN -->
                     <div class="tradingview-widget-container">
                         <div id="tradingview_3e9e0"></div>
@@ -18,7 +17,8 @@
                         <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
                         <script type="text/javascript">
                             new TradingView.widget({
-                                "autosize": true,
+                                "autosize": false,
+                                "height": 600,
                                 "symbol": "FX:EURUSD",
                                 "interval": "D",
                                 "timezone": "Etc/UTC",
@@ -33,7 +33,6 @@
                         </script>
                     </div>
                     <!-- TradingView Widget END -->
-                </div>
             </div>
         </div>
     </div>

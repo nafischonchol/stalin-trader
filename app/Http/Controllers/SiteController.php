@@ -17,6 +17,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Validator;
+use Log;
 
 class SiteController extends Controller
 {
@@ -172,6 +173,18 @@ class SiteController extends Controller
         $plans           = Plan::with('timeSetting')->whereHas('timeSetting', function($time){
             $time->where('status', 1);
         })->where('status', 1)->get();
+
+        $invests = collect(); // Initialize an empty collection
+
+        foreach ($plans as $plan) {
+            $invests = $invests->merge($plan->investsWithUserId(3)->get());
+        }
+        // Log::info($invests);
+        // foreach($invests as $item)
+        // {
+        //     print_r($item->plan_id);
+        // }
+        // die;
         $sections        = Page::where('tempname', $this->activeTemplate)->where('slug', 'plans')->first();
         $layout          = 'frontend';
         $gatewayCurrency = null;
@@ -182,7 +195,7 @@ class SiteController extends Controller
                 $gate->where('status', 1);
             })->with('method')->orderby('name')->get();
         }
-        return view($this->activeTemplate . $view, compact('pageTitle', 'plans', 'sections', 'layout', 'gatewayCurrency'));
+        return view($this->activeTemplate . $view, compact('pageTitle', 'plans', 'sections', 'layout', 'gatewayCurrency','invests'));
     }
 
     public function cookieAccept()

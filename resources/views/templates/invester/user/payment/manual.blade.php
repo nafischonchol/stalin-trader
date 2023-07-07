@@ -21,7 +21,12 @@
                                 </p>
 
                                 <div class="my-4">
-                                    <p>@php echo  $data->gateway->description @endphp</p>
+                                    <div class="copy-link">
+                                        <input type="text" class="copyURL" value="{{$data->gateway->description}}" readonly>
+                                        <span class="copyBoard" id="copyBoard"><i class="las la-copy"></i> <strong class="copyText">@lang('Copy')</strong></span>
+                                    </div>
+                                    
+                                    {{-- <p>@php echo  $data->gateway->description @endphp</p> --}}
                                 </div>
 
                             </div>
@@ -41,3 +46,24 @@
     </div>
 </div>
 @endsection
+@push('script')
+<script src="{{ asset('assets/global/js/jquery.treeView.js') }}"></script>
+<script>
+    (function($){
+    "use strict"
+        $('.copyBoard').click(function(){
+                var copyText = document.getElementsByClassName("copyURL");
+                copyText = copyText[0];
+                copyText.select();
+                copyText.setSelectionRange(0, 99999);
+
+                /*For mobile devices*/
+                document.execCommand("copy");
+                $('.copyText').text('Copied');
+                setTimeout(() => {
+                    $('.copyText').text('Copy');
+                }, 2000);
+        });
+    })(jQuery);
+</script>
+@endpush

@@ -12,7 +12,7 @@
             </div>
             <div class="form-check form-switch investModal mt-2" data-plan="{{ $plan }}" data-is-invested="{{ $isInvested }}" style="margin: auto">
                 <input class="form-check-input form-control" type="checkbox" role="switch" id="flexSwitchCheckChecked"
-                    {{ $isInvested ? '' : 'checked' }} {{ $isInvested ? '' : 'disabled' }}
+                    {{ $isInvested ? 'checked' : '' }} {{ $isInvested ? 'disabled' : '' }}
                     style="min-height: 30px; min-width:65px">
             </div>
         </div>
@@ -59,7 +59,7 @@
                 var isInvested = $(this).data("is-invested");
                 console.log(isInvested);
                 var modal = $('#investModal');
-                if(isInvested)
+                if(!isInvested)
                     modal.modal("show");
             });
         

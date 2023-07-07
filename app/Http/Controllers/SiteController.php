@@ -180,7 +180,11 @@ class SiteController extends Controller
             $invests = $invests->merge($plan->investsWithUserId(3)->get());
         }
 
-        Log::info($invests);
+        // foreach($invests as $item)
+        // {
+        //     print_r($item->plan_id);
+        // }
+        // die;
         $sections        = Page::where('tempname', $this->activeTemplate)->where('slug', 'plans')->first();
         $layout          = 'frontend';
         $gatewayCurrency = null;

@@ -63,47 +63,65 @@
                 }
                 modal.modal("show");
             });
-            $('.investModal').click(function() {
-                var symbol = '{{ $general->cur_sym }}';
-                var currency = '{{ $general->cur_text }}';
-                $('.gateway-info').addClass('d-none');
-                var modal = $('#investModal');
-                var plan = $(this).data('plan');
-                modal.find('[name=plan_id]').val(plan.id);
-                modal.find('.planName').text(plan.name);
-                let fixedAmount = parseFloat(plan.fixed_amount).toFixed(2);
-                let minimumAmount = parseFloat(plan.minimum).toFixed(2);
-                let maximumAmount = parseFloat(plan.maximum).toFixed(2);
-                let interestAmount = parseFloat(plan.interest);
 
-                if (plan.fixed_amount > 0) {
-                    modal.find('.investAmountRange').text(`Invest: ${symbol}${fixedAmount}`);
-                    modal.find('[name=amount]').val(parseFloat(plan.fixed_amount).toFixed(2));
-                    modal.find('[name=amount]').attr('readonly', true);
-                } else {
-                    modal.find('.investAmountRange').text(
-                        `Invest: ${symbol}${minimumAmount} - ${symbol}${maximumAmount}`);
-                    modal.find('[name=amount]').val('');
-                    modal.find('[name=amount]').removeAttr('readonly');
-                }
+            $(".investModal").click(function() {
+                var invests = @json($invests->toArray());
 
-                if (plan.interest_type == '1') {
-                    modal.find('.interestDetails').html(`<strong> Interest: ${interestAmount}% </strong>`);
-                } else {
-                    modal.find('.interestDetails').html(
-                        `<strong> Interest: ${interestAmount} ${currency}  </strong>`);
-                }
+                console.log(invests);
+                var planIdToCheck = 1;
+                var planExists = invests.some(function(invest) {
+                    return invest.plan_id === planIdToCheck;
+                });
 
-                if (plan.lifetime == '0') {
-                    modal.find('.interestValidity').html(
-                        `<strong>  Every ${plan.time_setting.time} hours for ${plan.repeat_time} times</strong>`
-                    );
+                if (planExists) {
+                    console.log("Plan with plan_id 6 exists in the invests collection.");
                 } else {
-                    modal.find('.interestValidity').html(
-                        `<strong>  Every ${plan.time_setting.time} hours for life time </strong>`);
+                    console.log("Plan with plan_id 6 does not exist in the invests collection.");
                 }
-                modal.modal("show");
             });
+
+
+            // $('.investModal').click(function() {
+            //     var symbol = '{{ $general->cur_sym }}';
+            //     var currency = '{{ $general->cur_text }}';
+            //     $('.gateway-info').addClass('d-none');
+            //     var modal = $('#investModal');
+            //     var plan = $(this).data('plan');
+            //     modal.find('[name=plan_id]').val(plan.id);
+            //     modal.find('.planName').text(plan.name);
+            //     let fixedAmount = parseFloat(plan.fixed_amount).toFixed(2);
+            //     let minimumAmount = parseFloat(plan.minimum).toFixed(2);
+            //     let maximumAmount = parseFloat(plan.maximum).toFixed(2);
+            //     let interestAmount = parseFloat(plan.interest);
+
+            //     if (plan.fixed_amount > 0) {
+            //         modal.find('.investAmountRange').text(`Invest: ${symbol}${fixedAmount}`);
+            //         modal.find('[name=amount]').val(parseFloat(plan.fixed_amount).toFixed(2));
+            //         modal.find('[name=amount]').attr('readonly', true);
+            //     } else {
+            //         modal.find('.investAmountRange').text(
+            //             `Invest: ${symbol}${minimumAmount} - ${symbol}${maximumAmount}`);
+            //         modal.find('[name=amount]').val('');
+            //         modal.find('[name=amount]').removeAttr('readonly');
+            //     }
+
+            //     if (plan.interest_type == '1') {
+            //         modal.find('.interestDetails').html(`<strong> Interest: ${interestAmount}% </strong>`);
+            //     } else {
+            //         modal.find('.interestDetails').html(
+            //             `<strong> Interest: ${interestAmount} ${currency}  </strong>`);
+            //     }
+
+            //     if (plan.lifetime == '0') {
+            //         modal.find('.interestValidity').html(
+            //             `<strong>  Every ${plan.time_setting.time} hours for ${plan.repeat_time} times</strong>`
+            //         );
+            //     } else {
+            //         modal.find('.interestValidity').html(
+            //             `<strong>  Every ${plan.time_setting.time} hours for life time </strong>`);
+            //     }
+            //     modal.modal("show");
+            // });
 
             $('[name=amount]').on('input', function() {
                 $('[name=wallet_type]').trigger('change');

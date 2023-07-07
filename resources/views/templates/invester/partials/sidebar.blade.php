@@ -25,7 +25,7 @@
         {{-- <li><a href="{{ route('user.invest.statistics') }}" class="{{ menuActive(['user.invest.statistics', 'user.invest.log']) }}"><img src="{{ asset($activeTemplateTrue . '/images/icon/investment.png') }}" alt="icon"> @lang('Investments')</a></li> --}}
         <li><a href="{{ route('plan') }}" class="{{ menuActive(['plan']) }}"><img
                     src="{{ asset($activeTemplateTrue . '/images/icon/investment.png') }}" alt="icon">
-                @lang('All Trading Bots')</a></li>
+                @lang('AI Trading Bots')</a></li>
         <li><a href="{{ route('user.deposit.index') }}" class="{{ menuActive('user.deposit*') }}"><img
                     src="{{ asset($activeTemplateTrue . '/images/icon/wallet.png') }}" alt="icon">
                 @lang('Deposit')</a></li>

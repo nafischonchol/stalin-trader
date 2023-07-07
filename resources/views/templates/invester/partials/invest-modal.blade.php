@@ -20,8 +20,6 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <h6 class="text-center investAmountRange"></h6>
-                            <p class="text-center mt-1 interestDetails"></p>
-                            <p class="text-center interestValidity"></p>
 
                             <label>@lang('Select Wallet')</label>
                             <select class="form-control form--control form-select" name="wallet_type" required>
@@ -29,9 +27,11 @@
                                 @if (auth()->user()->deposit_wallet > 0)
                                     <option value="deposit_wallet">@lang('Deposit Wallet - ' . $general->cur_sym . showAmount(auth()->user()->deposit_wallet))</option>
                                 @endif
+                               
                                 @if (auth()->user()->interest_wallet > 0)
-                                    <option value="interest_wallet">@lang('Interest Wallet -' . $general->cur_sym . showAmount(auth()->user()->interest_wallet))</option>
-                                @endif
+                                <option value="interest_wallet">@lang('Interest Wallet') - {{$general->cur_sym . showAmount(auth()->user()->interest_wallet)}}</option>
+                            @endif
+
                                 @foreach ($gatewayCurrency as $data)
                                     <option value="{{ $data->id }}" @selected(old('wallet_type') == $data->method_code)
                                         data-gateway="{{ $data }}">{{ $data->name }}</option>

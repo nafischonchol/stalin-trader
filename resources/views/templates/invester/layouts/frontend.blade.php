@@ -1,187 +1,88 @@
 @extends($activeTemplate . 'layouts.app')
 @section('panel')
-    <header>
-        <!-- header content begin -->
-        <div class="uk-section uk-padding-remove-vertical in-header-home ">
-            <!-- module navigation begin -->
-            <nav class="uk-navbar-container uk-navbar-transparent"
-                data-uk-sticky="show-on-up: true; top: 80; animation: uk-animation-fade;">
-                <div class="uk-container" data-uk-navbar>
-                    <div class="uk-navbar-left uk-width-auto">
-                        <div class="uk-navbar-item">
-                            <!-- module logo begin -->
-                            <a class="uk-logo" href="#">
-                                <img class="uk-margin-small-right in-offset-top-10"
-                                    src="{{ asset(getImage(getFilePath('logoIcon') . '/logo.png')) }}"
-                                    data-src="{{ asset(getImage(getFilePath('logoIcon') . '/logo.png')) }}" alt="wave"
-                                    width="134" height="23" data-uk-img>
-                            </a>
-                            <!-- module logo begin -->
-                        </div>
-                    </div>
-                    <div class="uk-navbar-right uk-width-expand uk-flex uk-flex-right">
-                        <ul class="uk-navbar-nav uk-visible@m">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#roadmap">Roadmap</a></li>
-                            <li><a href="#plan">Plan</a></li>
-                            <li><a href="#contact">Contanct</a></li>
-                        </ul>
-                        <div class="uk-navbar-item uk-visible@m in-optional-nav">
-                            <a href="{{ route('user.login') }}" class="uk-button uk-button-text"><i
-                                    class="fas fa-user-circle uk-margin-small-right"></i>Log in</a>
-                            <a href="{{ route('user.register') }}"
-                                class="uk-button uk-button-primary uk-button-small uk-border-pill">Sign up</a>
-                        </div>
-                        <div class="uk-navbar-item uk-visible@m in-optional-nav">
-                            <i class="fa fa-language" style="color: #ffffff;font-size: 26px;"></i>
-                            <select name="" id="" class="uk-border-rounded">
-                                <option value="en">English</option>
-                            </select>
+    <div class="preloader">
+        <div class="animated-preloader"></div>
+    </div>
+    <div class="overlay"></div>
+    <div class="header">
+        <div class="container">
+            <div class="header-bottom">
+                <div class="header-bottom-area align-items-center">
+                    <div class="logo"><a href="{{ route('home') }}"><img
+                                src="{{ asset(getImage(getFilePath('logoIcon') . '/logo.png')) }}" alt="logo"></a></div>
+                    <ul class="menu ms-auto">
+                        <li>
+                            <a href="{{ route('home') }}">@lang('Home')</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('plan') }}">@lang('Plan')</a>
+                        </li>
+                        @php
+                            $pages = App\Models\Page::where('tempname', $activeTemplate)
+                                ->where('is_default', 0)
+                                ->get();
+                        @endphp
+                        @foreach ($pages as $k => $data)
+                            <li><a href="{{ route('pages', [$data->slug]) }}">{{ __($data->name) }}</a></li>
+                        @endforeach
+                        <li>
+                            <a href="{{ route('contact') }}">@lang('Contact')</a>
+                        </li>
+                        @if (auth()->check())
+                            <li class="menu-btn">
+                                <a href="{{ route('user.home') }}" class="ps-2"> <i class="las la-user"></i>
+                                    @lang('Dashboard')</a>
+                            </li>
+                        @else
+                            <li>
+                                <a href="{{ route('user.register') }}">@lang('Register')</a>
+                            </li>
+                            <li class="menu-btn">
+                                <a href="{{ route('user.login') }}"> <i class="las la-user"></i> @lang('Login')</a>
+                            </li>
+                        @endif
+                    </ul>
+                    @if ($general->language_switch)
+                    <select name="langSel" class="langSel form--control h-auto px-2 py-1 border-0">
+                        @foreach ($language as $item)
+                            <option value="{{ $item->code }}" @if (session('lang') == $item->code) selected @endif>
+                                {{ __($item->name) }}
+                            </option>
+                        @endforeach
+                    </select>
+                    @endif
+                    <div class="header-trigger-wrapper d-flex d-lg-none align-items-center">
+                        <div class="header-trigger">
+                            <span></span>
                         </div>
                     </div>
                 </div>
-            </nav>
+            </div>
         </div>
-        <!-- header content end -->
-    </header>
+    </div>
+
     @yield('content')
 
     @php
-        $content = getContent('footer.content', true);
+        $content = getContent('footer.content',true);
     @endphp
     <!-- Footer Section -->
-    <footer>
-        <!-- footer content begin -->
-        <div class="uk-section uk-section-muted uk-padding-large uk-padding-remove-horizontal uk-margin-medium-top">
-            <div class="uk-container">
-                <div class="uk-grid-medium" data-uk-grid>
-                    <div class="uk-width-expand@m">
-                        <img class="uk-margin-small-right in-margin-top-30@s" src="img/in-lazy.gif"
-                            data-src="img/in-logo-2.svg" alt="wave" width="134" height="23" data-uk-img>
-                        <p class="uk-text-large uk-margin-small-top">Trade with financial thinking.</p>
-                        <p class="uk-visible@m">Imperium Tower (Headquarters)<br>
-                            Jl. Prof Dr Satrio, Kuningan<br>
-                            12920<br>
-                            Jakarta - Indonesia
-                        </p>
-                    </div>
-                    <div class="uk-width-3-5@m">
-                        <div class="uk-child-width-1-3@s uk-child-width-1-3@m" data-uk-grid>
-                            <div>
-                                <h4><span>Markets</span></h4>
-                                <ul class="uk-list uk-link-text">
-                                    <li><a href="#">Forex</a></li>
-                                    <li><a href="#">Synthetic indices</a></li>
-                                    <li><a href="#">Stock indices</a></li>
-                                    <li><a href="#">Commodities</a></li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4><span>Resources</span></h4>
-                                <ul class="uk-list uk-link-text">
-                                    <li><a href="#">Help Centre</a></li>
-                                    <li><a href="#">Payment methods</a></li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4><span>Company</span></h4>
-                                <ul class="uk-list uk-link-text">
-                                    <li><a href="#">Our story</a></li>
-                                    <li><a href="#">Our leadership</a></li>
-                                    <li><a href="#">Contact us</a></li>
-                                    <li><a href="#">Partners</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="uk-width-1-1 uk-margin-large-top in-offset-bottom-20">
-                        <h6><i class="fas fa-exclamation-triangle fa-sm uk-text-danger uk-margin-small-right"></i>Risk
-                            warning</h6>
-                        <p class="uk-text-small">The financial products offered via this website include digitals,
-                            contracts for difference (CFDs), and other complex derivatives and financial products.
-                            Trading options may not be suitable for everyone. Trading CFDs carries a high level of risk
-                            since leverage can work both to your advantage and disadvantage. As a result, the products
-                            offered on this website may not be suitable for all investors because of the risk of losing
-                            all of your invested capital. You should never invest money that you cannot afford to lose,
-                            and never trade with borrowed money. Before trading in the complex financial products
-                            offered, please be sure to understand the risks involved and learn about <a
-                                href="#">Secure
-                                and responsible trading.</a></p>
-                        <hr>
-                        <div class="uk-grid uk-flex uk-flex-middle" data-uk-grid>
-                            <div class="uk-width-1-2@m">
-                                <div class="uk-grid-small uk-flex uk-child-width-1-4@s uk-flex uk-child-width-1-5@m in-payment-method uk-text-center"
-                                    data-uk-grid>
-                                    <div>
-                                        <div class="uk-card uk-card-default uk-card-small uk-card-body">
-                                            <img src="img/in-lazy.gif" data-src="{{asset('assets/templates/trending/img/in-wave-visa.svg')}}" alt="wave-payment"
-                                                width="59" height="22" data-uk-img>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="uk-card uk-card-default uk-card-small uk-card-body">
-                                            <img src="img/in-lazy.gif" data-src="{{asset('assets/templates/trending/img/in-wave-mastercard.svg')}}"
-                                                alt="wave-payment" width="59" height="22" data-uk-img>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="uk-card uk-card-default uk-card-small uk-card-body">
-                                            <img src="img/in-lazy.gif" data-src="{{asset('assets/templates/trending/img/in-wave-skrill.svg')}}" alt="wave-payment"
-                                                width="59" height="22" data-uk-img>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="uk-card uk-card-default uk-card-small uk-card-body">
-                                            <img src="img/in-lazy.gif" data-src="{{asset('assets/templates/trending/img/in-wave-paypal.svg')}}" alt="wave-payment"
-                                                width="59" height="22" data-uk-img>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="uk-card uk-card-default uk-card-small uk-card-body uk-visible@m">
-                                            <img src="img/in-lazy.gif" data-src="img/in-wave-neteller.svg"
-                                                alt="wave-payment" width="59" height="22" data-uk-img>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="uk-width-1-2@m uk-text-right@m">
-                                <div class="in-footer-socials in-margin-bottom-40@s">
-                                    <a href="#"><i class="fab fa-youtube"></i></a>
-                                    <a href="#"><i class="fab fa-facebook-square"></i></a>
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <footer class="py-4">
+        <div class="container">
+            <div class="footer-content text-center">
+                <a href="{{ route('home') }}" class="logo mb-3"><img
+                        src="{{ asset(getImage(getFilePath('logoIcon') . '/logo_2.png')) }}" alt="images"></a>
+                <p class="footer-text mx-auto">{{ __($content->data_values->content) }}</p>
+                <ul class="footer-links d-flex flex-wrap gap-3 justify-content-center mt-3 mb-3">
+                    <li><a href="{{ route('home') }}" class="link-color">@lang('Home')</a></li>
+                    <li><a href="{{ route('contact') }}" class="link-color">@lang('Contact')</a></li>
+                    <li><a href="{{ route('user.login') }}" class="link-color">@lang('Sign In')</a></li>
+                    <li><a href="{{ route('user.register') }}" class="link-color">@lang('Sign Up')</a></li>
+                </ul>
+                <p class="copy-right-text">&copy; {{ date('Y') }} <a href="{{ route('home') }}"
+                        class="text--base">{{ __($general->site_name) }}</a>. @lang('All Rights Reserved')</p>
             </div>
         </div>
-        <div class="uk-section uk-section-secondary uk-padding-remove-vertical">
-            <div class="uk-container">
-                <div class="uk-grid">
-                    <div class="uk-width-3-4@m uk-visible@m">
-                        <ul class="uk-subnav uk-subnav-divider">
-                            <li><a href="#">Regulations</a></li>
-                            <li><a href="#">Legal documents</a></li>
-                            <li><a href="#">Important information</a></li>
-                            <li><a href="#">Privacy</a></li>
-                            <li><a href="#">Public relations</a></li>
-                            <li><a href="#">Careers</a></li>
-                        </ul>
-                    </div>
-                    <div class="uk-width-expand@m uk-text-right@m">
-                        <p>© 2020 Wave Capital Inc.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- footer content end -->
-        <!-- module totop begin -->
-        <div class="uk-visible@m">
-            <a href="#" class="in-totop fas fa-chevron-up" data-uk-scroll></a>
-        </div>
-        <!-- module totop begin -->
     </footer>
     <!-- Footer Section -->
 @endsection

@@ -12,7 +12,7 @@
 
             <div class="modal-body">
                 <ul id="cripto">
-                    <li><span class="symbol">▪️</span> <span class="info-text">Type of BOT: Grid Bot, Arbitrage Bot, DCA Bot, and 12 others.</span></li>
+                    <li class='mt-1'><span class="symbol">▪️</span> <span class="info-text">Type of BOT: Grid Bot, Arbitrage Bot, DCA Bot, and 12 others.</span></li>
                     <li><span class="symbol">▪️</span> <span class="info-text">Trade Entry Amount: $30 to $100,000</span></li>
                     <li><span class="symbol">▪️</span> <span class="info-text">Estimated Profit: 1% to Unlimited</span></li>
                     <li><span class="symbol">▪️</span> <span class="info-text">96%-100% Win rate accounts</span></li>
@@ -20,11 +20,11 @@
                 </ul>
 
                 <ul id="forex">
-                    <li><span class="symbol">▪️</span> <span class="info-text">Type of BOT:ALGO,IG,GPS Forex Robot,Forex Gump,Centobot,EA Builder & more</span></li>
-                    <li><span class="symbol">▪️</span> <span class="info-text">Trade Entry Amount:30$ To 100000$</span></li>
-                    <li><span class="symbol">▪️</span> <span class="info-text">Estimated Profit:1% To Unlimited</span></li>
-                    <li><span class="symbol">▪️</span> <span class="info-text">93%-100% Win rate accounts</span></li>
-                    <li><span class="symbol">▪️</span> <span class="info-text">Proven long term performance</span></li>
+                    <li class='mt-1'><span class="symbol">▪️</span> <span class="info-text">Type of BOT:ALGO,IG,GPS Forex Robot,Forex Gump,Centobot,EA Builder & more</span></li>
+                    <li class='mt-1'><span class="symbol">▪️</span> <span class="info-text">Trade Entry Amount:30$ To 100000$</span></li>
+                    <li class='mt-1'><span class="symbol">▪️</span> <span class="info-text">Estimated Profit:1% To Unlimited</span></li>
+                    <li class='mt-1'><span class="symbol">▪️</span> <span class="info-text">93%-100% Win rate accounts</span></li>
+                    <li class='mt-1'><span class="symbol">▪️</span> <span class="info-text">Proven long term performance</span></li>
                 </ul>
 
             </div>

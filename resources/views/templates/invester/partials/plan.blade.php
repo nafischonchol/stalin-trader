@@ -93,12 +93,17 @@
 
 @push('style')
     <style>
-        .symbol{
+        .symbol {
             font-weight: bold;
             font-size: 25px;
+            margin-right: 8px;
+            /* Add some spacing between the symbol and text */
         }
-        .info-text{
+
+        .info-text {
             font-weight: bold;
+            display: inline;
+            /* Display the text inline */
         }
     </style>
 @endpush
@@ -110,13 +115,10 @@
                 var modal = $('#planInfoModal');
                 var plan = $(this).data('plan');
                 modal.find('.planName').text(plan.name);
-                if(plan.name=='cryptp bot')
-                {
+                if (plan.name == 'cryptp bot') {
                     $("#cripto").show();
                     $("#forex").hide();
-                }
-                else
-                {
+                } else {
                     $("#cripto").hide();
                     $("#forex").show();
                 }
@@ -155,7 +157,7 @@
                 if (plan.lifetime == '0') {
                     modal.find('.interestValidity').html(
                         `<strong>  Every ${plan.time_setting.time} hours for ${plan.repeat_time} times</strong>`
-                        );
+                    );
                 } else {
                     modal.find('.interestValidity').html(
                         `<strong>  Every ${plan.time_setting.time} hours for life time </strong>`);

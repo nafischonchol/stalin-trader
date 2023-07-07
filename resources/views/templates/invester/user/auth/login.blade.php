@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#313131" />
     <!-- Site Properties -->
-    <title>Sign in - Wave HTML5 Template</title>
+    <title> {{ $general->siteName(__($pageTitle)) }}</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png">
     <!-- Stylesheet -->

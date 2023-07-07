@@ -8,8 +8,7 @@
                 </span>
             </div>
 
-            <div class="form-check form-switch investModal mt-2" data-plan="{{ $plan }}"
-                style="margin: auto">
+            <div class="form-check form-switch investModal mt-2" data-plan="{{ $plan }}" style="margin: auto">
                 <input class="form-check-input form-control" type="checkbox" role="switch" id="flexSwitchCheckChecked"
                     checked style="min-height: 30px; min-width:65px">
             </div>
@@ -40,6 +39,17 @@
     <script>
         (function($) {
             "use strict"
+            $('#flexSwitchCheckChecked').prop('checked', true);
+
+            // Toggle the switch on click
+            $('#flexSwitchCheckChecked').click(function() {
+                if ($(this).prop('checked')) {
+                    $(this).prop('checked', false);
+                } else {
+                    $(this).prop('checked', true);
+                }
+            });
+
             $('.infoModal').click(function() {
                 var modal = $('#planInfoModal');
                 var plan = $(this).data('plan');

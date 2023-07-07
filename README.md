@@ -1,1 +1,1 @@
-# axim-trader
+# Stalin Trader

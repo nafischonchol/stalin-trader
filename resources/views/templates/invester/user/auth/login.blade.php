@@ -66,10 +66,10 @@
                                             <label><input class="uk-checkbox uk-border-rounded" type="checkbox">
                                                 Remember me</label>
                                         </div>
-                                        <div class="uk-margin-small uk-width-expand uk-text-small">
+                                        {{-- <div class="uk-margin-small uk-width-expand uk-text-small">
                                             <label class="uk-align-right"><a class="uk-link-reset" href="#">Forgot
                                                     password?</a></label>
-                                        </div>
+                                        </div> --}}
                                         <div class="uk-margin-small uk-width-1-1">
                                             <button
                                                 class="uk-button uk-width-1-1 uk-button-primary uk-border-rounded uk-float-left"

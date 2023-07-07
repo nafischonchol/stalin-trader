@@ -44,7 +44,7 @@
                             <label>@lang('Invest Amount')</label>
                             <div class="input-group">
                                 <input type="number" step="any" class="form-control form--control" name="amount"
-                                    required>
+                                    >
                                 <div class="input-group-text">{{ $general->cur_text }}</div>
                             </div>
                             <code class="gateway-info d-none">@lang('Charge'): <span class="charge"></span>

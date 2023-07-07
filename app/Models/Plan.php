@@ -22,10 +22,10 @@ class Plan extends Model
 
     public function investsWithUserId($userId)
     {
-        // ei id ghula invest korte parbe na
+        // ei id ghula invest korte parbe na, have current invest
         return $this->hasMany(Invest::class)
         ->where("status",1)
-        ->where('next_time', '<', now()->utc())
+        ->where('next_time', '>', now()->utc())
         ->whereHas('user', function ($query) use ($userId) {
             $query->where('id', $userId);
         });

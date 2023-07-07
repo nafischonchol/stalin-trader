@@ -42,6 +42,10 @@
     <script>
         (function($) {
             "use strict"
+            $('.form-check-input').click(function(e) {
+                e.preventDefault();
+            });
+
             $('.infoModal').click(function() {
                 var modal = $('#planInfoModal');
                 var plan = $(this).data('plan');

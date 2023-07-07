@@ -76,15 +76,6 @@
                                                 type="submit" name="submit">Sign in</button>
                                         </div>
                                     </form>
-                                    <!-- login form end -->
-                                    <p class="uk-heading-line uk-text-center"><span>Or sign in with</span></p>
-                                    <div class="uk-margin-medium-bottom uk-text-center">
-                                        <a class="uk-button uk-button-small uk-border-rounded in-brand-google"
-                                            href="#"><i class="fab fa-google uk-margin-small-right"></i>Google</a>
-                                        <a class="uk-button uk-button-small uk-border-rounded in-brand-facebook"
-                                            href="#"><i
-                                                class="fab fa-facebook-f uk-margin-small-right"></i>Facebook</a>
-                                    </div>
                                 </div>
                             </div>
                         </div>

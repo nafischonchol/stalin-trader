@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#313131" />
     <!-- Site Properties -->
-    <title>Sign in - Wave HTML5 Template</title>
+    <title> {{ $general->siteName(__($pageTitle)) }}</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png">
     <!-- Stylesheet -->
@@ -47,9 +47,10 @@
                                     <p class="uk-text-lead uk-margin-top uk-margin-remove-bottom">Create your account
                                     </p>
                                     <p class="uk-text-small uk-margin-remove-top uk-margin-medium-bottom">Already  have an
-                                        account? <a href="#">Login here</a></p>
+                                        account? <a href="{{ route('user.login')}}">Login here</a></p>
                                         <div class="uk-margin-medium-left in-margin-remove-left@s">
-                                            <form id="contact-form" class="uk-form uk-grid-small" data-uk-grid>
+                                            <form action="{{ route('user.register') }}" method="POST"  id="contact-form" class="uk-form uk-grid-small" data-uk-grid>
+                                                @csrf
                                                 <div class="uk-width-1-2@s uk-inline">
                                                     <span class="uk-form-icon fas fa-user fa-sm"></span>
                                                     <input class="uk-input uk-border-rounded" id="name" name="name" type="text" placeholder="Full name">
@@ -552,7 +553,6 @@
                                                     </select>
                                                 </div>
                                                 <div class="uk-width-1-2@s uk-inline">
-                                                    <span class="uk-form-icon">+88</span>
                                                     <input class="uk-input uk-border-rounded" id="email" name="email" type="email" placeholder="Phone No">
                                                 </div>
                                                 
@@ -594,6 +594,7 @@
         <!-- section content end -->
     </main>
     <!-- Javascript -->
+    @include('partials.notify')
     <script src="{{ asset('assets/templates/trending/js/vendors/uikit.min.js')}}"></script>
     <script src="{{ asset('assets/templates/trending/js/vendors/indonez.min.js')}}"></script>
 </body>

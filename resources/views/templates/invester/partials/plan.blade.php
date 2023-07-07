@@ -1,26 +1,28 @@
 @foreach ($plans as $plan)
-<div class="col-lg-4 col-md-4 col-sm-6">
-    <div class="plan-item style--two text-center mw-100 w-100 h-100">
-        <div class="plan-item__header d-flex justify-content-between align-items-center">
-            <span class="mb-1 plan-title" style="font-size:30px;font-weight:800">{{ __($plan->name) }}</span>
-            <span class="text-right"><i class="fas fa-info-circle fa-lg"></i>
+    <div class="col-lg-4 col-md-4 col-sm-6">
+        <div class="plan-item style--two text-center mw-100 w-100 h-100">
+            <div class="plan-item__header d-flex justify-content-between align-items-center">
+                <span class="mb-1 plan-title" style="font-size:30px;font-weight:800">{{ __($plan->name) }}</span>
+                <span class="text-right"><i class="fas fa-info-circle fa-lg infoModal" data-plan="{{ $plan }}"
+                        data-bs-toggle="modal" data-bs-target="#planInfoModal"></i>
 
-            </span>
-        </div>
-
-            <div class="form-check form-switch investModal mt-2 investModal" data-plan="{{ $plan }}" data-bs-toggle="modal" data-bs-target="#investModal" style="margin: auto">
-                <input class="form-check-input form-control" type="checkbox" role="switch"
-                    id="flexSwitchCheckChecked" checked style="min-height: 30px; min-width:65px">
+                </span>
             </div>
 
-        {{-- <button class="cmn--btn plan-btn btn mt-2 investModal" data-bs-toggle="modal"
+            <div class="form-check form-switch investModal mt-2 investModal" data-plan="{{ $plan }}"
+                data-bs-toggle="modal" data-bs-target="#investModal" style="margin: auto">
+                <input class="form-check-input form-control" type="checkbox" role="switch" id="flexSwitchCheckChecked"
+                    checked style="min-height: 30px; min-width:65px">
+            </div>
+
+            {{-- <button class="cmn--btn plan-btn btn mt-2 investModal" data-bs-toggle="modal"
             data-plan="{{ $plan }}" data-bs-target="#investModal"
             type="button">@lang('Invest Now')</button> --}}
+        </div>
     </div>
-</div>
 @endforeach
 
-
+@include('templates.invester.partials.plan-info-modal')
 <div class="modal fade" id="investModal">
     <div class="modal-dialog modal-dialog-centered modal-content-bg">
         <div class="modal-content">
@@ -56,18 +58,23 @@
                                     <option value="interest_wallet">@lang('Interest Wallet -' . $general->cur_sym . showAmount(auth()->user()->interest_wallet))</option>
                                 @endif
                                 @foreach ($gatewayCurrency as $data)
-                                    <option value="{{ $data->id }}" @selected(old('wallet_type') == $data->method_code) data-gateway="{{ $data }}">{{ $data->name }}</option>
+                                    <option value="{{ $data->id }}" @selected(old('wallet_type') == $data->method_code)
+                                        data-gateway="{{ $data }}">{{ $data->name }}</option>
                                 @endforeach
                             </select>
-                            <code class="gateway-info rate-info d-none">@lang('Rate'): 1 {{ $general->cur_text }} = <span class="gateway-rate"></span> <span class="method_currency"></span></code>
+                            <code class="gateway-info rate-info d-none">@lang('Rate'): 1 {{ $general->cur_text }} =
+                                <span class="gateway-rate"></span> <span class="method_currency"></span></code>
                         </div>
                         <div class="form-group">
                             <label>@lang('Invest Amount')</label>
                             <div class="input-group">
-                                <input type="number" step="any" class="form-control form--control" name="amount" required>
+                                <input type="number" step="any" class="form-control form--control" name="amount"
+                                    required>
                                 <div class="input-group-text">{{ $general->cur_text }}</div>
                             </div>
-                            <code class="gateway-info d-none">@lang('Charge'): <span class="charge"></span> {{ $general->cur_text }}. @lang('Total amount'): <span class="total"></span> {{ $general->cur_text }}</code>
+                            <code class="gateway-info d-none">@lang('Charge'): <span class="charge"></span>
+                                {{ $general->cur_text }}. @lang('Total amount'): <span class="total"></span>
+                                {{ $general->cur_text }}</code>
                         </div>
                     </div>
                 @endif
@@ -84,11 +91,26 @@
     </div>
 </div>
 
-
+@push('style')
+    <style>
+        .symbol{
+            font-weight: bold;
+            font-size: 25px;
+        }
+        .info-text{
+            font-weight: bold;
+        }
+    </style>
+@endpush
 @push('script')
     <script>
         (function($) {
             "use strict"
+            $('.infoModal').click(function() {
+                var modal = $('#planInfoModal');
+                var plan = $(this).data('plan');
+                modal.find('.planName').text(plan.name);
+            });
             $('.investModal').click(function() {
                 var symbol = '{{ $general->cur_sym }}';
                 var currency = '{{ $general->cur_text }}';
@@ -107,7 +129,8 @@
                     modal.find('[name=amount]').val(parseFloat(plan.fixed_amount).toFixed(2));
                     modal.find('[name=amount]').attr('readonly', true);
                 } else {
-                    modal.find('.investAmountRange').text(`Invest: ${symbol}${minimumAmount} - ${symbol}${maximumAmount}`);
+                    modal.find('.investAmountRange').text(
+                        `Invest: ${symbol}${minimumAmount} - ${symbol}${maximumAmount}`);
                     modal.find('[name=amount]').val('');
                     modal.find('[name=amount]').removeAttr('readonly');
                 }
@@ -115,13 +138,17 @@
                 if (plan.interest_type == '1') {
                     modal.find('.interestDetails').html(`<strong> Interest: ${interestAmount}% </strong>`);
                 } else {
-                    modal.find('.interestDetails').html(`<strong> Interest: ${interestAmount} ${currency}  </strong>`);
+                    modal.find('.interestDetails').html(
+                        `<strong> Interest: ${interestAmount} ${currency}  </strong>`);
                 }
 
                 if (plan.lifetime == '0') {
-                    modal.find('.interestValidity').html(`<strong>  Every ${plan.time_setting.time} hours for ${plan.repeat_time} times</strong>`);
+                    modal.find('.interestValidity').html(
+                        `<strong>  Every ${plan.time_setting.time} hours for ${plan.repeat_time} times</strong>`
+                        );
                 } else {
-                    modal.find('.interestValidity').html(`<strong>  Every ${plan.time_setting.time} hours for life time </strong>`);
+                    modal.find('.interestValidity').html(
+                        `<strong>  Every ${plan.time_setting.time} hours for life time </strong>`);
                 }
 
             });

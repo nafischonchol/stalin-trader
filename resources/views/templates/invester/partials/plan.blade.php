@@ -1,4 +1,7 @@
 @foreach ($plans as $plan)
+    @php
+        $isInvested = $invests->contains('plan_id', $plan->id);
+    @endphp
     <div class="col-lg-4 col-md-4 col-sm-6">
         <div class="plan-item style--two text-center mw-100 w-100 h-100">
             <div class="plan-item__header d-flex justify-content-between align-items-center">
@@ -7,10 +10,10 @@
 
                 </span>
             </div>
-
-            <div class="form-check form-switch investModal mt-2" data-plan="{{ $plan }}" style="margin: auto">
+            <div class="form-check form-switch investModal mt-2" data-plan="{{ $plan }}" data-is-invested="{{ $isInvested }}" style="margin: auto">
                 <input class="form-check-input form-control" type="checkbox" role="switch" id="flexSwitchCheckChecked"
-                    checked style="min-height: 30px; min-width:65px">
+                    {{ $isInvested ? '' : 'checked' }} {{ $isInvested ? '' : 'disabled' }}
+                    style="min-height: 30px; min-width:65px">
             </div>
         </div>
     </div>
@@ -39,17 +42,6 @@
     <script>
         (function($) {
             "use strict"
-            $('#flexSwitchCheckChecked').prop('checked', true);
-
-            // Toggle the switch on click
-            $('#flexSwitchCheckChecked').click(function() {
-                if ($(this).prop('checked')) {
-                    $(this).prop('checked', false);
-                } else {
-                    $(this).prop('checked', true);
-                }
-            });
-
             $('.infoModal').click(function() {
                 var modal = $('#planInfoModal');
                 var plan = $(this).data('plan');
@@ -63,30 +55,24 @@
                 }
                 modal.modal("show");
             });
-
-            $(".investModal").click(function() {
-                var invests = @json($invests->toArray());
-
-                console.log(invests);
-                var planIdToCheck = 1;
-                var planExists = invests.some(function(invest) {
-                    return invest.plan_id === planIdToCheck;
-                });
-
-                if (planExists) {
-                    console.log("Plan with plan_id 6 exists in the invests collection.");
-                } else {
-                    console.log("Plan with plan_id 6 does not exist in the invests collection.");
-                }
+            $('.investModal').click(function() {
+                var isInvested = $(this).data("is-invested");
+                console.log(isInvested);
+                var modal = $('#investModal');
+                if(isInvested)
+                    modal.modal("show");
             });
-
+        
 
             // $('.investModal').click(function() {
+            //     var isInvested = $(this).data("isInvested");
+            //     console.log(isInvested);
             //     var symbol = '{{ $general->cur_sym }}';
             //     var currency = '{{ $general->cur_text }}';
             //     $('.gateway-info').addClass('d-none');
             //     var modal = $('#investModal');
             //     var plan = $(this).data('plan');
+                
             //     modal.find('[name=plan_id]').val(plan.id);
             //     modal.find('.planName').text(plan.name);
             //     let fixedAmount = parseFloat(plan.fixed_amount).toFixed(2);

@@ -1,7 +1,9 @@
 {
     "Remember Me":"Remember Me",
     "Interest Wallet": "Profit Wallet",
+    "Interest wallet": "Profit wallet",
     "Withdraw": "Cashout",
     "Investment Plan": "AI Trading Bots List",
-    "Invest": "AI Bots"
+    "Invest": "AI Trade",
+    "invest": "AI Bots Active"
 }

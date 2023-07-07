@@ -64,7 +64,13 @@
                                 <i class="las la-long-arrow-alt-right"></i>
                             </div>
                             <div class="content">
-                                <h6 class="trans-title">{{ __(keyToTitle($transaction->remark)) }} - {{ __(keyToTitle($transaction->wallet_type)) }}</h6>
+                                <h6 class="trans-title">
+                                    @if ($transaction->remark == 'invest')
+                                        @lang("AI Bots Active") - {{ __(keyToTitle($transaction->wallet_type)) }}
+                                    @else
+                                        {{ __(keyToTitle($transaction->remark)) }} - {{ __(keyToTitle($transaction->wallet_type)) }}
+                                    @endif
+                                </h6>
                                 <span class="text-muted font-size--14px mt-2">{{showDateTime($transaction->created_at,'M d Y @g:i:a')}}</span>
                             </div>
                         </div>

@@ -30,8 +30,8 @@
                     src="{{ asset($activeTemplateTrue . '/images/icon/wallet.png') }}" alt="icon">
                 @lang('Deposit')</a></li>
                 
-                <li><a href="{{ route('forext.trade.widget') }}"
-                    class="{{ menuActive(['forext.trade.widget']) }}"><img
+                <li><a href="{{ route('user.forex.trade.widget') }}"
+                    class="{{ menuActive(['user.forex.trade.widget']) }}"><img
                         src="{{ asset($activeTemplateTrue . '/images/icon/ticket.png') }}" alt="icon">
                     @lang('Forex Trade')</a></li>
 

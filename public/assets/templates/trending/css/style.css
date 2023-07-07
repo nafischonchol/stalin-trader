@@ -267,7 +267,7 @@ header .uk-card-secondary a:hover {
 .uk-sticky.uk-active a.uk-logo {
     width: 134px;
     height: 23px;
-    background: url(../img/in-logo-1.svg);
+    background: url(../../../logo.png);
     background-size: 99.7%;
     margin-top: -2px;
 }

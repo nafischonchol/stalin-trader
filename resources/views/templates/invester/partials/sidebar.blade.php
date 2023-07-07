@@ -3,7 +3,7 @@
 @endphp
 <div class="dashboard-sidebar" id="dashboard-sidebar">
     <button class="btn-close dash-sidebar-close d-xl-none"></button>
-    <a href="{{ route('home') }}" class="logo"><img src="{{ asset('assets/images/logoIcon/logo_2.png') }}"
+    <a href="{{ route('home') }}" class="logo"><img src="{{ asset('assets/logo.png') }}"
         alt="images"></a>
     <div class="bg--lights">
         <div class="profile-info">

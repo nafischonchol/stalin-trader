@@ -110,6 +110,16 @@
                 var modal = $('#planInfoModal');
                 var plan = $(this).data('plan');
                 modal.find('.planName').text(plan.name);
+                if(plan.name=='cryptp bot')
+                {
+                    $("#cripto").show();
+                    $("#forex").hide();
+                }
+                else
+                {
+                    $("#cripto").hide();
+                    $("#forex").show();
+                }
             });
             $('.investModal').click(function() {
                 var symbol = '{{ $general->cur_sym }}';

@@ -28,10 +28,16 @@
                             <li><a href="#contact">Contact Us</a></li>
                         </ul>
                         <div class="uk-navbar-item uk-visible@m in-optional-nav">
+                            @if (auth()->check())
+                            <a href="{{ route('user.home') }}"
+                                class="uk-button uk-button-primary uk-button-small uk-border-pill">Dashboard</a>
+                            @else
                             <a href="{{ route('user.login') }}" class="uk-button uk-button-text"><i
-                                    class="fas fa-user-circle uk-margin-small-right"></i>Log in</a>
-                            <a href="{{ route('user.register') }}"
-                                class="uk-button uk-button-primary uk-button-small uk-border-pill">Sign up</a>
+                                class="fas fa-user-circle uk-margin-small-right"></i>Log in</a>
+                        <a href="{{ route('user.register') }}"
+                            class="uk-button uk-button-primary uk-button-small uk-border-pill">Sign up</a>
+                            @endif
+                           
                         </div>
                         <div class="uk-navbar-item uk-visible@m in-optional-nav">
                             <i class="fa fa-language" style="color: #ffffff;font-size: 26px;"></i>

@@ -95,6 +95,7 @@
         <!-- section content end -->
     </main>
     <!-- Javascript -->
+    @include('partials.notify')
     <script src="{{ asset('assets/templates/trending/js/vendors/uikit.min.js') }}"></script>
     <script src="{{ asset('assets/templates/trending/js/vendors/indonez.min.js') }}"></script>
 </body>

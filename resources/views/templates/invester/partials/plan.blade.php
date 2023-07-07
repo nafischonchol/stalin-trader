@@ -2,7 +2,8 @@
     @php
         $isInvested = $invests->contains('plan_id', $plan->id);
     @endphp
-    <div class="col-lg-4 col-md-4 col-sm-6">
+    <div class="col-lg-1 col-md-1 col-sm-0"></div>
+    <div class="col-lg-5 col-md-5 col-sm-6">
         <div class="plan-item style--two text-center mw-100 w-100 h-100">
             <div class="plan-item__header d-flex justify-content-between align-items-center">
                 <span class="mb-1 plan-title" style="font-size:30px;font-weight:800">{{ __($plan->name) }}</span>
@@ -50,7 +51,7 @@
                 var modal = $('#planInfoModal');
                 var plan = $(this).data('plan');
                 modal.find('.planName').text(plan.name);
-                if (plan.name == 'crypto bot') {
+                if (plan.name == 'Crypto AI Bot FC-98') {
                     $("#cripto").show();
                     $("#forex").hide();
                 } else {

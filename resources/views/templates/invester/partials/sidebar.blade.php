@@ -17,7 +17,7 @@
     </div>
     <ul class="sidebar-menu">
         <li><a href="{{ route('user.home') }}" class="{{ menuActive('user.home') }}"><img src="{{ asset($activeTemplateTrue . '/images/icon/dashboard.png') }}" alt="icon"> @lang('Dashboard')</a></li>
-        <li><a href="{{ route('user.invest.statistics') }}" class="{{ menuActive(['user.invest.statistics', 'user.invest.log']) }}"><img src="{{ asset($activeTemplateTrue . '/images/icon/investment.png') }}" alt="icon"> @lang('Investments')</a></li>
+        {{-- <li><a href="{{ route('user.invest.statistics') }}" class="{{ menuActive(['user.invest.statistics', 'user.invest.log']) }}"><img src="{{ asset($activeTemplateTrue . '/images/icon/investment.png') }}" alt="icon"> @lang('Investments')</a></li> --}}
         <li><a href="{{ route('plan') }}"
             class="{{ menuActive(['plan']) }}"><img
                 src="{{ asset($activeTemplateTrue . '/images/icon/investment.png') }}" alt="icon">

@@ -23,8 +23,9 @@
                         <ul class="uk-navbar-nav uk-visible@m">
                             <li><a href="#">Home</a></li>
                             <li><a href="#roadmap">Roadmap</a></li>
-                            <li><a href="#plan">Plan</a></li>
-                            <li><a href="#contact">Contanct</a></li>
+                            <li><a href="#market">Market</a></li>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#contact">Contact Us</a></li>
                         </ul>
                         <div class="uk-navbar-item uk-visible@m in-optional-nav">
                             <a href="{{ route('user.login') }}" class="uk-button uk-button-text"><i

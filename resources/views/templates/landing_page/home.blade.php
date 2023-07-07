@@ -218,6 +218,79 @@
             </div>
         </div>
         <!-- section content end -->
+         <div class="uk-section" id="market">
+            <div class="uk-container">
+                <div class="uk-grid-match uk-grid-medium uk-child-width-1-2@s uk-child-width-1-3@m in-card-10" data-uk-grid>
+                    <div class="uk-width-1-1">
+                        <h1 class="uk-margin-remove">A <span class="in-highlight">relationship</span> on your terms.</h1>
+                        <p class="uk-text-lead uk-text-muted uk-margin-remove">Work with us the way you want.</p>
+                        <p>Some believe you must choose between an online broker and a wealth management firm. At Wave Capital,
+                            you don’t need to compromise. Whether you invest on your own, with an advisor, or a little of both —
+                            we can support you.</p>
+                    </div>
+                    <div>
+                        <div class="uk-card uk-card-default uk-card-body uk-border-rounded uk-light in-card-green">
+                            <i class="fas fa-seedling fa-lg in-icon-wrap uk-margin-bottom"></i>
+                            <h4 class="uk-margin-top">
+                                <a href="#">Investing<i class="fas fa-chevron-right uk-float-right"></i></a>
+                            </h4>
+                            <hr>
+                            <p>A wide selection of investment product to help build diversified portfolio</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-card uk-card-default uk-card-body uk-border-rounded uk-light in-card-blue">
+                            <i class="fas fa-chart-bar fa-lg in-icon-wrap uk-margin-bottom"></i>
+                            <h4 class="uk-margin-top">
+                                <a href="#">Trading<i class="fas fa-chevron-right uk-float-right"></i></a>
+                            </h4>
+                            <hr>
+                            <p>Powerful trading tools, resources, insight and support</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-card uk-card-default uk-card-body uk-border-rounded uk-light in-card-purple">
+                            <i class="fas fa-chart-pie fa-lg in-icon-wrap uk-margin-bottom"></i>
+                            <h4 class="uk-margin-top">
+                                <a href="#">Wealth management<i class="fas fa-chevron-right uk-float-right"></i></a>
+                            </h4>
+                            <hr>
+                            <p>Dedicated financial consultant to help reach your own specific goals</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-card uk-card-default uk-card-body uk-border-rounded uk-light in-card-navy">
+                            <i class="fas fa-chalkboard-teacher fa-lg in-icon-wrap uk-margin-bottom"></i>
+                            <h4 class="uk-margin-top">
+                                <a href="#">Investment advisory<i class="fas fa-chevron-right uk-float-right"></i></a>
+                            </h4>
+                            <hr>
+                            <p>A wide selection of investing strategies from seasoned portfolio managers</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-card uk-card-default uk-card-body uk-border-rounded uk-light in-card-grey">
+                            <i class="fas fa-funnel-dollar fa-lg in-icon-wrap uk-margin-bottom"></i>
+                            <h4 class="uk-margin-top">
+                                <a href="#">Smart portfolio<i class="fas fa-chevron-right uk-float-right"></i></a>
+                            </h4>
+                            <hr>
+                            <p>A revolutionary, fully-automated investmend advisory services</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-card uk-card-default uk-card-body uk-border-rounded uk-light in-card-orange">
+                            <i class="fas fa-handshake fa-lg in-icon-wrap uk-margin-bottom"></i>
+                            <h4 class="uk-margin-top">
+                                <a href="#">Mutual fund advisor<i class="fas fa-chevron-right uk-float-right"></i></a>
+                            </h4>
+                            <hr>
+                            <p>Specialized guidance from independent local advisor for hight-net-worth investors</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- section content begin -->
         <div class="uk-section uk-section-muted uk-padding-large in-wave-3 uk-background-contain uk-background-center"
             style="background-image: url(img/in-wave-background-1.png);" data-uk-parallax="bgy: -200">
@@ -276,51 +349,46 @@
         </div>
         <!-- section content end -->
         <!-- section content begin -->
-        <div class="uk-section uk-padding-large" id="plan">
-            <div class="uk-container in-wave-4">
-                <div class="uk-grid uk-flex uk-flex-center">
-                    <div class="uk-width-1-1 uk-text-center">
-                        <h1 class="uk-margin-medium-bottom">Complete <span class="in-highlight">Paln</span> for every
-                            traders</h1>
+        <div class="uk-section" id="about">
+            <div class="uk-container">
+                <div class="uk-grid">
+                    <div class="uk-width-1-1">
+                        <div class="uk-width-3-5@m">
+                            <h1 class="uk-margin-small-bottom">Putting our clients first <span class="in-highlight">since
+                                    1986</span></h1>
+                            <p class="uk-text-lead uk-text-muted uk-margin-remove-top">For more than 30 years, we’ve been
+                                empowering clients by helping them take control of their financial lives.</p>
+                        </div>
                     </div>
-                    <div class="uk-width-3-4@m">
-                        <div class="uk-grid-collapse  uk-child-width-1-2@m in-wave-pricing" data-uk-grid>
-                            <div>
-                                <div class="uk-card uk-card-default uk-card-body uk-box-shadow-medium">
-                                <p class="uk-text-small uk-text-uppercase">Minimum funding<span
-                                        class="uk-label uk-border-pill uk-text-small uk-margin-small-left">USD
-                                        20</span></p>
-                                <h2 class="uk-margin-top uk-margin-remove-bottom">Testing Bot</h2>
-                                <p class="uk-text-lead uk-text-muted uk-margin-remove-top">EVERY DAILY FOR 1 Daily</p>
-                                <hr>
-                                <ul class="uk-list uk-list-bullet">
-                                    <li>Investment <span style="float: right;">$20.00 - $15,000.00</span></li>
-                                    <li>Max. Earn<span style="float: right;">300 USD</span></li>
-                                    <li>Repeats Time<span style="float: right;">1</span></li>
-                                    <li>Capital Back*<span style="float: right;">Yes</span></li>
-                                    <li>Total Return<span style="float: right;">1-6%</span></li>
-                                </ul>
-                                <a href="#" class="uk-button uk-button-default uk-border-rounded uk-align-center">Invest NOw<i class="fas fa-chevron-circle-right fa-xs uk-margin-small-left"></i></a>
-                                </div>
+                    <div class="uk-grid uk-grid-large uk-child-width-1-3@m uk-margin-medium-top" data-uk-grid>
+                        <div class="uk-flex uk-flex-left">
+                            <div class="uk-margin-right">
+                                <i class="fas fa-leaf fa-lg in-icon-wrap primary-color"></i>
                             </div>
                             <div>
-                                <div class="uk-card uk-card-default uk-card-body uk-box-shadow-large">
-                                    <p class="uk-text-small uk-text-uppercase">Minimum funding<span
-                                            class="uk-label uk-border-pill uk-text-small uk-margin-small-left">USD
-                                            30</span></p>
-                                    <h2 class="uk-margin-top uk-margin-remove-bottom">Cryptp Bot</h2>
-                                    <p class="uk-text-lead uk-text-muted uk-margin-remove-top">EVERY DAILY FOR 1 Daily</p>
-                                    <hr>
-                                    <ul class="uk-list uk-list-bullet">
-                                        <li>Investment <span style="float: right;">$30.00 - $15,000.00</span></li>
-                                        <li>Max. Earn<span style="float: right;">1000 USD</span></li>
-                                        <li>Repeats Time<span style="float: right;">1</span></li>
-                                        <li>Capital Back*<span style="float: right;">Yes</span></li>
-                                        <li>Total Return<span style="float: right;">1-6%</span></li>
-                                    </ul>
-                                    <a href="#" class="uk-button uk-button-primary uk-border-rounded uk-align-center">Invest Now<i
-                                            class="fas fa-chevron-circle-right fa-xs uk-margin-small-left"></i></a>
-                                </div>
+                                <h3>Philosophy</h3>
+                                <p>At vero eos etme accusamus iusto odio ent dignissimos deleniti atque corrupti quos ducimus
+                                    moll quilla blanditiis expedita est distinctio.</p>
+                            </div>
+                        </div>
+                        <div class="uk-flex uk-flex-left">
+                            <div class="uk-margin-right">
+                                <i class="fas fa-hourglass-end fa-lg in-icon-wrap primary-color"></i>
+                            </div>
+                            <div>
+                                <h3>History</h3>
+                                <p>At vero eos etme accusamus iusto odio ent dignissimos deleniti atque corrupti quos ducimus
+                                    moll quilla blanditiis expedita est distinctio.</p>
+                            </div>
+                        </div>
+                        <div class="uk-flex uk-flex-left">
+                            <div class="uk-margin-right">
+                                <i class="fas fa-flag fa-lg in-icon-wrap primary-color"></i>
+                            </div>
+                            <div>
+                                <h3>Culture</h3>
+                                <p>At vero eos etme accusamus iusto odio ent dignissimos deleniti atque corrupti quos ducimus
+                                    moll quilla blanditiis expedita est distinctio.</p>
                             </div>
                         </div>
                     </div>

@@ -47,7 +47,7 @@
                                     <p class="uk-text-lead uk-margin-top uk-margin-remove-bottom">Create your account
                                     </p>
                                     <p class="uk-text-small uk-margin-remove-top uk-margin-medium-bottom">Already  have an
-                                        account? <a href="{{ route('user.login')}}">Login here</a></p>
+                                        account? <a href="#">Login here</a></p>
                                         <div class="uk-margin-medium-left in-margin-remove-left@s">
                                             <form action="{{ route('user.register') }}" method="POST"  id="contact-form" class="uk-form uk-grid-small" data-uk-grid>
                                                 @csrf
@@ -553,6 +553,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="uk-width-1-2@s uk-inline">
+                                                    <span class="uk-form-icon">+88</span>
                                                     <input class="uk-input uk-border-rounded" id="email" name="email" type="email" placeholder="Phone No">
                                                 </div>
                                                 

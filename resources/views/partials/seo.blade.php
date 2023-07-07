@@ -16,10 +16,10 @@
 @if($seoContents)
     <meta name="description" content="{{ $seoContents->meta_description??$seoContents->description }}">
     <meta name="keywords" content="{{ implode(',',$seoContents->keywords) }}">
-    <link rel="shortcut icon" href="{{ getImage(getFilePath('logoIcon') . '/favicon.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('assets/images/logoIcon/favicon.png') }}" type="image/x-icon">
 
     {{--<!-- Apple Stuff -->--}}
-    <link rel="apple-touch-icon" href="{{ getImage(getFilePath('logoIcon') . '/logo.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('assets/images/logoIcon/logo.png') }}">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="{{ $general->sitename($pageTitle) }}">

@@ -21,8 +21,7 @@
     <link rel="preload" href="{{ asset('assets/templates/trending/fonts/rubik-v9-latin-regular.woff2') }}"
         as="font" type="font/woff2" crossorigin>
     <!-- Favicon and apple icon -->
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png">
+>
     <!-- Stylesheet -->
     <link rel="stylesheet" href="{{ asset('assets/templates/trending/css/vendors/uikit.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/templates/trending/css/style.css') }}">

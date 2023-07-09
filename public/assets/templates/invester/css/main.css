@@ -3853,9 +3853,10 @@ button[type="submit"]:hover
     box-shadow: 0 0 0 .25rem rgba(225,83,97,0.5)
 }
 
-h3{
+h3,h4{
     color: #fff !important;
 }
+
 
 .form-control {
     display: block;
@@ -3873,13 +3874,35 @@ h3{
     transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
 }
 
-.form-control:focus {
+.form-control:hover {
     background-color: #000;
     color:#fff;
     font-size: 15px;
     border-color: #EB1616;
 }
 
+.copy-link input{
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #fff;
+    background-color: #000;
+    background-clip: padding-box;
+    border: 1px solid #000;
+    appearance: none;
+    border-radius: 5px;
+    transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
+}
+
+.copy-link input:hover{
+    background-color: #000;
+    color:#fff;
+    font-size: 15px;
+    border-color: #EB1616;
+}
 
 input,button,select,optgroup,textarea {
     margin: 0;

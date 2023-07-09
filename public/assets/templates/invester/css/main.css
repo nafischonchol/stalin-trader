@@ -3832,11 +3832,25 @@ select.langSel option {
 
 /* custom overwrite */
 .btn{
-    background-color:  #191C24 !important;
-    border-color: #000000 !important;
+    background-color: #EB1616 !important;
 }
 .btn:hover{
+    color: #fff;
+    background-color: #bb2d3b !important;
+    border-color: #b02a37 !important;
+    box-shadow: 0 0 0 .25rem rgba(225,83,97,0.5)
+}
+
+button[type="submit"]
+{
     background-color: #EB1616 !important;
+}
+button[type="submit"]:hover
+{
+    color: #fff;
+    background-color: #bb2d3b !important;
+    border-color: #b02a37 !important;
+    box-shadow: 0 0 0 .25rem rgba(225,83,97,0.5)
 }
 
 h3{

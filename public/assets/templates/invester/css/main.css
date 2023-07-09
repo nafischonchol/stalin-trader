@@ -2890,13 +2890,14 @@ input:-webkit-autofill:focus {
 
 .plan-item.style--two {
     box-shadow: 0 2px 5px 3px hsl(var(--dark)/0.05);
-   padding: 40px 25px;
+    padding: 40px 25px;
     position: relative;
     overflow: hidden;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-between;
+    background-color: #000000 !important;
 }
 
 .plan-item.style--two .plan-name {
@@ -3924,9 +3925,6 @@ input,button,select,optgroup,textarea {
 {
     color:#fff !important;
 }
-
-
-
 
 
 ::-webkit-scrollbar {

@@ -8,7 +8,7 @@
             <div class="alert__icon d-flex align-items-center text--danger"><i class="fas fa-exclamation-triangle"></i></div>
             <p class="alert__message">
                 <span class="fw-bold">@lang('Empty Balance')</span><br>
-                <small><i>@lang('Your balance is empty. Please make') <a href="{{ route('user.deposit.index') }}" class="link-color">@lang('deposit')</a> @lang('for your next investment.')</i></small>
+                <small><i>@lang('Your balance is empty. Please make') <a href="{{ route('user.deposit.index') }}" class="link-color">@lang('deposit')</a> @lang('for your next trade.')</i></small>
             </p>
         </div>
         @endif
@@ -28,7 +28,7 @@
             <div class="alert__icon d-flex align-items-center text--primary"><i class="fas fa-spinner"></i></div>
             <p class="alert__message">
                 <span class="fw-bold">@lang('Withdrawal Pending')</span><br>
-                <small><i>@lang('Total') {{ showAmount($pendingWithdrawals) }} {{ $general->cur_text }} @lang('withdrawal request is pending. Please wait for admin approval. The amount will send to the account which you\'ve provided. See') <a href="{{ route('user.withdraw.history') }}" class="link-color">@lang('withdrawal history')</a></i></small>
+                <small><i>@lang('Total') {{ showAmount($pendingWithdrawals) }} {{ $general->cur_text }} @lang('withdrawal request is pending. Please wait for approval. The amount will send to the account which you\'ve provided. See') <a href="{{ route('user.withdraw.history') }}" class="link-color">@lang('withdrawal history')</a></i></small>
             </p>
         </div>
         @endif

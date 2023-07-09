@@ -1,5 +1,6 @@
 {
     "Remember Me":"Remember Me",
+    "Interest": "Trade Profit",
     "Interest Wallet": "Profit Wallet",
     "Interest wallet": "Profit wallet",
     "Investment Plan": "AI Trading Bots List",
@@ -18,7 +19,7 @@
     "Confirm to invest on": "Confirm to active on",
     "Invest Amount": "Enter Amount",
     "Invested on Crypto AI Bot FC-98": "Active on Crypto AI Bot FC-98",
-    "Invested on Forex AI Bot NS-5": "Active on Forex AI Bot NS-5"
-
-
+    "Invested on Forex AI Bot NS-5": "Active on Forex AI Bot NS-5",
+    "investment plan": "Bots or trade options",
+    "page and invest now": "page and trade now"
 }

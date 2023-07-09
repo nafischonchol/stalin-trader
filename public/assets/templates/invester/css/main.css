@@ -68,7 +68,7 @@ body {
     padding: 0;
     margin: 0;
     font-size: 14px;
-    color: #EB1616 !important;
+    color: #fff !important;
     line-height: 1.6;
     font-family: var(--body-font);
     min-height: 100vh;
@@ -144,6 +144,9 @@ a {
 
 .text--base {
     color: hsl(var(--base)) !important;
+}
+.usd-balance{
+    color:  #EB1616 !important;
 }
 
 /* background color css start */
@@ -3818,4 +3821,12 @@ select.langSel option {
         min-width: 920px;
         padding-bottom: 30px;
     }
+}
+
+.btn{
+    background-color:  #191C24 !important;
+    border-color: #000000 !important;
+}
+.btn:hover{
+    background-color: #EB1616 !important;
 }

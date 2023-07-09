@@ -39,9 +39,9 @@
                             <div class="uk-width-4-5@m">
                                 <div class="in-padding-horizontal@s">
                                     <!-- module logo begin -->
-                                    <a class="uk-logo" href="index.html">
-                                        <img class="uk-margin-small-right in-offset-top-10" src="img/in-lazy.gif"
-                                            data-src="img/in-logo-2.svg" alt="wave" width="134" height="23"
+                                    <a class="uk-logo" href="/#">
+                                        <img class="uk-margin-small-right in-offset-top-10" src="{{ asset("assets/logo.png")}}"
+                                            data-src="{{ asset("assets/logo.png")}}" alt="wave" width="134" height="23"
                                             data-uk-img>
                                     </a>
                                     <!-- module logo begin -->

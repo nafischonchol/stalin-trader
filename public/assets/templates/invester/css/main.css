@@ -3865,8 +3865,8 @@ h3,h4{
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #6C7293;
-    background-color: #000;
+    color: #fff !important;
+    background-color: #000 !important;
     background-clip: padding-box;
     border: 1px solid #000;
     appearance: none;
@@ -3909,4 +3909,8 @@ input,button,select,optgroup,textarea {
     font-family: inherit;
     font-size: inherit;
     line-height: inherit
+}
+
+.blue-text{
+    color: #EB1616 !important;
 }

@@ -190,7 +190,7 @@
                             </div>
                         </div>
                         <hr>
-                        <p><small><i>@lang('You\'ve invested') {{ $general->cur_sym }}{{ showAmount($depositWalletInvests) }} @lang('from the deposit wallet and') {{ $general->cur_sym }}{{ showAmount($interestWalletInvests) }} @lang('from the interest wallet')</i></small></p>
+                        <p><small><i>@lang('You have invested') {{ $general->cur_sym }}{{ showAmount($depositWalletInvests) }} @lang('from the deposit wallet and') {{ $general->cur_sym }}{{ showAmount($interestWalletInvests) }} @lang('from the interest wallet')</i></small></p>
                     </div>
                 </div>
             </div>

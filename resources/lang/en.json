@@ -8,5 +8,12 @@
     "Invest Rankings": "Trade Rankings",
     "Invest Rankings List": "Trade Rankings List",
     "My Invest": "My Trade",
-    "Team Invest": "Team Trade"
+    "Team Invest": "Team Trade",
+    "Total Investments":"Total Trade Amount",
+    "Interests": "Profit",
+    "You have invested": "You have trade",
+    "from the interest wallet": "from the profit wallet",
+    "Latest ROI Statistics": "Latest Trading Statistics",
+    "Here is last 30 days statistics of your ROI (Return on Investment)": "Here is last 30 days statistics of your Profit on Trade"
+
 }

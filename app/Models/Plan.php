@@ -21,8 +21,10 @@ class Plan extends Model
         return $this->belongsTo(TimeSetting::class);
     }
 
-    public function investsWithUserId($userId)
+    public function investsWithUserId()
     {
+        $userId = auth()->user()->id;
+        Log::info($userId);
         $now = Carbon::now()->utc();
         $formattedTime = $now->format('Y-m-d H:i:s');
         // Log::info($formattedTime);

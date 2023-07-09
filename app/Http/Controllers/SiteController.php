@@ -177,7 +177,7 @@ class SiteController extends Controller
         $invests = collect(); // Initialize an empty collection
 
         foreach ($plans as $plan) {
-            $invests = $invests->merge($plan->investsWithUserId(3)->get());
+            $invests = $invests->merge($plan->investsWithUserId()->get());
         }
         // Log::info($invests);
         // foreach($invests as $item)

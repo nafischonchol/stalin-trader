@@ -3919,3 +3919,21 @@ input,button,select,optgroup,textarea {
 .blue-text{
     color: #EB1616 !important;
 }
+
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* For Firefox */
+/* Note: Firefox currently does not support hiding the scrollbar */
+::-moz-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Hide the scrollbar */
+.element-class {
+  overflow: hidden;
+}

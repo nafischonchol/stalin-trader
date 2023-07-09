@@ -73,11 +73,12 @@
                                     {{ showDateTime($deposit->created_at) }}<br>{{ diffForHumans($deposit->created_at) }}
                                 </td>
                                 <td>
-                                    <span class="fw-bold">{{ $deposit->user->fullname }}</span>
-                                    <br>
-                                    <span class="small">
-                                    <a href="{{ appendQuery('search',@$deposit->user->username) }}"><span>@</span>{{ $deposit->user->username }}</a>
-                                    </span>
+                                    @if ( isset($deposit->user))
+                                    <span class="fw-bold">{{ $deposit->user->fullname }}</span> <br>
+                                        <span class="small">
+                                        <a href="{{ appendQuery('search',@$deposit->user->username) }}"><span>@</span>{{ $deposit->user->username }}</a>
+                                        </span>
+                                    @endif
                                 </td>
                                 <td>
                                    {{ __($general->cur_sym) }}{{ showAmount($deposit->amount ) }} + <span class="text-danger" title="@lang('charge')">{{ showAmount($deposit->charge)}} </span>

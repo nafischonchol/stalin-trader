@@ -20,20 +20,22 @@
     <ul class="sidebar-menu">
         <li><a href="{{ route('user.home') }}" class="{{ menuActive('user.home') }}"><i class="fas fa-home"></i>
                 @lang('Dashboard')</a></li>
-        {{-- <li><a href="{{ route('user.invest.statistics') }}" class="{{ menuActive(['user.invest.statistics', 'user.invest.log']) }}"><img src="{{ asset($activeTemplateTrue . '/images/icon/investment.png') }}" alt="icon"> @lang('Investments')</a></li> --}}
         <li><a href="{{ route('plan') }}" class="{{ menuActive(['plan']) }}"><i class="fad fa-robot"></i>
                 @lang('AI Trading Bots')</a></li>
-        <li><a href="{{ route('user.deposit.index') }}" class="{{ menuActive('user.deposit*') }}"><img
-                    src="{{ asset($activeTemplateTrue . '/images/icon/wallet.png') }}" alt="icon">
-                @lang('Deposit Funds')</a></li>
+        <li>
+            <a href="{{ route('user.deposit.index') }}" class="{{ menuActive('user.deposit*') }}">
+                <i class="menu-icon tf-icons ti ti-download"></i>
+                @lang('Deposit Funds')
+            </a>
+        </li>
 
         <li><a href="{{ route('user.forex.trade.widget') }}"
                 class="{{ menuActive(['user.forex.trade.widget']) }}"><img
                     src="{{ asset($activeTemplateTrue . '/images/icon/ticket.png') }}" alt="icon">
                 @lang('Options Trade')</a></li>
 
-        <li><a href="{{ route('user.withdraw') }}" class="{{ menuActive('user.withdraw*') }}"><img
-                    src="{{ asset($activeTemplateTrue . '/images/icon/withdraw.png') }}" alt="icon">
+        <li><a href="{{ route('user.withdraw') }}" class="{{ menuActive('user.withdraw*') }}" class="menu-link">
+            <i class="menu-icon tf-icons ti ti-cash"></i>
                 @lang('Withdraw Funds')</a></li>
         @if ($general->b_transfer)
             <li><a href="{{ route('user.transfer.balance') }}" class="{{ menuActive('user.transfer.balance') }}"><img

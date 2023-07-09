@@ -62,15 +62,12 @@
         @endif
         {{-- referrals --}}
         <div class="mb-4">
-            <h3>@lang('My Referrals')</h3>
+            <h3>@lang('Refer & Enjoy the Bonus')</h3>
         </div>
         <div class="row gy-4">
             <div class="col-md-12">
                 <div class="card mb-3">
                     <div class="card-body">
-                        <h4 class="mb-1">@lang('Refer & Enjoy the Bonus')</h4>
-                        <p class="mb-3">@lang('You\'ll get commission against your referral\'s activities. Level has been decided by the') <strong><i>{{ __($general->site_name) }}</i></strong>
-                            @lang('authority. If you reach the level, you\'ll get commission.')</p>
                         <div class="copy-link">
                             <input type="text" class="copyURL"
                                 value="{{ route('home') }}?reference={{ auth()->user()->username }}" readonly>

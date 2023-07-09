@@ -1,164 +1,76 @@
 @foreach ($plans as $plan)
-    <div class="col-lg-4 col-md-4 col-sm-6">
+    @php
+        $isInvested = $invests->contains('plan_id', $plan->id);
+    @endphp
+    <div class="col-lg-1 col-md-1 col-sm-0"></div>
+    <div class="col-lg-5 col-md-5 col-sm-6">
         <div class="plan-item style--two text-center mw-100 w-100 h-100">
-            <div class="plan-item__header">
-                <h4 class="mb-1 plan-title">{{ __($plan->name) }}</h4>
-                <p class="mb-2">
-                    @if ($plan->lifetime == 0)
-                        @lang('Total')
-                        {{ __($plan->interest * $plan->repeat_time) }}{{ $plan->interest_type == 1 ? '%' : ' ' . __($general->cur_text) }}
-                        @lang('ROI')
-                    @else
-                        @lang('Unlimited')
-                    @endif
-                </p>
-                <div class="plan-rate">
-                    <h3 class="rate">
-                        {{ $plan->interest_type != 1 ? $general->cur_sym : '' }}{{ showAmount($plan->interest) }}{{ $plan->interest_type == 1 ? '%' : '' }}
-                    </h3>
-                    <p>@lang('EVERY') {{ __(strtoupper($plan->timeSetting->name)) }} @lang('FOR') @if ($plan->lifetime == 0)
-                            {{ __($plan->repeat_time) }} {{ __($plan->timeSetting->name) }}
-                        @else
-                            @lang('LIFETIME')
-                        @endif
-                    </p>
-                </div>
-            </div>
-            <div class="plan-item__body my-4">
-                <ul class="list list-style-three text-start">
-                    <li class="d-flex flex-wrap justify-content-between align-items-center">
-                        <span class="label">@lang('Investment')</span>
-                        <span class="value">
-                            @if ($plan->fixed_amount == 0)
-                                {{ __($general->cur_sym) }}{{ showAmount($plan->minimum) }} -
-                                {{ __($general->cur_sym) }}{{ showAmount($plan->maximum) }}
-                            @else
-                                {{ __($general->cur_sym) }}{{ showAmount($plan->fixed_amount) }}
-                            @endif
-                        </span>
-                    </li>
-                    <li class="d-flex flex-wrap justify-content-between align-items-center">
-                        <span class="label">@lang('Max. Earn')</span>
-                        <span class="value">
-                            @php
-                                if ($plan->fixed_amount == 0) {
-                                    $investAmo = $plan->maximum;
-                                } else {
-                                    $investAmo = $plan->fixed_amount;
-                                }
-                                
-                                if ($plan->lifetime == 0) {
-                                    if ($plan->interest_type == 1) {
-                                        $interestAmo = (($investAmo * $plan->interest) / 100) * $plan->repeat_time;
-                                    } else {
-                                        $interestAmo = $plan->interest * $plan->repeat_time;
-                                    }
-                                } else {
-                                    $interestAmo = 'Unlimited';
-                                }
-                                
-                            @endphp
+            <div class="plan-item__header d-flex justify-content-between align-items-center">
+                <span class="mb-1 plan-title" style="font-size:30px;font-weight:800">{{ __($plan->name) }}</span>
+                <span class="text-right"><i class="fas fa-info-circle fa-lg infoModal" data-plan="{{ $plan }}"></i>
 
-                            {{ $interestAmo }} @if ($plan->lifetime == 0)
-                                {{ $general->cur_text }}
-                            @endif
-                        </span>
-                    </li>
-                    <li class="d-flex flex-wrap justify-content-between align-items-center">
-                        <span class="label">@lang('Total Return')</span>
-                        <span class="value">
-                            @if ($plan->lifetime == 0)
-                                @if ($plan->capital_back == 1)
-                                    @lang('capital') +
-                                @endif
-                                {{ __($plan->interest * $plan->repeat_time) }}{{ $plan->interest_type == 1 ? '%' : ' ' . __($general->cur_text) }}
-                            @else
-                                @lang('Unlimited')
-                            @endif
-                        </span>
-                    </li>
-                </ul>
+                </span>
             </div>
-            <button class="cmn--btn plan-btn btn mt-2 investModal" data-bs-toggle="modal" data-plan="{{ $plan }}" data-bs-target="#investModal" type="button">@lang('Invest Now')</button>
+            <div class="form-check form-switch investModal mt-2" data-plan="{{ $plan }}" data-is-invested="{{ $isInvested }}" style="margin: auto">
+                <input class="form-check-input form-control" type="checkbox" role="switch" id="flexSwitchCheckChecked"
+                    {{ $isInvested ? 'checked' : '' }} {{ $isInvested ? 'disabled' : '' }}
+                    style="min-height: 30px; min-width:65px">
+            </div>
         </div>
     </div>
 @endforeach
 
+@include('templates.invester.partials.plan-info-modal')
+@include('templates.invester.partials.invest-modal')
 
-<div class="modal fade" id="investModal">
-    <div class="modal-dialog modal-dialog-centered modal-content-bg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">
-                    @if (auth()->check())
-                        @lang('Confirm to invest on') <span class="planName"></span>
-                    @else
-                        @lang('At first sign in your account')
-                    @endif
-                </h5>
-                <button type="button" class="close" data-bs-dismiss="modal">
-                    <i class="las la-times"></i>
-                </button>
-            </div>
-            <form action="{{ route('user.invest.submit') }}" method="post">
-                @csrf
-                <input type="hidden" name="plan_id">
-                @if (auth()->check())
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <h6 class="text-center investAmountRange"></h6>
-                            <p class="text-center mt-1 interestDetails"></p>
-                            <p class="text-center interestValidity"></p>
+@push('style')
+    <style>
+        .symbol {
+            font-weight: bold;
+            font-size: 25px;
+            margin-right: 8px;
+            /* Add some spacing between the symbol and text */
+        }
 
-                            <label>@lang('Select Wallet')</label>
-                            <select class="form-control form--control form-select" name="wallet_type" required>
-                                <option value="">@lang('Select One')</option>
-                                @if (auth()->user()->deposit_wallet > 0)
-                                    <option value="deposit_wallet">@lang('Deposit Wallet - ' . $general->cur_sym . showAmount(auth()->user()->deposit_wallet))</option>
-                                @endif
-                                @if (auth()->user()->interest_wallet > 0)
-                                    <option value="interest_wallet">@lang('Interest Wallet -' . $general->cur_sym . showAmount(auth()->user()->interest_wallet))</option>
-                                @endif
-                                @foreach ($gatewayCurrency as $data)
-                                    <option value="{{ $data->id }}" @selected(old('wallet_type') == $data->method_code) data-gateway="{{ $data }}">{{ $data->name }}</option>
-                                @endforeach
-                            </select>
-                            <code class="gateway-info rate-info d-none">@lang('Rate'): 1 {{ $general->cur_text }} = <span class="gateway-rate"></span> <span class="method_currency"></span></code>
-                        </div>
-                        <div class="form-group">
-                            <label>@lang('Invest Amount')</label>
-                            <div class="input-group">
-                                <input type="number" step="any" class="form-control form--control" name="amount" required>
-                                <div class="input-group-text">{{ $general->cur_text }}</div>
-                            </div>
-                            <code class="gateway-info d-none">@lang('Charge'): <span class="charge"></span> {{ $general->cur_text }}. @lang('Total amount'): <span class="total"></span> {{ $general->cur_text }}</code>
-                        </div>
-                    </div>
-                @endif
-                <div class="modal-footer">
-                    @if (auth()->check())
-                        <button type="button" class="btn btn--dark" data-bs-dismiss="modal">@lang('No')</button>
-                        <button type="submit" class="btn btn--base">@lang('Yes')</button>
-                    @else
-                        <a href="{{ route('user.login') }}" class="btn btn--base w-100">@lang('At first sign in your account')</a>
-                    @endif
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-
+        .info-text {
+            font-weight: bold;
+            display: inline;
+            /* Display the text inline */
+        }
+    </style>
+@endpush
 @push('script')
     <script>
         (function($) {
             "use strict"
+            $('.form-check-input').click(function(e) {
+                e.preventDefault();
+            });
+
+            $('.infoModal').click(function() {
+                var modal = $('#planInfoModal');
+                var plan = $(this).data('plan');
+                modal.find('.planName').text(plan.name);
+                if (plan.name == 'Crypto AI Bot FC-98') {
+                    $("#cripto").show();
+                    $("#forex").hide();
+                } else {
+                    $("#cripto").hide();
+                    $("#forex").show();
+                }
+                modal.modal("show");
+            });
+
             $('.investModal').click(function() {
+                var isInvested = $(this).data("is-invested");
+                if(isInvested)
+                    return false;
                 var symbol = '{{ $general->cur_sym }}';
                 var currency = '{{ $general->cur_text }}';
                 $('.gateway-info').addClass('d-none');
                 var modal = $('#investModal');
                 var plan = $(this).data('plan');
+                
                 modal.find('[name=plan_id]').val(plan.id);
                 modal.find('.planName').text(plan.name);
                 let fixedAmount = parseFloat(plan.fixed_amount).toFixed(2);
@@ -171,7 +83,8 @@
                     modal.find('[name=amount]').val(parseFloat(plan.fixed_amount).toFixed(2));
                     modal.find('[name=amount]').attr('readonly', true);
                 } else {
-                    modal.find('.investAmountRange').text(`Invest: ${symbol}${minimumAmount} - ${symbol}${maximumAmount}`);
+                    modal.find('.investAmountRange').text(
+                        `Invest: ${symbol}${minimumAmount} - ${symbol}${maximumAmount}`);
                     modal.find('[name=amount]').val('');
                     modal.find('[name=amount]').removeAttr('readonly');
                 }
@@ -179,15 +92,19 @@
                 if (plan.interest_type == '1') {
                     modal.find('.interestDetails').html(`<strong> Interest: ${interestAmount}% </strong>`);
                 } else {
-                    modal.find('.interestDetails').html(`<strong> Interest: ${interestAmount} ${currency}  </strong>`);
+                    modal.find('.interestDetails').html(
+                        `<strong> Interest: ${interestAmount} ${currency}  </strong>`);
                 }
 
                 if (plan.lifetime == '0') {
-                    modal.find('.interestValidity').html(`<strong>  Every ${plan.time_setting.time} hours for ${plan.repeat_time} times</strong>`);
+                    modal.find('.interestValidity').html(
+                        `<strong>  Every ${plan.time_setting.time} hours for ${plan.repeat_time} times</strong>`
+                    );
                 } else {
-                    modal.find('.interestValidity').html(`<strong>  Every ${plan.time_setting.time} hours for life time </strong>`);
+                    modal.find('.interestValidity').html(
+                        `<strong>  Every ${plan.time_setting.time} hours for life time </strong>`);
                 }
-
+                modal.modal("show");
             });
 
             $('[name=amount]').on('input', function() {

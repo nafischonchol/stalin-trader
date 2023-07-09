@@ -1,152 +1,144 @@
-@extends($activeTemplate . 'layouts.app')
-@section('panel')
-    @php
-        $authContent = getContent('authentication.content', true);
-    @endphp
-    <!-- Account Section -->
-    <section class="account-section position-relative">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-6 col-lg-7 col-md-8">
-                    <a href="{{ route('home') }}" class="text-center d-block mb-3 mb-sm-4 auth-page-logo"><img src="{{ getImage(getFilePath('logoIcon') . '/logo_2.png') }}" alt="logo"></a>
-                    <form action="{{ route('user.register') }}" method="POST" class="verify-gcaptcha account-form">
-                        @csrf
-                        <div class="mb-4">
-                            <h4 class="mb-2">{{ __(@$authContent->data_values->register_title) }}</h4>
-                            <p>{{ __(@$authContent->data_values->register_subtitle) }}</p>
-                        </div>
-                        <div class="row">
-                            @if (session()->get('reference') != null)
-                                <div class="col-12">
-                                    <p>@lang('You\'re referred by') <i class="fw-bold text--base">{{ session()->get('reference') }}</i></p>
-                                </div>
-                            @endif
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label class="form-label">@lang('Username')</label>
-                                    <input type="text" class="form-control form--control checkUser h-45" name="username" value="{{ old('username') }}" required>
-                                    <small class="text-danger usernameExist"></small>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label class="form-label">@lang('E-Mail Address')</label>
-                                    <input type="email" class="form-control form--control h-45 checkUser" name="email" value="{{ old('email') }}" required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label">@lang('Country')</label>
-                                    <select name="country" class="form--control form-select">
-                                        @foreach ($countries as $key => $country)
-                                            <option data-mobile_code="{{ $country->dial_code }}" value="{{ $country->country }}" data-code="{{ $key }}">
-                                                {{ __($country->country) }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label">@lang('Mobile')</label>
-                                    <div class="input-group ">
-                                        <span class="input-group-text mobile-code">
+<!DOCTYPE html>
+<html lang="zxx" dir="ltr">
 
-                                        </span>
-                                        <input type="hidden" name="mobile_code">
-                                        <input type="hidden" name="country_code">
-                                        <input type="number" name="mobile" value="{{ old('mobile') }}" class="form-control form--control checkUser" required>
-                                    </div>
-                                    <small class="text-danger mobileExist"></small>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <label class="form-label">@lang('Password')</label>
-                                    <input type="password" class="form-control form--control h-45" name="password" required>
-                                    @if ($general->secure_password)
-                                        <div class="input-popup">
-                                            <p class="error lower">@lang('1 small letter minimum')</p>
-                                            <p class="error capital">@lang('1 capital letter minimum')</p>
-                                            <p class="error number">@lang('1 number minimum')</p>
-                                            <p class="error special">@lang('1 special character minimum')</p>
-                                            <p class="error minimum">@lang('6 character password')</p>
-                                        </div>
-                                    @endif
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <label class="form-label">@lang('Confirm Password')</label>
-                                    <input type="password" class="form-control form--control h-45" name="password_confirmation" required>
-                                </div>
-                            </div>
-                            @if ($general->agree)
-                                @php
-                                    $policyPages = getContent('policy_pages.element', false, null, true);
-                                @endphp
-                                <div class="col-12">
-                                    <x-captcha />
-                                </div>
-                                <div class="col-12">
-                                    <div class="d-flex flex-wrap gap-2 justify-content-between">
-                                        <div class="form-group custom--checkbox">
-                                            <input type="checkbox" id="agree" @checked(old('agree')) name="agree" class="form-check-input" required>
-                                            <label for="agree">@lang('I agree with') </label> <span>
-                                                @foreach ($policyPages as $policy)
-                                                    <a href="{{ route('policy.pages', [slug($policy->data_values->title), $policy->id]) }}" class="link-color">{{ __($policy->data_values->title) }}</a>
-                                                    @if (!$loop->last)
-                                                        ,
-                                                    @endif
-                                                @endforeach
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endif
-                            <div class="col-12">
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8">
+    <meta name="description" content="Premium HTML5 Template by Indonez">
+    <meta name="keywords" content="blockit, uikit3, indonez, handlebars, scss, vanilla javascript">
+    <meta name="author" content="Indonez">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#313131" />
+    <!-- Site Properties -->
+    <title> {{ $general->siteName(__($pageTitle)) }}</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="{{ asset('assets/templates/trending/css/vendors/uikit.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/templates/trending/css/style.css') }}">
+</head>
 
-                                <button type="submit" class="btn btn--base w-100">@lang('Create Account')</button>
-                            </div>
-                            <div class="col-12 mt-4">
-                                <p class="text-center">@lang('Already have an account?') <a href="{{ route('user.login') }}" class="fw-bold text--base">@lang('Login Account')</a></p>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Account Section -->
-
-
-    <div class="modal fade" id="existModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="existModalLongTitle">@lang('You are with us')</h5>
-                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                        <i class="las la-times"></i>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <h6 class="text-center">@lang('You already have an account please Login ')</h6>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">@lang('Close')</button>
-                    <a href="{{ route('user.login') }}" class="btn btn--base">@lang('Login')</a>
-                </div>
-            </div>
-        </div>
+<body>
+    <!-- preloader begin -->
+    <div class="in-loader">
+        <div></div>
+        <div></div>
+        <div></div>
     </div>
-@endsection
+    <!-- preloader end -->
+    <main>
+        <!-- section content begin -->
+        <div class="uk-section uk-padding-remove-vertical">
+            <div class="uk-container uk-container-expand">
+                <div class="uk-grid" data-uk-height-viewport="expand: true">
+                    <div class="uk-width-2-5@m uk-background-cover uk-background-center-right uk-visible@m uk-box-shadow-xlarge"
+                        style="background-image: url({{ asset('assets/templates/landing_page/images/trade.jpg') }});">
+                    </div>
+                    <div class="uk-width-expand@m uk-flex uk-flex-middle">
+                        <div class="uk-grid uk-flex-center">
+                            <div class="uk-width-4-5@m">
+                                <div class="in-padding-horizontal@s">
+                                    <!-- module logo begin -->
+                                    <a class="uk-logo" href="/#">
+                                        <img class="uk-margin-small-right in-offset-top-10" src="{{ asset("assets/logo.png")}}"
+                                            data-src="{{ asset("assets/logo.png")}}" alt="wave" width="134" height="23"
+                                            data-uk-img>
+                                    </a>
+                                    <!-- module logo begin -->
+                                    <p class="uk-text-lead uk-margin-top uk-margin-remove-bottom">Create your account
+                                    </p>
+                                    <p class="uk-text-small uk-margin-remove-top uk-margin-medium-bottom">Already have
+                                        an
+                                        account? <a href="{{ route('user.login') }}">Login here</a></p>
+                                    <div class="uk-margin-medium-left in-margin-remove-left@s">
+                                        <form action="{{ route('user.register') }}" method="POST" id="contact-form"
+                                            class="uk-form uk-grid-small" data-uk-grid>
+                                            @csrf
+                                            <div class="uk-width-1-2@s uk-inline">
+                                                <input class="uk-input uk-border-rounded" id="username" name="username"
+                                                    type="text"value="{{ old('username') }}" required
+                                                    placeholder="User name">
+                                            </div>
+                                            <div class="uk-width-1-2@s uk-inline">
+                                                <span class="uk-form-icon fas fa-envelope fa-sm"></span>
+                                                <input class="uk-input uk-border-rounded" id="email" name="email"
+                                                    value="{{ old('email') }}" required type="email"
+                                                    placeholder="Email address">
+                                            </div>
+                                            <div class="uk-width-1-2@s uk-inline">
 
-@if ($general->secure_password)
-    @push('script-lib')
-        <script src="{{ asset('assets/global/js/secure_password.js') }}"></script>
-    @endpush
-@endif
+                                                <select name="country" class="uk-input uk-border-rounded"
+                                                    id="country">
+                                                    @foreach ($countries as $key => $country)
+                                                        <option data-mobile_code="{{ $country->dial_code }}"
+                                                            value="{{ $country->country }}"
+                                                            data-code="{{ $key }}">
+                                                            {{ __($country->country) }}</option>
+                                                    @endforeach
+                                                </select>
 
-@push('script')
+                                            </div>
+                                            <div class="uk-width-1-2@s uk-inline">
+                                                <div class="input-group ">
+                                                    <input type="hidden" name="mobile_code">
+                                                    <input type="hidden" name="country_code">
+                                                    <input type="text" name="mobile" value="{{ old('mobile') }}"
+                                                        class="uk-input uk-border-rounded checkUser" required
+                                                        placeholder="Mobile Number">
+                                                </div>
+                                                <small class="text-danger mobileExist"></small>
+                                            </div>
+
+                                            <div class="uk-width-1-2@s uk-inline">
+                                                <span class="uk-form-icon"><svg xmlns="http://www.w3.org/2000/svg"
+                                                        height="1em" viewBox="0 0 512 512">
+                                                        <path
+                                                            d="M336 352c97.2 0 176-78.8 176-176S433.2 0 336 0S160 78.8 160 176c0 18.7 2.9 36.8 8.3 53.7L7 391c-4.5 4.5-7 10.6-7 17v80c0 13.3 10.7 24 24 24h80c13.3 0 24-10.7 24-24V448h40c13.3 0 24-10.7 24-24V384h40c6.4 0 12.5-2.5 17-7l33.3-33.3c16.9 5.4 35 8.3 53.7 8.3zM376 96a40 40 0 1 1 0 80 40 40 0 1 1 0-80z" />
+                                                    </svg></span>
+                                                <input class="uk-input uk-border-rounded" id="password" name="password"
+                                                    type="password" placeholder="Password">
+                                            </div>
+                                            <div class="uk-width-1-2@s uk-inline">
+                                                <span class="uk-form-icon"><svg xmlns="http://www.w3.org/2000/svg"
+                                                        height="1em" viewBox="0 0 512 512">
+                                                        <path
+                                                            d="M336 352c97.2 0 176-78.8 176-176S433.2 0 336 0S160 78.8 160 176c0 18.7 2.9 36.8 8.3 53.7L7 391c-4.5 4.5-7 10.6-7 17v80c0 13.3 10.7 24 24 24h80c13.3 0 24-10.7 24-24V448h40c13.3 0 24-10.7 24-24V384h40c6.4 0 12.5-2.5 17-7l33.3-33.3c16.9 5.4 35 8.3 53.7 8.3zM376 96a40 40 0 1 1 0 80 40 40 0 1 1 0-80z" />
+                                                    </svg></span>
+                                                <input class="uk-input uk-border-rounded" id="password_confirmation"
+                                                    name="password_confirmation" type="password"
+                                                    placeholder="Confirm Password">
+                                            </div>
+                                            <div class="uk-width-1-2@s uk-inline"></div>
+                                            <div class="uk-margin-small uk-width-auto uk-text-small">
+                                                <label><input type="checkbox" id="agree"
+                                                        @checked(old('agree')) name="agree"
+                                                        class="form-check-input" required> I agree with Privacy Policy
+                                                    , Terms and Service
+                                            </div>
+                                            <div class="uk-margin-small uk-width-1-1">
+                                                <button
+                                                    class="uk-button uk-width-1-1 uk-button-primary uk-border-rounded uk-float-left"
+                                                    type="submit" name="submit">Sign Up</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!-- login form begin -->
+                                    <!-- login form end -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- section content end -->
+    </main>
+    <!-- Javascript -->
+    @include('partials.notify')
+    <script src="{{ asset('assets/templates/trending/js/vendors/uikit.min.js') }}"></script>
+    <script src="{{ asset('assets/templates/trending/js/vendors/indonez.min.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script>
         "use strict";
         (function($) {
@@ -196,4 +188,6 @@
             });
         })(jQuery);
     </script>
-@endpush
+</body>
+
+</html>

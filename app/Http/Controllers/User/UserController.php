@@ -69,7 +69,7 @@ class UserController extends Controller
             ->orderBy('created_at', 'asc')
             ->groupBy('date')
             ->get();
-        $data['maxLevel']  = Referral::max('level');
+        $data['maxLevel']  = Refferral::max('level');
         return view($this->activeTemplate . 'user.dashboard', $data);
     }
 

@@ -3145,8 +3145,8 @@ input:-webkit-autofill:focus {
 }
 
 .custom-input-box {
-    background-color: #fff;
-    border: 1px solid #cacaca;
+    background-color: #000000;
+    border: 1px solid #191C24;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -3156,7 +3156,7 @@ input:-webkit-autofill:focus {
 }
 
 .custom-input-box label {
-    color: #a0a0a0;
+    color: #fff;
     font-size: 0.75rem;
     margin-bottom: 0;
 }
@@ -3166,13 +3166,13 @@ input:-webkit-autofill:focus {
     width: 100%;
     border: none;
     font-family: "Maven Pro", sans-serif;
-    color: #373e4a;
+    color: #fff;
     font-size: 0.875rem;
     font-weight: 500;
 }
 
 .custom-input-box input:focus, .custom-input-box select:focus{
-    outline: none;
+    border: 1px solid #EB1616;
 }
 
 .copy-link{
@@ -3857,6 +3857,9 @@ h3,h4{
     color: #fff !important;
 }
 
+.flex-grow-1 form{
+    background-color: #000000 !important;
+}
 
 .form-control {
     display: block;
@@ -3903,6 +3906,8 @@ h3,h4{
     font-size: 15px;
     border-color: #EB1616;
 }
+
+
 
 input,button,select,optgroup,textarea {
     margin: 0;

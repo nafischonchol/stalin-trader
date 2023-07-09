@@ -5,7 +5,7 @@
             <div class="mb-4">
                 <div class="row mb-4">
                     <div class="col-lg-8">
-                        <h3 class="mb-2">@lang('Forex Trade')</h3>
+                        <h3 class="mb-2">@lang('Options Trade')</h3>
                     </div>
                 </div>
                     <!-- TradingView Widget BEGIN -->

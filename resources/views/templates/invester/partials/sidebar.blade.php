@@ -3,8 +3,7 @@
 @endphp
 <div class="dashboard-sidebar" id="dashboard-sidebar">
     <button class="btn-close dash-sidebar-close d-xl-none"></button>
-    <a href="{{ route('home') }}" class="logo"><img src="{{ asset('assets/logo.png') }}"
-        alt="images"></a>
+    <a href="{{ route('home') }}" class="logo"><img src="{{ asset('assets/logo.png') }}" alt="images"></a>
     <div class="bg--lights">
         <div class="profile-info">
             <p class="fs--13px mb-3 fw-bold">@lang('ACCOUNT BALANCE')</p>
@@ -19,21 +18,19 @@
         </div>
     </div>
     <ul class="sidebar-menu">
-        <li><a href="{{ route('user.home') }}" class="{{ menuActive('user.home') }}"><img
-                    src="{{ asset($activeTemplateTrue . '/images/icon/dashboard.png') }}" alt="icon">
+        <li><a href="{{ route('user.home') }}" class="{{ menuActive('user.home') }}"><i class="fas fa-home"></i>
                 @lang('Dashboard')</a></li>
         {{-- <li><a href="{{ route('user.invest.statistics') }}" class="{{ menuActive(['user.invest.statistics', 'user.invest.log']) }}"><img src="{{ asset($activeTemplateTrue . '/images/icon/investment.png') }}" alt="icon"> @lang('Investments')</a></li> --}}
-        <li><a href="{{ route('plan') }}" class="{{ menuActive(['plan']) }}"><img
-                    src="{{ asset($activeTemplateTrue . '/images/icon/investment.png') }}" alt="icon">
+        <li><a href="{{ route('plan') }}" class="{{ menuActive(['plan']) }}"><i class="fad fa-robot"></i>
                 @lang('AI Trading Bots')</a></li>
         <li><a href="{{ route('user.deposit.index') }}" class="{{ menuActive('user.deposit*') }}"><img
                     src="{{ asset($activeTemplateTrue . '/images/icon/wallet.png') }}" alt="icon">
                 @lang('Deposit Funds')</a></li>
-                
-                <li><a href="{{ route('user.forex.trade.widget') }}"
-                    class="{{ menuActive(['user.forex.trade.widget']) }}"><img
-                        src="{{ asset($activeTemplateTrue . '/images/icon/ticket.png') }}" alt="icon">
-                    @lang('Options Trade')</a></li>
+
+        <li><a href="{{ route('user.forex.trade.widget') }}"
+                class="{{ menuActive(['user.forex.trade.widget']) }}"><img
+                    src="{{ asset($activeTemplateTrue . '/images/icon/ticket.png') }}" alt="icon">
+                @lang('Options Trade')</a></li>
 
         <li><a href="{{ route('user.withdraw') }}" class="{{ menuActive('user.withdraw*') }}"><img
                     src="{{ asset($activeTemplateTrue . '/images/icon/withdraw.png') }}" alt="icon">
@@ -43,16 +40,16 @@
                         src="{{ asset($activeTemplateTrue . '/images/icon/balance-transfer.png') }}" alt="icon">
                     @lang('Balance Transfer')</a></li>
         @endif
-        <li><a href="{{ route('user.transactions') }}" class="{{ menuActive('user.transactions') }}"><img
-                    src="{{ asset($activeTemplateTrue . '/images/icon/transaction.png') }}" alt="icon">
+        <li><a href="{{ route('user.transactions') }}" class="{{ menuActive('user.transactions') }}"><i
+                    class="fas fa-exchange-alt"></i>
                 @lang('All Transaction')</a></li>
         @if ($general->user_ranking)
             <li><a href="{{ route('user.invest.ranking') }}" class="{{ menuActive('user.invest.ranking') }}"><img
                         src="{{ asset($activeTemplateTrue . '/images/icon/ranking.png') }}" alt="icon">
                     @lang('Achieving Rank')</a></li>
         @endif
-        <li><a href="{{ route('user.referrals') }}" class="{{ menuActive('user.referrals') }}"><img
-                    src="{{ asset($activeTemplateTrue . '/images/icon/referral.png') }}" alt="icon">
+        <li><a href="{{ route('user.referrals') }}" class="{{ menuActive('user.referrals') }}"><i
+                    class="fas fa-users"></i>
                 @lang('My Team')</a></li>
         @if ($general->promotional_tool && $promotionCount)
             <li><a href="{{ route('user.promotional.banner') }}"

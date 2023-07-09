@@ -2264,20 +2264,25 @@ input:-webkit-autofill:focus {
 }
 
 .sidebar-menu li a {
+    font-size: 20px;
     padding: 15px 13px;
     color: #6C7293;
     border-left: 3px solid #191C24;
     border-radius: 0 30px 30px 0;
     outline: none;
 }
-@media (max-width:1199px) {
-    .sidebar-menu li a {
-        padding-inline: 25px;
-    }
-}
-.sidebar-menu li a img {
+
+.sidebar-menu li a i {
+    width: 40px;
+    height: 26px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #000000;
+    border-radius: 40px;
     margin-right: 12px;
 }
+
 
 
 .sidebar-menu li a.active, .sidebar-menu li a:hover {

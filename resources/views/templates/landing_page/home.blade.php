@@ -7,8 +7,8 @@
                 <ul class="uk-slideshow-items uk-light">
                     <li>
                         <div class="uk-position-cover">
-                            <img src="{{ asset('assets/templates/trending/img/in-slideshow-image-1.jpg') }}"
-                                data-src="{{ asset('assets/templates/trending/img/in-slideshow-image-1.jpg') }}"
+                            <img src="{{ asset('assets/templates/landing_page/images/slide1.jpg') }}"
+                                data-src="{{ asset('assets/templates/landing_page/images/slide1.jpg') }}"
                                 alt="slideshow-image" data-uk-cover width="1920" height="700" data-uk-img>
                         </div>
                         <span></span>
@@ -29,7 +29,7 @@
                     </li>
                     <li>
                         <div class="uk-position-cover">
-                            <img src="img/in-lazy.gif" data-src="img/in-slideshow-image-2.jpg" alt="slideshow-image"
+                            <img src="{{ asset('assets/templates/landing_page/images/slide2.jpg') }}" data-src="{{ asset('assets/templates/landing_page/images/slide2.jpg') }}" alt="slideshow-image"
                                 data-uk-cover width="1920" height="700" data-uk-img>
                         </div>
                         <span></span>
@@ -51,7 +51,7 @@
                     </li>
                     <li>
                         <div class="uk-position-cover">
-                            <img src="img/in-lazy.gif" data-src="img/in-slideshow-image-3.jpg" alt="slideshow-image"
+                            <img src="{{ asset('assets/templates/landing_page/images/slide3.jpg') }}" data-src="{{ asset('assets/templates/landing_page/images/slide3.jpg') }}" alt="slideshow-image"
                                 data-uk-cover width="1920" height="700" data-uk-img>
                         </div>
                         <span></span>

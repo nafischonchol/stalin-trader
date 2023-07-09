@@ -68,7 +68,7 @@ body {
     padding: 0;
     margin: 0;
     font-size: 14px;
-    color: hsl(var(--body));
+    color: #EB1616 !important;
     line-height: 1.6;
     font-family: var(--body-font);
     min-height: 100vh;
@@ -123,7 +123,7 @@ a {
 }
 
 .text--warning {
-    color: hsl(var(--warning)) !important;
+    color: #EB1616 !important;
 }
 
 .text--info {
@@ -176,7 +176,7 @@ a {
 }
 
 .bg--light {
-    background-color: hsl(var(--light)) !important;
+    background-color: #191C24 !important;;
 }
 
 .bg--base {
@@ -2157,7 +2157,7 @@ input:-webkit-autofill:focus {
     height: 100%;
     padding: 20px;
     border-right: 1px solid hsl(var(--border));
-    background-color: hsl(var(--white));
+    background-color: #191C24 !important;
     overflow-y: auto;
 }
 
@@ -2210,7 +2210,7 @@ input:-webkit-autofill:focus {
     }
 }
 .dashboard-wrapper {
-    background-color: hsl(var(--light));
+    background-color: #000 !important;
     width: calc(100% - 310px);
     margin-left: auto;
     min-height: 100vh;
@@ -2332,7 +2332,7 @@ input:-webkit-autofill:focus {
     -o-border-radius: 5px;
     overflow: hidden;
     align-items: stretch;
-    background-color: #fff;
+    background-color:#191C24 !important;
 }
 
 .alert button.close {
@@ -2513,7 +2513,7 @@ input:-webkit-autofill:focus {
     position: sticky;
     top: 0;
     padding: 15px 25px;
-    background-color: hsl(var(--white));
+    background-color: #191C24 !important;
     box-shadow: 0px 3px 15px hsl(var(--base)/0.05);
     z-index: 11;
 }

@@ -3942,3 +3942,10 @@ input,button,select,optgroup,textarea {
 .element-class {
   overflow: hidden;
 }
+
+
+.modal-content {
+    background-color: #191C24;
+    border: 1px solid red;
+    color:#fff;
+}

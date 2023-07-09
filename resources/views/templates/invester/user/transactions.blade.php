@@ -100,7 +100,12 @@
                             </li>
                             <li>
                                 <span class="caption">@lang('Details')</span>
-                                <span class="value">{{ __($transaction->details) }}</span>
+                                @if ($transaction->remark == 'interest')
+                                    <span class="value details">Profit on trade</span>
+                                @else
+                                    <span class="value details">{{ __($transaction->details) }}</span>
+                                @endif
+                                
                             </li>
                         </ul>
                     </div>

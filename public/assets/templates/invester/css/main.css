@@ -2200,11 +2200,13 @@ input:-webkit-autofill:focus {
     }
 }
 .dashboard-container{
+    background-color: #191C24;
     max-width:1140px;
     margin:0 auto;
 }
 .dashboard-container .dashboard-inner{    
     padding: 40px 20px;
+    margin-top: 30px;
 
 }
 @media (max-width: 575px) {
@@ -3829,4 +3831,8 @@ select.langSel option {
 }
 .btn:hover{
     background-color: #EB1616 !important;
+}
+
+h3{
+    color: #fff !important;
 }

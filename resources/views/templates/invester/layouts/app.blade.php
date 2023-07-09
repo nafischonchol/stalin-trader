@@ -11,9 +11,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400;1,500&family=Maven+Pro:wght@400;500;600&display=swap" rel="stylesheet">
 
 
-    <link href="{{ asset('assets/global/css/bootstrap.min.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('assets/global/css/bootstrap.min.css') }}" rel="stylesheet">
 
-    <link href="{{ asset('assets/global/css/all.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/global/css/all.min.css') }}" rel="stylesheet"> --}}
+
+    <link href="{{ asset('assets/templates/invester/css/dark-theme/bootstrap.min.css') }}" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('assets/global/css/line-awesome.min.css') }}" />
 

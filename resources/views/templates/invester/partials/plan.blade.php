@@ -79,12 +79,12 @@
                 let interestAmount = parseFloat(plan.interest);
 
                 if (plan.fixed_amount > 0) {
-                    modal.find('.investAmountRange').text(`Invest: ${symbol}${fixedAmount}`);
+                    modal.find('.investAmountRange').text(`Trade Amount: ${symbol}${fixedAmount}`);
                     modal.find('[name=amount]').val(parseFloat(plan.fixed_amount).toFixed(2));
                     modal.find('[name=amount]').attr('readonly', true);
                 } else {
                     modal.find('.investAmountRange').text(
-                        `Invest: ${symbol}${minimumAmount} - ${symbol}${maximumAmount}`);
+                        `Trade Amount: ${symbol}${minimumAmount} - ${symbol}${maximumAmount}`);
                     modal.find('[name=amount]').val('');
                     modal.find('[name=amount]').removeAttr('readonly');
                 }

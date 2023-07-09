@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\UserRanking;
 use App\Rules\FileTypeValidate;
 use Illuminate\Http\Request;
+use Log;
 
 class RankingController extends Controller
 {
@@ -39,7 +40,8 @@ class RankingController extends Controller
 
         if ($request->hasFile('icon')) {
             try {
-                $userRanking->icon = fileUploader($request->icon, getFilePath('userRanking'), getFileSize('userRanking'), $userRanking->icon);
+              
+                $userRanking->icon = fileUploader($request->icon, "public/assets/images/user_rankings", "100x100", $userRanking->icon);
             } catch (\Exception$exp) {
                 $notify[] = ['error', 'Couldn\'t upload your icon'];
                 return back()->withNotify($notify);

@@ -20,7 +20,7 @@
                             <tbody>
                                 @forelse($userRankings as $userRanking)
                                     <tr>
-                                        <td><img src="{{ getImage(getFilePath('userRanking') . '/' . $userRanking->icon, getFileSize('userRanking')) }}" alt=""></td>
+                                        <td><img src="{{ asset('assets/images/user_rankings/' . $userRanking->icon) }}" alt=""></td>
                                         <td>{{ __($userRanking->level) }}</td>
                                         <td>{{ __($userRanking->name) }}</td>
                                         <td>{{ $general->cur_sym }}{{ showAmount($userRanking->minimum_invest) }}</td>

@@ -2273,10 +2273,11 @@ input:-webkit-autofill:focus {
 }
 
 .sidebar-menu li a {
-    padding: 8px 30px;
-    align-items: center;
-    font-size: 16px;
-    border-radius: 20px;
+    padding: 15px 13px;
+    color: #6C7293;
+    border-left: 3px solid #191C24;
+    border-radius: 0 30px 30px 0;
+    outline: none;
 }
 @media (max-width:1199px) {
     .sidebar-menu li a {
@@ -2292,8 +2293,9 @@ input:-webkit-autofill:focus {
 }
 
 .sidebar-menu li a.active, .sidebar-menu li a:hover {
-    color: hsl(var(--base));
-    background-color: hsl(var(--base)/0.1);
+    color: #EB1616;
+    background-color: #000000;
+    border-color:  #EB1616
 }
 
 .sidebar-menu li a.active img, .sidebar-menu li a:hover img {

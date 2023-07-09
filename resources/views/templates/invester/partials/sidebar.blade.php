@@ -14,7 +14,7 @@
                     class="top-0 fs--13px">{{ $general->cur_text }} <small>(@lang('Interest Wallet'))</small></sub></p>
             <div class="mt-4 d-flex flex-wrap gap-2">
                 <a href="{{ route('user.deposit.index') }}" class="btn btn--base btn--smd">@lang('Deposit')</a>
-                <a href="{{ route('user.withdraw') }}" class="btn btn--secondary btn--smd">@lang('Withdraw')</a>
+                <a href="{{ route('user.withdraw') }}" class="btn btn--secondary btn--smd">@lang('Withdraw Funds')</a>
             </div>
         </div>
     </div>
@@ -28,16 +28,16 @@
                 @lang('AI Trading Bots')</a></li>
         <li><a href="{{ route('user.deposit.index') }}" class="{{ menuActive('user.deposit*') }}"><img
                     src="{{ asset($activeTemplateTrue . '/images/icon/wallet.png') }}" alt="icon">
-                @lang('Deposit')</a></li>
+                @lang('Deposit Funds')</a></li>
                 
                 <li><a href="{{ route('user.forex.trade.widget') }}"
                     class="{{ menuActive(['user.forex.trade.widget']) }}"><img
                         src="{{ asset($activeTemplateTrue . '/images/icon/ticket.png') }}" alt="icon">
-                    @lang('Forex Trade')</a></li>
+                    @lang('Options Trade')</a></li>
 
         <li><a href="{{ route('user.withdraw') }}" class="{{ menuActive('user.withdraw*') }}"><img
                     src="{{ asset($activeTemplateTrue . '/images/icon/withdraw.png') }}" alt="icon">
-                @lang('Cash Out')</a></li>
+                @lang('Withdraw Funds')</a></li>
         @if ($general->b_transfer)
             <li><a href="{{ route('user.transfer.balance') }}" class="{{ menuActive('user.transfer.balance') }}"><img
                         src="{{ asset($activeTemplateTrue . '/images/icon/balance-transfer.png') }}" alt="icon">

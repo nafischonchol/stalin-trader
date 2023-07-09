@@ -18,7 +18,7 @@
                         <script type="text/javascript">
                             new TradingView.widget({
                                 "autosize": false,
-                                "height": 600,
+                                "height": 400,
                                 "symbol": "FX:EURUSD",
                                 "interval": "D",
                                 "timezone": "Etc/UTC",

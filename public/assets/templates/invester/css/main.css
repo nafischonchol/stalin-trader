@@ -2897,7 +2897,7 @@ input:-webkit-autofill:focus {
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #000000 !important;
+    background-color: #191C24 !important;
 }
 
 .plan-item.style--two .plan-name {
@@ -3925,7 +3925,6 @@ input,button,select,optgroup,textarea {
 {
     color:#fff !important;
 }
-
 
 ::-webkit-scrollbar {
   width: 0;

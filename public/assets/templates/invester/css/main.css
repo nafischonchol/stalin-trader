@@ -1725,7 +1725,11 @@ input:-webkit-autofill:focus {
 .custom--card .card-footer .title {
     margin: 0;
 }
-
+.card-body {
+    background-color: #191C24 !important;
+    flex: 1 1 auto;
+    padding: 1rem 1rem;
+}
 .custom--card .card-body {
     padding: 25px;
 }

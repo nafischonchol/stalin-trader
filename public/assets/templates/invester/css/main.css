@@ -3962,3 +3962,19 @@ input,button,select,optgroup,textarea {
     border: 1px solid red;
     color:#fff;
 }
+
+.accordion-button{
+    background-color: #000000;
+    color: #fff;
+}
+
+.accordion-collapse collapse show{
+    background-color: #000000;
+    color: #fff;
+}
+
+.accordion-button:not(.collapsed){
+    color: #fff;
+    background-color: #000000 !important;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
+}

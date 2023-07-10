@@ -34,7 +34,7 @@
 
         <li><a href="{{ route('user.forex.trade.widget') }}"
                 class="{{ menuActive(['user.forex.trade.widget']) }}"><span class="material-symbols-outlined">
-                    bolt
+                    candlestick_chart
                     </span>
                 @lang('Options Trade')</a></li>
 

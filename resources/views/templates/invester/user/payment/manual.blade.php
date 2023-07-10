@@ -9,7 +9,7 @@
             </div>
             <div class="card custom--card">
                 <div class="card-header card-header-bg">
-                    <h5 class="text-center"> <i class="las la-wallet"></i> {{ $data->gateway->name }} @lang('Payment')</h5>
+                    <h5 class="text-center" style="color: #EB1616;"> <i class="las la-wallet"></i> {{ $data->gateway->name }} @lang('Payment')</h5>
                 </div>
                 <div class="card-body  ">
                     <form action="{{ route('user.deposit.manual.update') }}" method="POST" enctype="multipart/form-data">

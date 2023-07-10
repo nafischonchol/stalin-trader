@@ -826,7 +826,6 @@ h6 {
 
 .btn--base {
     background-color: hsl(var(--base));
-    border: 2px solid hsl(var(--base));
     color: hsl(var(--white));
 }
 

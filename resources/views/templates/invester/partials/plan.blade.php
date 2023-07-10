@@ -12,9 +12,16 @@
                 </span>
             </div>
             <div class="form-check form-switch investModal mt-2" data-plan="{{ $plan }}" data-is-invested="{{ $isInvested }}" style="margin: auto">
-                <input class="form-check-input form-control" type="checkbox" role="switch" id="flexSwitchCheckChecked"
+                <span class="material-symbols-outlined">
+                    toggle_off
+                    </span>
+
+                    <span class="material-symbols-outlined">
+                        toggle_on
+                        </span>
+                {{-- <input class="form-check-input form-control" type="checkbox" role="switch" id="flexSwitchCheckChecked"
                     {{ $isInvested ? 'checked' : '' }} {{ $isInvested ? 'disabled' : '' }}
-                    style="min-height: 30px; min-width:65px">
+                    style="min-height: 30px; min-width:65px"> --}}
             </div>
         </div>
     </div>
@@ -25,6 +32,21 @@
 
 @push('style')
     <style>
+        .material-symbols-outlined{
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 88px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
         .symbol {
             font-weight: bold;
             font-size: 25px;

@@ -4,6 +4,7 @@
         
     <div class="dashboard-inner">
         @include("templates.invester.user.dashboard-card")
+       
         @if ($user->deposit_wallet <= 0 && $user->interest_wallet <= 0)
             <div class="alert border border--danger" role="alert">
                 <div class="alert__icon d-flex align-items-center text--danger"><i class="fas fa-exclamation-triangle"></i>
@@ -98,7 +99,7 @@
                 @endif
             </div>
         </div>
-
+        {{-- reffer done --}}
 
         @if ($isHoliday)
             <div class="alert border border--info" role="alert">
@@ -131,6 +132,7 @@
             </div>
         @endif
 
+        
         <div class="card mt-4 mb-4">
             <div class="card-body">
                 <div class="mb-2">

@@ -1,4 +1,4 @@
-<div class="row g-3">
+<div class="row g-3 mb-4">
 
     <div class="col-md-3">
         <div class="card mb-3 dashboard-card">
@@ -29,8 +29,8 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="dashboard-icon">
                         <span class="material-symbols-outlined">
-                            monitoring
-                        </span>
+                            signal_cellular_alt
+                            </span>
                     </div>
                     <div class="info">
                         <div>
@@ -52,8 +52,8 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="dashboard-icon">
                         <span class="material-symbols-outlined">
-                            monitoring
-                        </span>
+                            account_tree
+                            </span>
                     </div>
                     <div class="info">
                         <div>
@@ -74,8 +74,8 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="dashboard-icon">
                         <span class="material-symbols-outlined">
-                            monitoring
-                        </span>
+                            schema
+                            </span>
                     </div>
                     <div class="info">
                         <div>
@@ -97,8 +97,8 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="dashboard-icon">
                         <span class="material-symbols-outlined">
-                            monitoring
-                        </span>
+                            query_stats
+                            </span>
                     </div>
                     <div class="info">
                         <div>
@@ -121,8 +121,8 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="dashboard-icon">
                         <span class="material-symbols-outlined">
-                            monitoring
-                        </span>
+                            grouped_bar_chart
+                            </span>
                     </div>
                     <div class="info">
                         <div>
@@ -144,8 +144,8 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="dashboard-icon">
                         <span class="material-symbols-outlined">
-                            monitoring
-                        </span>
+                            finance
+                            </span>
                     </div>
                     <div class="info">
                         <div>
@@ -167,8 +167,8 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="dashboard-icon">
                         <span class="material-symbols-outlined">
-                            monitoring
-                        </span>
+                            bar_chart_4_bars
+                            </span>
                     </div>
                     <div class="info">
                         <div>

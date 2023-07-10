@@ -72,7 +72,7 @@ class InvestController extends Controller
         $hyip = new HyipLab($user, $plan);
         $hyip->invest($amount, $wallet);
 
-        $notify[] = ['success', 'Trade to plan successfully'];
+        $notify[] = ['success', 'AI Bot is Activated'];
         return back()->withNotify($notify);
     }
 

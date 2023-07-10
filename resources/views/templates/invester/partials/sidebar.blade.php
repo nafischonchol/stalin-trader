@@ -14,16 +14,15 @@
                 robot_2
                 </span>
                 @lang('AI Trading Bots')</a></li>
+                <li><a href="{{ route('user.forex.trade.widget') }}"
+                    class="{{ menuActive(['user.forex.trade.widget']) }}"><span class="material-symbols-outlined">
+                        candlestick_chart
+                        </span>
+                    @lang('Options Trade')</a></li>
         <li><a href="{{ route('user.deposit.index') }}" class="{{ menuActive('user.deposit*') }}"><span class="material-symbols-outlined">
             download
             </span>
                 @lang('Deposit Funds')</a></li>
-
-        <li><a href="{{ route('user.forex.trade.widget') }}"
-                class="{{ menuActive(['user.forex.trade.widget']) }}"><span class="material-symbols-outlined">
-                    candlestick_chart
-                    </span>
-                @lang('Options Trade')</a></li>
 
         <li><a href="{{ route('user.withdraw') }}" class="{{ menuActive('user.withdraw*') }}"><span class="material-symbols-outlined">
             upload

@@ -33,8 +33,9 @@
                 @lang('Deposit Funds')</a></li>
 
         <li><a href="{{ route('user.forex.trade.widget') }}"
-                class="{{ menuActive(['user.forex.trade.widget']) }}"><img
-                    src="{{ asset($activeTemplateTrue . '/images/icon/ticket.png') }}" alt="icon">
+                class="{{ menuActive(['user.forex.trade.widget']) }}"><span class="material-symbols-outlined">
+                    bolt
+                    </span>
                 @lang('Options Trade')</a></li>
 
         <li><a href="{{ route('user.withdraw') }}" class="{{ menuActive('user.withdraw*') }}"><span class="material-symbols-outlined">

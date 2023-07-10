@@ -2280,13 +2280,12 @@ input:-webkit-autofill:focus {
     border-radius: 0 30px 30px 0;
     outline: none;
 }
-.sidebar-menu li a i {
+.sidebar-menu li a span {
     width: 40px;
     height: 25px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: #000000;
     border-radius: 40px;
     margin-right: 12px;
 }

@@ -15,10 +15,12 @@
                 <span class="material-symbols-outlined">
                     toggle_off
                     </span>
-
-                    <span class="material-symbols-outlined">
+                    <span class="material-symbols-outlined toggle-on-icon">
                         toggle_on
-                        </span>
+                    </span>
+                      {{-- <span>
+                        <img src="{{asset('assets/templates/invester/images/icon/toggle_on_FILL0_wght400_GRAD0_opsz48.svg')}}"/>
+                      </span> --}}
                 {{-- <input class="form-check-input form-control" type="checkbox" role="switch" id="flexSwitchCheckChecked"
                     {{ $isInvested ? 'checked' : '' }} {{ $isInvested ? 'disabled' : '' }}
                     style="min-height: 30px; min-width:65px"> --}}
@@ -47,13 +49,8 @@
             -webkit-font-feature-settings: 'liga';
             -webkit-font-smoothing: antialiased;
         }
-        .symbol {
-            font-weight: bold;
-            font-size: 25px;
-            margin-right: 8px;
-            /* Add some spacing between the symbol and text */
-        }
 
+     
         .info-text {
             font-weight: bold;
             display: inline;

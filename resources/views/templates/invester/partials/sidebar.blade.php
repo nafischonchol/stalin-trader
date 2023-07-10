@@ -4,20 +4,7 @@
 <div class="dashboard-sidebar" id="dashboard-sidebar">
     <button class="btn-close dash-sidebar-close d-xl-none"></button>
     <a href="{{ route('home') }}" class="logo"><img src="{{ asset('assets/logo.png') }}" alt="images"></a>
-    <div class="bg--lights">
-        <div class="profile-info">
-            <p class="fs--13px mb-3 fw-bold">@lang('ACCOUNT BALANCE')</p>
-            <h4 class="usd-balance text--base mb-2 fs--30">{{ showAmount(auth()->user()->deposit_wallet) }} <sub
-                    class="top-0 fs--13px">{{ $general->cur_text }} <small>(@lang('Deposit Wallet'))</small> </sub></h4>
-            <p class="btc-balance fw-medium fs--18px">{{ showAmount(auth()->user()->interest_wallet) }} <sub
-                    class="top-0 fs--13px">{{ $general->cur_text }} <small>(@lang('Interest Wallet'))</small></sub></p>
-            <div class="mt-4 d-flex flex-wrap gap-2">
-                <a href="{{ route('user.deposit.index') }}" class="btn btn--base btn--smd">@lang('Deposit')</a>
-                <a href="{{ route('user.withdraw') }}" class="btn btn--secondary btn--smd">@lang('Withdraw')</a>
-            </div>
-        </div>
-    </div>
-    <ul class="sidebar-menu">
+    <ul class="sidebar-menu mt-5">
         <li><a href="{{ route('user.home') }}" class="{{ menuActive('user.home') }}"><span class="material-symbols-outlined">
             home
             </span>

@@ -1,8 +1,8 @@
 @extends($activeTemplate . 'layouts.master')
 @section('content')
-
+    <div style="background-color: #000000 !important">
+        @include("templates.invester.user.dashboard-card")
     <div class="dashboard-inner">
-
         @if ($user->deposit_wallet <= 0 && $user->interest_wallet <= 0)
             <div class="alert border border--danger" role="alert">
                 <div class="alert__icon d-flex align-items-center text--danger"><i class="fas fa-exclamation-triangle"></i>
@@ -130,94 +130,6 @@
             </div>
         @endif
 
-        <div class="row g-3 mt-4">
-            <div class="col-lg-4">
-                <div class="dashboard-widget">
-                    <div class="d-flex justify-content-between">
-                        <h5 class="text-secondary">@lang('Successful Deposits')</h5>
-                    </div>
-                    <h3 class="text--secondary my-4">{{ showAmount($successfulDeposits) }} {{ $general->cur_text }}</h3>
-                    <div class="widget-lists">
-                        <div class="row">
-                            <div class="col-4">
-                                <p class="fw-bold">@lang('Submitted')</p>
-                                <span>{{ $general->cur_sym }}{{ showAmount($submittedDeposits) }}</span>
-                            </div>
-                            <div class="col-4">
-                                <p class="fw-bold">@lang('Pending')</p>
-                                <span>{{ $general->cur_sym }}{{ showAmount($pendingDeposits) }}</span>
-                            </div>
-                            <div class="col-4">
-                                <p class="fw-bold">@lang('Rejected')</p>
-                                <span>{{ $general->cur_sym }}{{ showAmount($rejectedDeposits) }}</span>
-                            </div>
-                        </div>
-                        <hr>
-                        <p><small><i>@lang('You\'ve requested to deposit') {{ $general->cur_sym }}{{ showAmount($requestedDeposits) }}.
-                                    @lang('Where') {{ $general->cur_sym }}{{ showAmount($initiatedDeposits) }}
-                                    @lang('is just initiated but not submitted.')</i></small></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="dashboard-widget">
-                    <div class="d-flex justify-content-between">
-                        <h5 class="text-secondary">@lang('Successful Withdrawals')</h5>
-                    </div>
-                    <h3 class="text--secondary my-4">{{ showAmount($successfulWithdrawals) }} {{ $general->cur_text }}
-                    </h3>
-                    <div class="widget-lists">
-                        <div class="row">
-                            <div class="col-4">
-                                <p class="fw-bold">@lang('Submitted')</p>
-                                <span>{{ $general->cur_sym }}{{ showAmount($submittedWithdrawals) }}</span>
-                            </div>
-                            <div class="col-4">
-                                <p class="fw-bold">@lang('Pending')</p>
-                                <span>{{ $general->cur_sym }}{{ showAmount($pendingWithdrawals) }}</span>
-                            </div>
-                            <div class="col-4">
-                                <p class="fw-bold">@lang('Rejected')</p>
-                                <span>{{ $general->cur_sym }}{{ showAmount($rejectedWithdrawals) }}</span>
-                            </div>
-                        </div>
-                        <hr>
-                        <p><small><i>@lang('You\'ve requested to withdraw') {{ $general->cur_sym }}{{ showAmount($requestedWithdrawals) }}.
-                                    @lang('Where') {{ $general->cur_sym }}{{ showAmount($initiatedWithdrawals) }}
-                                    @lang('is just initiated but not submitted.')</i></small></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="dashboard-widget">
-                    <div class="d-flex justify-content-between">
-                        <h5 class="text-secondary">@lang('Total Investments')</h5>
-                    </div>
-                    <h3 class="text--secondary my-4">{{ showAmount($invests) }} {{ $general->cur_text }}</h3>
-                    <div class="widget-lists">
-                        <div class="row">
-                            <div class="col-4">
-                                <p class="fw-bold">@lang('Completed')</p>
-                                <span>{{ $general->cur_sym }}{{ showAmount($completedInvests) }}</span>
-                            </div>
-                            <div class="col-4">
-                                <p class="fw-bold">@lang('Running')</p>
-                                <span>{{ $general->cur_sym }}{{ showAmount($runningInvests) }}</span>
-                            </div>
-                            <div class="col-4">
-                                <p class="fw-bold">@lang('Interests')</p>
-                                <span>{{ $general->cur_sym }}{{ showAmount($interests) }}</span>
-                            </div>
-                        </div>
-                        <hr>
-                        <p><small><i>@lang('You have invested') {{ $general->cur_sym }}{{ showAmount($depositWalletInvests) }}
-                                    @lang('from the deposit wallet and') {{ $general->cur_sym }}{{ showAmount($interestWalletInvests) }}
-                                    @lang('from the interest wallet')</i></small></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <div class="card mt-4 mb-4">
             <div class="card-body">
                 <div class="mb-2">
@@ -228,6 +140,8 @@
             </div>
         </div>
     </div>
+
+</div>
 
 @endsection
 

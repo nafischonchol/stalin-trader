@@ -3989,3 +3989,8 @@ input,button,select,optgroup,textarea {
 .raking-invest h5,.raking-common h5{
     color: #EB1616;
 }
+
+.custom--card .card-header, .custom--card .card-footer{
+    background-color: #000000;
+}
+

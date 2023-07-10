@@ -11,19 +11,20 @@
 
                 </span>
             </div>
-            <div class="form-check form-switch investModal mt-2" data-plan="{{ $plan }}" data-is-invested="{{ $isInvested }}" style="margin: auto">
-                <span class="material-symbols-outlined">
-                    toggle_off
-                    </span>
-                    <span class="material-symbols-outlined toggle-on-icon">
-                        toggle_on
-                    </span>
-                      {{-- <span>
-                        <img src="{{asset('assets/templates/invester/images/icon/toggle_on_FILL0_wght400_GRAD0_opsz48.svg')}}"/>
-                      </span> --}}
-                {{-- <input class="form-check-input form-control" type="checkbox" role="switch" id="flexSwitchCheckChecked"
-                    {{ $isInvested ? 'checked' : '' }} {{ $isInvested ? 'disabled' : '' }}
-                    style="min-height: 30px; min-width:65px"> --}}
+            <div class="investModal mt-2" data-plan="{{ $plan }}" data-is-invested="{{ $isInvested }}" style="margin: auto">
+
+                @if ($isInvested)
+                    <div class="form-check form-switch plan-toggle" id="checked-toggle">
+                        <input class="form-check-input" type="checkbox" role="switch"
+                            id="flexSwitchCheckChecked" checked>
+                        
+                    </div>
+                @else
+                    <div class="form-check form-switch plan-toggle" id="unchecked-toggle">
+                        <input class="form-check-input" type="checkbox" role="switch"
+                            id="flexSwitchCheckDisabled" disabled>
+                    </div>
+                @endif
             </div>
         </div>
     </div>
@@ -33,24 +34,21 @@
 @include('templates.invester.partials.invest-modal')
 
 @push('style')
+    <link href="{{asset('assets/templates/invester/css/dark-theme/bootstrap.min.css')}}"/>
     <style>
-        .material-symbols-outlined{
-            font-family: 'Material Symbols Outlined';
-            font-weight: normal;
-            font-style: normal;
-            font-size: 88px;
-            line-height: 1;
-            letter-spacing: normal;
-            text-transform: none;
-            display: inline-block;
-            white-space: nowrap;
-            word-wrap: normal;
-            direction: ltr;
-            -webkit-font-feature-settings: 'liga';
-            -webkit-font-smoothing: antialiased;
+        .plan-toggle{
+            font-size:50px;
+        }
+        .form-check-input:checked{
+            background-color: #EB1616;
+            border-color: #EB1616;
         }
 
-     
+        .form-check-input:checked{
+            background-color: #EB1616;
+            border-color: #EB1616;
+        }
+
         .info-text {
             font-weight: bold;
             display: inline;

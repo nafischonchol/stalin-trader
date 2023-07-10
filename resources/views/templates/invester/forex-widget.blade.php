@@ -19,6 +19,7 @@
                             new TradingView.widget({
                                 "autosize": false,
                                 "height": 400,
+                                "width": 800,
                                 "symbol": "FX:EURUSD",
                                 "interval": "D",
                                 "timezone": "Etc/UTC",

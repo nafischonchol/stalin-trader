@@ -1,7 +1,7 @@
 <div class="row g-3 mb-4">
 
     <div class="col-md-3">
-        <div class="card mb-3 dashboard-card">
+        <div class="mb-3 dashboard-card">
             <div class="dashboard-widget dashboard-widget-card">
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="dashboard-icon">

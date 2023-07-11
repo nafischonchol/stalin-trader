@@ -223,9 +223,9 @@
                 ]
             }],
             fill: {
-                type: "gradient",
-                colors: ['#4c7de6', '#4c7de6', '#4c7de6'],
-                gradient: {
+                type: "black",
+                colors: ['#EB1616', '#EB1616', '#fff'],
+                black: {
                     shadeIntensity: 1,
                     opacityFrom: 0.6,
                     opacityTo: 0.9,

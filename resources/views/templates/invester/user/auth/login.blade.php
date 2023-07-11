@@ -8,7 +8,7 @@
     <meta name="keywords" content="blockit, uikit3, indonez, handlebars, scss, vanilla javascript">
     <meta name="author" content="Indonez">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#313131" />
+    <meta name="theme-color" content="#191C24" />
     <!-- Site Properties -->
     <title> {{ $general->siteName(__($pageTitle)) }}</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -59,7 +59,7 @@
                                         </div>
                                         <div class="uk-margin-small uk-width-1-1 uk-inline">
                                             <span class="uk-form-icon uk-form-icon-flip fas fa-lock fa-sm"></span>
-                                            <input class="uk-input uk-border-rounded" id="password" value=""  name="password" 
+                                            <input class="uk-input uk-border-rounded" id="password" value=""  name="password"
                                                 type="password" placeholder="Password">
                                         </div>
                                         <div class="uk-margin-small uk-width-auto uk-text-small">

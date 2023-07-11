@@ -8,7 +8,7 @@
     <meta name="keywords" content="blockit, uikit3, indonez, handlebars, scss, vanilla javascript">
     <meta name="author" content="Indonez">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#313131" />
+    <meta name="theme-color" content="#191C24" />
     <!-- Site Properties -->
     <title>{{ $general->siteName($pageTitle ?? '') }}</title>
     @include("partials.seo")

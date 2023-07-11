@@ -343,7 +343,7 @@
                     <div class="uk-width-1-2@m">
                         <div class="uk-inline uk-dark in-wave-video uk-margin-small-bottom">
                             <img class="uk-border-rounded uk-width-1-1" src="img/in-lazy.gif"
-                                data-src="{{ asset('assets/templates/trending/img/in-wave-image-1.jpg') }}"
+                                data-src="{{ asset('assets/templates/landing_page/images/slide1.jpg') }}"
                                 alt="wave-video" width="533" height="355" data-uk-img>
                             <div class="uk-position-center">
                                 <a href="#modal-media-youtube" data-uk-toggle>

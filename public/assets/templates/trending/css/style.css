@@ -1349,9 +1349,11 @@ footer .uk-subnav-divider> ::before {
 
 .in-card-10 .uk-light .in-icon-wrap {
     background: rgba(255, 255, 255, 0.3);
-    color: #fff;
+    color: #EB1616;
 }
-
+.in-card-10 .uk-light h4 {
+    color: #EB1616;
+}
 .in-card-10 .uk-card-default {
     border: 0;
 }
@@ -1364,6 +1366,7 @@ footer .uk-subnav-divider> ::before {
 }
 .in-card-10 .in-card-secondary {
     background-color: #191C24;
+    color:  #EB1616!important;
 }
 
 .in-card-10 .in-card-blue {

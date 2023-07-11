@@ -242,7 +242,7 @@
                             we can support you.</p>
                     </div>
                     <div>
-                        <div class="uk-card uk-card-default uk-card-body uk-border-rounded uk-light in-card-primary">
+                        <div class="uk-card uk-card-default uk-card-body uk-border-rounded uk-light in-card-secondary">
                             <i class="fas fa-seedling fa-lg in-icon-wrap uk-margin-bottom"></i>
                             <h4 class="uk-margin-top">
                                 <a href="#">Investing<i class="fas fa-chevron-right uk-float-right"></i></a>
@@ -262,7 +262,7 @@
                         </div>
                     </div>
                     <div>
-                        <div class="uk-card uk-card-default uk-card-body uk-border-rounded uk-light in-card-primary">
+                        <div class="uk-card uk-card-default uk-card-body uk-border-rounded uk-light in-card-secondary">
                             <i class="fas fa-chart-pie fa-lg in-icon-wrap uk-margin-bottom"></i>
                             <h4 class="uk-margin-top">
                                 <a href="#">Wealth management<i class="fas fa-chevron-right uk-float-right"></i></a>
@@ -283,7 +283,7 @@
                         </div>
                     </div>
                     <div>
-                        <div class="uk-card uk-card-default uk-card-body uk-border-rounded uk-light in-card-primary">
+                        <div class="uk-card uk-card-default uk-card-body uk-border-rounded uk-light in-card-secondary">
                             <i class="fas fa-funnel-dollar fa-lg in-icon-wrap uk-margin-bottom"></i>
                             <h4 class="uk-margin-top">
                                 <a href="#">Smart portfolio<i class="fas fa-chevron-right uk-float-right"></i></a>

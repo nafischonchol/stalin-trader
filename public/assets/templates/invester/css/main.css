@@ -3067,7 +3067,7 @@ input:-webkit-autofill:focus {
 }
 
 .custom-input-box select, .custom-input-box input {
-    background-color: transparent;
+    background-color: #000000;
     width: 100%;
     border: none;
     font-family: "Maven Pro", sans-serif;
@@ -3919,4 +3919,8 @@ input,button,select,optgroup,textarea {
     -webkit-font-smoothing: antialiased;
 }
 
+.table--acordion .accordion-body
+{
+    background-color: #000000 !important;
+}
 

@@ -1,7 +1,7 @@
 @extends("$activeTemplate.layouts.master")
 @section('content')
     <div class="bg--light">
-        <div class="dashboard-inner container pt-120 pb-120">
+        <div class="dashboard-inner container pt-120 pb-120" style="min-height: 120vh">
             <div class="mb-4">
                 <div class="row mb-4">
                     <div class="col-lg-8">
@@ -19,7 +19,7 @@
                             new TradingView.widget({
                                 "autosize": false,
                                 "height": 400,
-                                "width": 800,
+                                "width":330,
                                 "symbol": "FX:EURUSD",
                                 "interval": "D",
                                 "timezone": "Etc/UTC",

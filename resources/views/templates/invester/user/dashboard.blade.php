@@ -239,7 +239,7 @@
             }],
             fill: {
                 type: "black",
-                colors: ['#EB1616', '#0003', '#EB1616'],
+                colors: ['#EB1616', '#0003', '#fff'],
                 gradient: {
                     shadeIntensity: 1,
                     opacityFrom: 0.6,

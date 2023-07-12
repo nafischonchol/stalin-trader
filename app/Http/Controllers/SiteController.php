@@ -23,9 +23,11 @@ class SiteController extends Controller
 {
     public function index()
     {
+        
         $reference = @$_GET['reference'];
         if ($reference) {
             session()->put('reference', $reference);
+            return redirect()->route('user.register');
         }
         $pageTitle = 'Home';
         $sections  = Page::where('tempname', $this->activeTemplate)->where('slug', '/')->first();

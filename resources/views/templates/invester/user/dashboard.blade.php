@@ -162,6 +162,16 @@
 {{-- this tree maybe not required fo referal --}}
 @push('style')
     <link href="{{ asset('assets/global/css/jquery.treeView.css') }}" rel="stylesheet" type="text/css">
+    <style>
+        .apexcharts-tooltip.apexcharts-theme-light .apexcharts-tooltip-title
+        {
+            background: #000 !important;
+        }
+        .apexcharts-tooltip.apexcharts-theme-light
+        {
+            background: #000 !important;
+        }
+        </style>
 @endpush
 
 
@@ -190,7 +200,6 @@
     {{-- end referal tree --}}
 
     <script src="{{ asset($activeTemplateTrue . '/js/lib/apexcharts.min.js') }}"></script>
-
     <script>
         // apex-line chart
         var options = {
@@ -229,8 +238,8 @@
                 ]
             }],
             fill: {
-                type: "gradient",
-                colors: ['#EB1616', '#EB1616', '#fff'],
+                type: "black",
+                colors: ['#EB1616', '#0003', '#EB1616'],
                 gradient: {
                     shadeIntensity: 1,
                     opacityFrom: 0.6,

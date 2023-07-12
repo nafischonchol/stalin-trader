@@ -11,7 +11,8 @@
     <meta name="theme-color" content="#191C24" />
     <!-- Site Properties -->
     <title> {{ $general->siteName(__($pageTitle)) }}</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('assets/images/logoIcon/favicon.png')}}" type="image/x-icon">
+
     <link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png">
     <!-- Stylesheet -->
     <link rel="stylesheet" href="{{ asset('assets/templates/trending/css/vendors/uikit.min.css') }}">

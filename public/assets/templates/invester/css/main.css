@@ -3296,14 +3296,14 @@ select.langSel option {
 }
 
 .invest-badge:hover .badge-lock {
-	background-color: #cda131;
+	background-color: #EB1616;
 }
 
 .invest-badge__thumb__mask::before {
 	position: absolute;
 	content: '';
 	width: 100%;
-	background: #cda131;
+	background: #EB1616;
 	left: 0;
 	bottom: 0;
 	z-index: -1;

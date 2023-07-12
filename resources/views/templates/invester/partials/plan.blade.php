@@ -5,6 +5,13 @@
     <div class="col-lg-1 col-md-1 col-sm-0"></div>
     <div class="col-lg-5 col-md-5 col-sm-6">
         <div class="plan-item style--two text-center mw-100 w-100 h-100">
+            <div>
+                @if ($isInvested)
+                    <span><img width="50px" src="{{asset("assets/templates/invester/images/bot/bot-on.png")}}"/> </span>
+                @else
+                    <span><img width="50px" src="{{asset("assets/templates/invester/images/bot/bot-off.png")}}"/> </span>
+                @endif
+            </div>
             <div class="plan-item__header d-flex justify-content-between align-items-center">
                 <span class="mb-1 plan-title" style="font-size:30px;font-weight:800">{{ __($plan->name) }}</span>
                 <span class="text-right"><i class="fas fa-info-circle fa-lg infoModal" data-plan="{{ $plan }}"></i>
@@ -14,13 +21,16 @@
             <div class="investModal mt-2" data-plan="{{ $plan }}" data-is-invested="{{ $isInvested }}" style="margin: auto">
 
                 @if ($isInvested)
+                <span>
                     <div class="form-check form-switch plan-toggle" id="checked-toggle">
                         <input class="form-check-input" type="checkbox" role="switch"
                             id="flexSwitchCheckChecked" checked>
                         
                     </div>
                 @else
+                
                     <div class="form-check form-switch plan-toggle" id="unchecked-toggle">
+                        
                         <input class="form-check-input" type="checkbox" role="switch"
                             id="flexSwitchCheckDisabled" disabled>
                     </div>

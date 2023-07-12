@@ -91,8 +91,8 @@
                             <div>
                                 <h4><span>Company</span></h4>
                                 <ul class="uk-list uk-link-text">
-                                    <li><a href="#">Our story</a></li>
-                                    <li><a href="#">Our leadership</a></li>
+                                    <li><a href="https://find-and-update.company-information.service.gov.uk/company/14994499" target="_blank">Regulated Certificate</a></li>
+                                    <li><a href="https://find-and-update.company-information.service.gov.uk/company/14994499/filing-history/MzM4NTgwODEwMmFkaXF6a2N4/document?format=pdf&download=0" target="_blank">Certificate PDF</a></li>
                                     <li><a href="#">Contact us</a></li>
                                     <li><a href="#">Partners</a></li>
                                 </ul>
@@ -180,7 +180,7 @@
                         </ul>
                     </div>
                     <div class="uk-width-expand@m uk-text-right@m">
-                        <p>© 2020 Wave Capital Inc.</p>
+                        <p>©  2021-2026 Stalin Finance(Forex & AI Trading) . All Rights Reserved.</p>
                     </div>
                 </div>
             </div>

@@ -424,9 +424,9 @@
                     <div class="uk-width-1-1 uk-background-contain uk-background-center-right uk-background-image@m"
                         style="background-image: url({{ asset('assets/templates/trending/img/in-wave-mockup-1.png') }});">
                         <h1 class="uk-margin-remove-bottom">Start <span class="uk-text-primary">trading</span></h1>
-                        <p class="uk-text-lead">on <span class="uk-text-primary">wave</span> mobile app.</p>
+                        <p class="uk-text-lead">on <span class="uk-text-primary">Stalin</span> mobile app.</p>
                         <p class="uk-margin-small-bottom">Available on multiple platform</p>
-                        <a href="#" class="uk-button uk-button-secondary uk-border-rounded in-button-app">
+                        <a href="https://play.google.com/store/apps/details?id=com.stalin.wallet" class="uk-button uk-button-secondary uk-border-rounded in-button-app" target="_blank">
                             <i class="fab fa-google-play fa-2x"></i>
                             <span class="wrapper">Download from<span>Play Store</span></span>
                         </a>
@@ -453,9 +453,9 @@
                             <p class="uk-text-lead">We're constantly updating our roadmap to bring transparency for our
                                 users
                                 and to get your feedback - please tell us what is important for you!</p>
-                            <p>You can follow our progress here or follow us on Twitter &nbsp; <a href="#"><i
+                            {{-- <p>You can follow our progress here or follow us on Twitter &nbsp; <a href="#"><i
                                         class="fab fa-twitter"></i><span class="uk-text-lowercase">@wavecapital</span></a>
-                            </p>
+                            </p> --}}
                         </div>
                     </div>
                     <div class="uk-width-1-1 in-timeline-1">

@@ -34,54 +34,49 @@
                     </script>
                 </div>
                 <!-- TradingView Widget END -->
-                <div class="design row mt-3">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-10" style="padding:25px; border:3px solid #fff">
-                        <div class="row">
-                            <div class="col-sm-4 col-md-6 mb-4">
-                                <select class="form-control" style="background-color:#191C24">
-                                    <option>EUR/USD <span style="color:red !important;">87%</span></option>
-                                </select>
-                            </div>
-                            <div class="col-sm-6 col-md-6 mb-4">
-                                <div class="form-check form-switch">
-                                <span class="option-switch-label">PENDING TRADE</span>
-                                    <input class="form-check-input custom-switch-input" type="checkbox"
-                                        id="switchInput">
-                                </div>
-                            </div>
-                            <div class="col-sm-4 col-md-6">
-                                <label>Time</label>
-                                <input type="text" class="form-control" value={{ date('h:i') }}
-                                    style="padding:1.25rem 0.75rem" readonly>
-                            </div>
-                            <div class="col-sm-4 col-md-6">
-                                <label>Investment</label>
-                                <input type="text" class="form-control" value="0$" style="padding:1.25rem 0.75rem">
-                            </div>
-                            <div class="col-md-12 text-center mt-3">
-                                <h6>Profit: 00.00$</h6>
-                            </div>
-                            <div class="col-sm-4 col-md-6 mt-4">
-                                <button class="forex-btn-down">
-                                    <span class="btn-text">Down</span>
-                                    <span class="material-symbols-outlined">
-                                        arrow_circle_down
-                                    </span>
-                                </button>
-                            </div>
-
-                            <div class="col-sm-4 col-md-6 mt-4">
-                                <button class="forex-btn-up">
-                                    <span class="btn-text">UP</span>
-                                    <span class="material-symbols-outlined">
-                                        arrow_circle_up
-                                    </span>
-                                </button>
-                            </div>
+                <div class="row mt-3" style="padding: 25px; border: 3px solid #fff">
+                    <div class="col-sm-12 col-md-6 mb-4">
+                        <select class="form-control" style="background-color: #191C24">
+                            <option>EUR/USD <span style="color: red !important;">87%</span></option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12 col-md-6 mb-4">
+                        <div class="form-check form-switch">
+                            <span class="option-switch-label">PENDING TRADE</span>
+                            <input class="form-check-input custom-switch-input" type="checkbox" id="switchInput">
                         </div>
                     </div>
+                    <div class="col-sm-12 col-md-6">
+                        <label>Time</label>
+                        <input type="text" class="form-control" value={{ date('h:i') }} readonly>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <label>Investment</label>
+                        <input type="text" class="form-control" value="0$">
+                    </div>
+                    <div class="col-md-12 text-center mt-3">
+                        <h6>Profit: 00.00$</h6>
+                    </div>
+                    <div class="col-sm-12 col-md-6 mt-4">
+                        <button class="forex-btn-down">
+                            <span class="btn-text">Down</span>
+                            <span class="material-symbols-outlined">
+                                arrow_circle_down
+                            </span>
+                        </button>
+                    </div>
+                
+                    <div class="col-sm-12 col-md-6 mt-4">
+                        <button class="forex-btn-up">
+                            <span class="btn-text">UP</span>
+                            <span class="material-symbols-outlined">
+                                arrow_circle_up
+                            </span>
+                        </button>
+                    </div>
                 </div>
+                
+
             </div>
         </div>
     </div>
@@ -91,8 +86,8 @@
         .option-switch-label {
             text-align: right;
             font-size: 25px;
-            margin-left:10px;
-            padding-left:10px;
+            margin-left: 10px;
+            padding-left: 10px;
         }
 
         .forex-btn-down {
@@ -164,7 +159,7 @@
         .custom-switch-input:checked {
             background-color: red;
         }
-       
+
         .custom-switch-input[type="checkbox"] {
             width: 70px;
             height: 30px;

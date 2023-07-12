@@ -6,8 +6,8 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="dashboard-icon">
                         <span class="material-symbols-outlined">
-                            monitoring
-                        </span>
+                            deployed_code_update
+                            </span>
                     </div>
                     <div class="info">
                         <div>
@@ -29,7 +29,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="dashboard-icon">
                         <span class="material-symbols-outlined">
-                            signal_cellular_alt
+                            account_balance_wallet
                             </span>
                     </div>
                     <div class="info">
@@ -52,7 +52,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="dashboard-icon">
                         <span class="material-symbols-outlined">
-                            account_tree
+                            exit_to_app
                             </span>
                     </div>
                     <div class="info">
@@ -74,7 +74,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="dashboard-icon">
                         <span class="material-symbols-outlined">
-                            schema
+                            ios_share
                             </span>
                     </div>
                     <div class="info">

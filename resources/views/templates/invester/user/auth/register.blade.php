@@ -32,7 +32,7 @@
             <div class="uk-container uk-container-expand">
                 <div class="uk-grid" data-uk-height-viewport="expand: true">
                     <div class="uk-width-2-5@m uk-background-cover uk-background-center-right uk-visible@m uk-box-shadow-xlarge"
-                        style="background-image: url({{ asset('assets/templates/landing_page/images/trade.jpg') }});">
+                        style="background-image: url({{ asset('assets/templates/landing_page/images/signup.png') }});">
                     </div>
                     <div class="uk-width-expand@m uk-flex uk-flex-middle">
                         <div class="uk-grid uk-flex-center">

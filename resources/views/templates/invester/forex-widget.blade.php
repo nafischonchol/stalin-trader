@@ -43,17 +43,12 @@
                                     <option>EUR/USD <span style="color:red !important;">87%</span></option>
                                 </select>
                             </div>
-                            <div class="col-sm-4 col-md-6 mb-4">
-                                <div class="row">
-                                    <div class="col-md-8 mt-2 option-switch-label">
-                                        <h6>PENDING TRADE</h6>
-                                    </div>
-                                    <div class="form-check form-switch col-md-4">
-                                        <input class="form-check-input custom-switch-input" type="checkbox"
-                                            id="switchInput">
-                                    </div>
+                            <div class="col-sm-6 col-md-6 mb-4">
+                                <div class="form-check form-switch">
+                                <span class="option-switch-label">PENDING TRADE</span>
+                                    <input class="form-check-input custom-switch-input" type="checkbox"
+                                        id="switchInput">
                                 </div>
-
                             </div>
                             <div class="col-sm-4 col-md-6">
                                 <label>Time</label>
@@ -95,7 +90,9 @@
     <style>
         .option-switch-label {
             text-align: right;
-            font-size: 30px;
+            font-size: 25px;
+            margin-left:10px;
+            padding-left:10px;
         }
 
         .forex-btn-down {
@@ -166,25 +163,11 @@
 
         .custom-switch-input:checked {
             background-color: red;
-            /* Customize the background color when the switch is checked */
         }
-
-        .custom-switch-input:checked+.custom-switch-label {
-            color: #fff;
-            /* Customize the label color when the switch is checked */
-        }
-
-        .custom-switch-input:focus {
-            box-shadow: none;
-            /* Remove the default focus outline */
-        }
-
        
         .custom-switch-input[type="checkbox"] {
             width: 70px;
-            /* Customize the width of the switch */
             height: 30px;
-            /* Customize the height of the switch */
         }
     </style>
 @endpush

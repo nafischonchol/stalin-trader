@@ -101,7 +101,7 @@
                             <li>
                                 <span class="caption">@lang('Details')</span>
                                 @if ($transaction->remark == 'interest')
-                                    <span class="value details">Profit on trade</span>
+                                    <span class="value details">@lang("Trading Profit")</span>
                                 @else
                                     <span class="value details">{{ __($transaction->details) }}</span>
                                 @endif

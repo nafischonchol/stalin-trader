@@ -44,7 +44,7 @@
             <li><a href="{{ route('user.invest.ranking') }}" class="{{ menuActive('user.invest.ranking') }}"><span class="material-symbols-outlined">
                 military_tech
                 </span>
-                    @lang('Achieving Rank')</a></li>
+                    @lang('Rank Bonus')</a></li>
         @endif
         <li><a href="{{ route('user.referrals') }}" class="{{ menuActive('user.referrals') }}"><span class="material-symbols-outlined">
             group

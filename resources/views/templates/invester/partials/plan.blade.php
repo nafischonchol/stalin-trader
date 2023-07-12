@@ -2,18 +2,18 @@
     @php
         $isInvested = $invests->contains('plan_id', $plan->id);
     @endphp
-    <div class="col-lg-1 col-md-1 col-sm-0"></div>
-    <div class="col-lg-5 col-md-5 col-sm-6">
+    <div class="col-lg-6 col-md-6 col-sm-6">
         <div class="plan-item style--two text-center mw-100 w-100 h-100">
-            <div>
-                @if ($isInvested)
-                    <span><img width="50px" src="{{asset("assets/templates/invester/images/bot/bot-on.png")}}"/> </span>
-                @else
-                    <span><img width="50px" src="{{asset("assets/templates/invester/images/bot/bot-off.png")}}"/> </span>
-                @endif
-            </div>
+           
             <div class="plan-item__header d-flex justify-content-between align-items-center">
                 <span class="mb-1 plan-title" style="font-size:30px;font-weight:800">{{ __($plan->name) }}</span>
+                <span>
+                    @if ($isInvested)
+                        <span><img width="50px" src="{{asset("assets/templates/invester/images/bot/bot-on.png")}}"/> </span>
+                    @else
+                        <span><img width="50px" src="{{asset("assets/templates/invester/images/bot/bot-off.png")}}"/> </span>
+                    @endif
+                </span>
                 <span class="text-right"><i class="fas fa-info-circle fa-lg infoModal" data-plan="{{ $plan }}"></i>
 
                 </span>

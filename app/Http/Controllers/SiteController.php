@@ -93,11 +93,11 @@ class SiteController extends Controller
         return to_route('ticket.view', [$ticket->ticket])->withNotify($notify);
     }
 
-    public function policyPages($slug, $id)
+    public function policyPages($slug="", $id=1)
     {
-        $policy    = Frontend::where('id', $id)->where('template_name', activeTemplateName())->where('data_keys', 'policy_pages.element')->firstOrFail();
+        $policy    = Frontend::where('template_name', activeTemplateName())->where('data_keys', 'policy_pages.element')->firstOrFail();
         $pageTitle = $policy->data_values->title;
-        return view($this->activeTemplate . 'policy', compact('policy', 'pageTitle'));
+        return view('templates.landing_page.policy', compact('policy', 'pageTitle'));
     }
 
     public function changeLanguage($lang = null)

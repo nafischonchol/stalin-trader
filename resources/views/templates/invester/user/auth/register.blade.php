@@ -109,11 +109,11 @@
                                                     placeholder="Confirm Password">
                                             </div>
                                             <div class="uk-width-1-2@s uk-inline"></div>
-                                            <div class="uk-margin-small uk-width-auto uk-text-small">
+                                            <div class="uk-margin-small uk-width-auto uk-text-small text-left">
                                                 <label><input type="checkbox" id="agree"
                                                         @checked(old('agree')) name="agree"
-                                                        class="form-check-input" required> I agree with Privacy Policy
-                                                    , Terms and Service
+                                                        class="form-check-input" required> I agree with <a href="{{route("policy.pages")}}">Privacy Policy</a>
+                                                   
                                             </div>
                                             <div class="uk-margin-small uk-width-1-1">
                                                 <button

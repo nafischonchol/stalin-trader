@@ -5,7 +5,7 @@
         <div class="col-md-8">
             <div class="mb-4">
                 <h3 class="mb-2">@lang('Deposit Funds')</h3>
-                <p>@lang('Add funds using our system\'s gateway. The deposited amount will be credited to the deposit wallet. You\'ll just make investments from this wallet.')</p>
+                <p>@lang('Add funds using our system\'s gateway. The deposited amount will be credited to the deposit wallet. You\'ll just Trade AI Bots and Option Trade from this wallet.')</p>
             </div>
             <div class="text-end mb-3">
                 <a href="{{ route('user.deposit.history') }}" class="btn btn--secondary btn--smd"><i class="las la-long-arrow-alt-left"></i> @lang('Deposit History')</a>

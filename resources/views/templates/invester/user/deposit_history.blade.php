@@ -9,11 +9,11 @@
                 </span>
             </div>
         </div>
-        <div class="accordion table--acordion" id="transactionAccordion">
+        <div class="accordion table--acordion" id="transactionAccordion" >
             @forelse($deposits as $deposit)
-                <div class="accordion-item transaction-item">
+                <div class="accordion-item transaction-item" >
                     <h2 class="accordion-header" id="h-{{ $loop->iteration }}">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c-{{ $loop->iteration }}" aria-expanded="false" aria-controls="c-1">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c-{{ $loop->iteration }}" aria-expanded="false" aria-controls="c-1" style="background-color: #000000 !important;color:#fff">
                             <div class="col-lg-4 col-sm-5 col-8 order-1 icon-wrapper">
                                 <div class="left">
                                     @if ($deposit->status == 1)
@@ -44,7 +44,7 @@
                             </div>
                         </button>
                     </h2>
-                    <div id="c-{{ $loop->iteration }}" class="accordion-collapse collapse" aria-labelledby="h-1" data-bs-parent="#transactionAccordion">
+                    <div id="c-{{ $loop->iteration }}" class="accordion-collapse collapse" aria-labelledby="h-1" data-bs-parent="#transactionAccordion" style="background-color: #000000 !important;color:#fff">
                         <div class="accordion-body">
                             <ul class="caption-list">
                                 <li>
@@ -75,7 +75,7 @@
                     </div>
                 </div><!-- transaction-item end -->
             @empty
-                <div class="accordion-body text-center bg-white">
+                <div class="accordion-body text-center">
                     <h4 class="text--muted"><i class="far fa-frown"></i> {{ __($emptyMessage) }}</h4>
                 </div>
             @endforelse

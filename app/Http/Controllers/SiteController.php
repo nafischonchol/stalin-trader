@@ -23,9 +23,11 @@ class SiteController extends Controller
 {
     public function index()
     {
+        
         $reference = @$_GET['reference'];
         if ($reference) {
             session()->put('reference', $reference);
+            return redirect()->route('user.register');
         }
         $pageTitle = 'Home';
         $sections  = Page::where('tempname', $this->activeTemplate)->where('slug', '/')->first();
@@ -177,7 +179,7 @@ class SiteController extends Controller
         $invests = collect(); // Initialize an empty collection
 
         foreach ($plans as $plan) {
-            $invests = $invests->merge($plan->investsWithUserId(3)->get());
+            $invests = $invests->merge($plan->investsWithUserId()->get());
         }
         // Log::info($invests);
         // foreach($invests as $item)

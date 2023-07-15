@@ -6,8 +6,13 @@
     </div>
     <div class="nav-right d-flex flex-wrap align-items-center gap-3">
         @if (auth()->user()->userRanking && $general->user_ranking)
-            <span class="rang-user" data-bs-toggle="tooltip" data-bs-title="@lang('Your current rank is '.auth()->user()->userRanking->name)"><img src="{{ getImage(getFilePath('userRanking') . '/' . auth()->user()->userRanking->icon, getFileSize('userRanking')) }}" alt="">
+           
+            <span class="rang-user" data-bs-toggle="tooltip" data-bs-title="@lang('Your current rank is '.auth()->user()->userRanking->name)">
+                <img src="{{asset('assets/images/user_rankings/633eef9a9b3161665068954.jpg') }}" alt="">
             </span>
+
+          
+            
         @endif
         @if ($general->language_switch)
             <select name="langSel" class="langSel form--control h-auto px-2 py-1 border-0">

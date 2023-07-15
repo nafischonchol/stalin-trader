@@ -12,7 +12,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 5px;
-    background-color: #fff;
+    background-color: #191C24;
     border: 1px solid #ebebeb
 }
 
@@ -41,7 +41,7 @@
 .verification-code input {
     position: absolute;
     height: 50px;
-    width: calc(100% + 80px);
+    max-width: 50px;
     left: 0;
     background: transparent;
     border: none;
@@ -53,7 +53,7 @@
     z-index: 1;
     padding-left: 25px;
     font-family: 'Courier Prime', monospace;
-    color: #504c4c !important;
+   
 }
 
 .verification-code input:focus {

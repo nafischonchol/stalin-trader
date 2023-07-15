@@ -8,10 +8,11 @@
     <meta name="keywords" content="blockit, uikit3, indonez, handlebars, scss, vanilla javascript">
     <meta name="author" content="Indonez">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#313131" />
+    <meta name="theme-color" content="#191C24" />
     <!-- Site Properties -->
     <title> {{ $general->siteName(__($pageTitle)) }}</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('assets/images/logoIcon/favicon.png')}}" type="image/x-icon">
+
     <link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png">
     <!-- Stylesheet -->
     <link rel="stylesheet" href="{{ asset('assets/templates/trending/css/vendors/uikit.min.css') }}">
@@ -32,16 +33,16 @@
             <div class="uk-container uk-container-expand">
                 <div class="uk-grid" data-uk-height-viewport="expand: true">
                     <div class="uk-width-3-5@m uk-background-cover uk-background-center-right uk-visible@m uk-box-shadow-xlarge"
-                        style="background-image: url({{asset('assets/templates/landing_page/images/trade.jpg')}})">
+                        style="background-image: url({{asset('assets/templates/landing_page/images/login.png')}})">
                     </div>
                     <div class="uk-width-expand@m uk-flex uk-flex-middle">
                         <div class="uk-grid uk-flex-center">
                             <div class="uk-width-3-5@m">
                                 <div class="in-padding-horizontal@s">
                                     <!-- module logo begin -->
-                                    <a class="uk-logo" href="index.html">
-                                        <img class="uk-margin-small-right in-offset-top-10" src="will be logo"
-                                            data-src="will be logo" alt="wave" width="134" height="23"
+                                    <a class="uk-logo" href="/#">
+                                        <img class="uk-margin-small-right in-offset-top-10" src="{{ asset("assets/logo.png")}}"
+                                            data-src="{{ asset("assets/logo.png")}}" alt="wave" width="134" height="23"
                                             data-uk-img>
                                     </a>
                                     <!-- module logo begin -->
@@ -59,7 +60,7 @@
                                         </div>
                                         <div class="uk-margin-small uk-width-1-1 uk-inline">
                                             <span class="uk-form-icon uk-form-icon-flip fas fa-lock fa-sm"></span>
-                                            <input class="uk-input uk-border-rounded" id="password" value=""  name="password" 
+                                            <input class="uk-input uk-border-rounded" id="password" value=""  name="password"
                                                 type="password" placeholder="Password">
                                         </div>
                                         <div class="uk-margin-small uk-width-auto uk-text-small">

@@ -11,10 +11,9 @@
                         <div class="uk-navbar-item">
                             <!-- module logo begin -->
                             <a class="uk-logo" href="#">
-                                <img class="uk-margin-small-right in-offset-top-10"
-                                    src="{{ asset('assets/images/logoIcon/logo.png') }}"
-                                    data-src="{{ asset('assets/images/logoIcon/logo.png') }}" alt="wave"
-                                    width="134" height="23" data-uk-img>
+                                <img class="uk-margin-small-right in-offset-top-10" src="{{ asset('assets/logo.png') }}"
+                                    data-src="{{ asset('assets/logo.png') }}" alt="wave" width="134" height="23"
+                                    data-uk-img>
                             </a>
                             <!-- module logo begin -->
                         </div>
@@ -29,15 +28,14 @@
                         </ul>
                         <div class="uk-navbar-item uk-visible@m in-optional-nav">
                             @if (auth()->check())
-                            <a href="{{ route('user.home') }}"
-                                class="uk-button uk-button-primary uk-button-small uk-border-pill">Dashboard</a>
+                                <a href="{{ route('user.home') }}"
+                                    class="uk-button uk-button-primary uk-button-small uk-border-pill">Dashboard</a>
                             @else
-                            <a href="{{ route('user.login') }}" class="uk-button uk-button-text"><i
-                                class="fas fa-user-circle uk-margin-small-right"></i>Log in</a>
-                        <a href="{{ route('user.register') }}"
-                            class="uk-button uk-button-primary uk-button-small uk-border-pill">Sign up</a>
+                                <a href="{{ route('user.login') }}" class="uk-button uk-button-text"><i
+                                        class="fas fa-user-circle uk-margin-small-right"></i>Log in</a>
+                                <a href="{{ route('user.register') }}"
+                                    class="uk-button uk-button-primary uk-button-small uk-border-pill">Sign up</a>
                             @endif
-                           
                         </div>
                         <div class="uk-navbar-item uk-visible@m in-optional-nav">
                             <i class="fa fa-language" style="color: #ffffff;font-size: 26px;"></i>
@@ -93,8 +91,8 @@
                             <div>
                                 <h4><span>Company</span></h4>
                                 <ul class="uk-list uk-link-text">
-                                    <li><a href="#">Our story</a></li>
-                                    <li><a href="#">Our leadership</a></li>
+                                    <li><a href="https://find-and-update.company-information.service.gov.uk/company/14994499" target="_blank">Regulated Certificate</a></li>
+                                    <li><a href="https://find-and-update.company-information.service.gov.uk/company/14994499/filing-history/MzM4NTgwODEwMmFkaXF6a2N4/document?format=pdf&download=0" target="_blank">Certificate PDF</a></li>
                                     <li><a href="#">Contact us</a></li>
                                     <li><a href="#">Partners</a></li>
                                 </ul>
@@ -121,26 +119,30 @@
                                     data-uk-grid>
                                     <div>
                                         <div class="uk-card uk-card-default uk-card-small uk-card-body">
-                                            <img src="img/in-lazy.gif" data-src="{{asset('assets/templates/trending/img/in-wave-visa.svg')}}" alt="wave-payment"
-                                                width="59" height="22" data-uk-img>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div class="uk-card uk-card-default uk-card-small uk-card-body">
-                                            <img src="img/in-lazy.gif" data-src="{{asset('assets/templates/trending/img/in-wave-mastercard.svg')}}"
+                                            <img src="img/in-lazy.gif"
+                                                data-src="{{ asset('assets/templates/trending/img/in-wave-visa.svg') }}"
                                                 alt="wave-payment" width="59" height="22" data-uk-img>
                                         </div>
                                     </div>
                                     <div>
                                         <div class="uk-card uk-card-default uk-card-small uk-card-body">
-                                            <img src="img/in-lazy.gif" data-src="{{asset('assets/templates/trending/img/in-wave-skrill.svg')}}" alt="wave-payment"
-                                                width="59" height="22" data-uk-img>
+                                            <img src="img/in-lazy.gif"
+                                                data-src="{{ asset('assets/templates/trending/img/in-wave-mastercard.svg') }}"
+                                                alt="wave-payment" width="59" height="22" data-uk-img>
                                         </div>
                                     </div>
                                     <div>
                                         <div class="uk-card uk-card-default uk-card-small uk-card-body">
-                                            <img src="img/in-lazy.gif" data-src="{{asset('assets/templates/trending/img/in-wave-paypal.svg')}}" alt="wave-payment"
-                                                width="59" height="22" data-uk-img>
+                                            <img src="img/in-lazy.gif"
+                                                data-src="{{ asset('assets/templates/trending/img/in-wave-skrill.svg') }}"
+                                                alt="wave-payment" width="59" height="22" data-uk-img>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="uk-card uk-card-default uk-card-small uk-card-body">
+                                            <img src="img/in-lazy.gif"
+                                                data-src="{{ asset('assets/templates/trending/img/in-wave-paypal.svg') }}"
+                                                alt="wave-payment" width="59" height="22" data-uk-img>
                                         </div>
                                     </div>
                                     <div>
@@ -178,7 +180,7 @@
                         </ul>
                     </div>
                     <div class="uk-width-expand@m uk-text-right@m">
-                        <p>© 2020 Wave Capital Inc.</p>
+                        <p>©  2021-2026 Stalin Finance(Forex & AI Trading) . All Rights Reserved.</p>
                     </div>
                 </div>
             </div>

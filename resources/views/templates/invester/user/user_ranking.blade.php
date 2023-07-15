@@ -16,7 +16,7 @@
                             <div class="row gy-4 align-items-center">
                                 <div class="col-lg-4 col-md-6">
                                     <div class="d-flex align-items-center raking-invest">
-                                        <img src="{{ getImage(getFilePath('userRanking') . '/' . $nextRanking->icon, getFileSize('userRanking')) }}" alt="image">
+                                        <img src="{{ asset("assets/images/user_rankings/".$nextRanking->icon) }}" alt="image">
                                         <div>
                                             <span>@lang('My Invest')</span>
                                             <h5>{{ $general->cur_sym }}{{ showAmount($user->total_invests) }} / {{ $general->cur_sym }}{{ showAmount($nextRanking->minimum_invest) }}</h6>
@@ -71,7 +71,7 @@
                             <div class="invest-badge text-center">
                                 <div class="invest-badge__thumb">
                                     <div class="invest-badge__thumb__mask {{ $nextRanking->id < $userRanking->id ? 'badge-lock' : '' }}" data-progress="{{ $nextRanking->id < $userRanking->id ? 0 : $progressPercent }}">
-                                        <img src="{{ getImage(getFilePath('userRanking') . '/' . $userRanking->icon, getFileSize('userRanking')) }}" alt="image">
+                                        <img src="{{asset("assets/images/user_rankings/".$userRanking->icon) }}" alt="image">
                                     </div>
                                 </div>
                                 <h4 class="invest-badge__title">

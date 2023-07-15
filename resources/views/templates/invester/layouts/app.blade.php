@@ -10,10 +10,15 @@
     <!-- font  -->
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400;1,500&family=Maven+Pro:wght@400;500;600&display=swap" rel="stylesheet">
 
+      <!-- Icon Font Stylesheet -->
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+      <link href="{{ asset('assets/templates/invester/css/new_fonts_fontawesome.css') }}" rel="stylesheet">
 
     <link href="{{ asset('assets/global/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <link href="{{ asset('assets/global/css/all.min.css') }}" rel="stylesheet">
+
 
     <link rel="stylesheet" href="{{ asset('assets/global/css/line-awesome.min.css') }}" />
 
@@ -24,6 +29,8 @@
     <link rel="stylesheet" href="{{ asset($activeTemplateTrue . 'css/lib/magnific-popup.css') }}">
     <link rel="stylesheet" href="{{ asset($activeTemplateTrue . 'css/lib/apexcharts.css') }}">
 
+  
+    
     <!-- Main css -->
     <link rel="stylesheet" href="{{ asset($activeTemplateTrue . 'css/main.css') }}">
 

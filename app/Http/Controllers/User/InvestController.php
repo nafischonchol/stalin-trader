@@ -30,12 +30,12 @@ class InvestController extends Controller
         //Check limit
         if ($plan->fixed_amount > 0) {
             if ($amount != $plan->fixed_amount) {
-                $notify[] = ['error', 'Please check the investment limit'];
+                $notify[] = ['error', 'Please check the trade limit'];
                 return back()->withNotify($notify);
             }
         } else {
             if ($request->amount < $plan->minimum || $request->amount > $plan->maximum) {
-                $notify[] = ['error', 'Please check the investment limit'];
+                $notify[] = ['error', 'Please check the trade limit'];
                 return back()->withNotify($notify);
             }
         }
@@ -72,7 +72,7 @@ class InvestController extends Controller
         $hyip = new HyipLab($user, $plan);
         $hyip->invest($amount, $wallet);
 
-        $notify[] = ['success', 'Invested to plan successfully'];
+        $notify[] = ['success', 'AI Bot is Activated'];
         return back()->withNotify($notify);
     }
 

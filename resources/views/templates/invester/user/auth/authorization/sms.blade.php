@@ -5,7 +5,7 @@
 <section class="account-section position-relative">
     <div class="container">
         <div class="text-center">
-            <a href="{{ route('home') }}" class="d-block mb-3 mb-sm-4 auth-page-logo"><img src="{{ getImage(getFilePath('logoIcon').'/logo_2.png') }}" alt="logo"></a>
+            <a href="{{ route('home') }}" class="d-block mb-3 mb-sm-4 auth-page-logo"><img src="{{ asset("assets/logo.png") }}" alt="logo"></a>
         </div>
         <div class="d-flex justify-content-center">
             <div class="verification-code-wrapper">

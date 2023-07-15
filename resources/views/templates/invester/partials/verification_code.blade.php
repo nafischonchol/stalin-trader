@@ -1,16 +1,6 @@
 <div class="mb-3 mt-3">
     <label>@lang('Verification Code')</label>
-    <div class="verification-code">
-        <input type="text" name="code" id="verification-code" class="form-control overflow-hidden" required autocomplete="off">
-        <div class="boxes">
-            <span>-</span>
-            <span>-</span>
-            <span>-</span>
-            <span>-</span>
-            <span>-</span>
-            <span>-</span>
-        </div>
-    </div>
+        <input type="text" name="code" class="form-control overflow-hidden" id="verification-code" required autocomplete="off">
 </div>
 
 @push('style-lib')

@@ -56,7 +56,7 @@
     <div class="accordion table--acordion" id="transactionAccordion">
         @forelse($transactions as $transaction)
             <div class="accordion-item transaction-item">
-                <h2 class="accordion-header" id="h-{{$loop->iteration}}">
+                <h2 class="accordion-header" id="h-{{$loop->iteration}}" style="background-color: black !important">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c-{{$loop->iteration}}">
                     <div class="col-lg-4 col-sm-5 col-8 order-1 icon-wrapper">
                         <div class="left">
@@ -87,7 +87,7 @@
                     </div>
                 </button>
                 </h2>
-                <div id="c-{{$loop->iteration}}" class="accordion-collapse collapse" aria-labelledby="h-1" data-bs-parent="#transactionAccordion">
+                <div id="c-{{$loop->iteration}}" class="accordion-collapse collapse" aria-labelledby="h-1" data-bs-parent="#transactionAccordion" style="background-color: black !important">
                     <div class="accordion-body">
                         <ul class="caption-list">
                             <li>
@@ -100,7 +100,12 @@
                             </li>
                             <li>
                                 <span class="caption">@lang('Details')</span>
-                                <span class="value">{{ __($transaction->details) }}</span>
+                                @if ($transaction->remark == 'interest')
+                                    <span class="value details">@lang("Trading Profit")</span>
+                                @else
+                                    <span class="value details">{{ __($transaction->details) }}</span>
+                                @endif
+                                
                             </li>
                         </ul>
                     </div>

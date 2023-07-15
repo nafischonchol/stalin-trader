@@ -2,19 +2,39 @@
     @php
         $isInvested = $invests->contains('plan_id', $plan->id);
     @endphp
-    <div class="col-lg-1 col-md-1 col-sm-0"></div>
-    <div class="col-lg-5 col-md-5 col-sm-6">
+    <div class="col-lg-6 col-md-6 col-sm-6">
         <div class="plan-item style--two text-center mw-100 w-100 h-100">
+           
             <div class="plan-item__header d-flex justify-content-between align-items-center">
                 <span class="mb-1 plan-title" style="font-size:30px;font-weight:800">{{ __($plan->name) }}</span>
+                <span>
+                    @if ($isInvested)
+                        <span><img width="50px" src="{{asset("assets/templates/invester/images/bot/bot-on.png")}}"/> </span>
+                    @else
+                        <span><img width="50px" src="{{asset("assets/templates/invester/images/bot/bot-off.png")}}"/> </span>
+                    @endif
+                </span>
                 <span class="text-right"><i class="fas fa-info-circle fa-lg infoModal" data-plan="{{ $plan }}"></i>
 
                 </span>
             </div>
-            <div class="form-check form-switch investModal mt-2" data-plan="{{ $plan }}" data-is-invested="{{ $isInvested }}" style="margin: auto">
-                <input class="form-check-input form-control" type="checkbox" role="switch" id="flexSwitchCheckChecked"
-                    {{ $isInvested ? 'checked' : '' }} {{ $isInvested ? 'disabled' : '' }}
-                    style="min-height: 30px; min-width:65px">
+            <div class="investModal mt-2" data-plan="{{ $plan }}" data-is-invested="{{ $isInvested }}" style="margin: auto">
+
+                @if ($isInvested)
+                <span>
+                    <div class="form-check form-switch plan-toggle" id="checked-toggle">
+                        <input class="form-check-input" type="checkbox" role="switch"
+                            id="flexSwitchCheckChecked" checked>
+                        
+                    </div>
+                @else
+                
+                    <div class="form-check form-switch plan-toggle" id="unchecked-toggle">
+                        
+                        <input class="form-check-input" type="checkbox" role="switch"
+                            id="flexSwitchCheckDisabled" disabled>
+                    </div>
+                @endif
             </div>
         </div>
     </div>
@@ -24,12 +44,19 @@
 @include('templates.invester.partials.invest-modal')
 
 @push('style')
+    <link href="{{asset('assets/templates/invester/css/dark-theme/bootstrap.min.css')}}"/>
     <style>
-        .symbol {
-            font-weight: bold;
-            font-size: 25px;
-            margin-right: 8px;
-            /* Add some spacing between the symbol and text */
+        .plan-toggle{
+            font-size:50px;
+        }
+        .form-check-input:checked{
+            background-color: #EB1616;
+            border-color: #EB1616;
+        }
+
+        .form-check-input:checked{
+            background-color: #EB1616;
+            border-color: #EB1616;
         }
 
         .info-text {
@@ -79,12 +106,12 @@
                 let interestAmount = parseFloat(plan.interest);
 
                 if (plan.fixed_amount > 0) {
-                    modal.find('.investAmountRange').text(`Invest: ${symbol}${fixedAmount}`);
+                    modal.find('.investAmountRange').text(`Trade Amount: ${symbol}${fixedAmount}`);
                     modal.find('[name=amount]').val(parseFloat(plan.fixed_amount).toFixed(2));
                     modal.find('[name=amount]').attr('readonly', true);
                 } else {
                     modal.find('.investAmountRange').text(
-                        `Invest: ${symbol}${minimumAmount} - ${symbol}${maximumAmount}`);
+                        `Trade Amount: ${symbol}${minimumAmount} - ${symbol}${maximumAmount}`);
                     modal.find('[name=amount]').val('');
                     modal.find('[name=amount]').removeAttr('readonly');
                 }

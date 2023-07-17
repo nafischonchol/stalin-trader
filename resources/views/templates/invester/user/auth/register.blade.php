@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#191C24" />
     <!-- Site Properties -->
-    <title> {{ $general->siteName(__($pageTitle)) }}</title>
+    <title>Stalin Finance: Crypto, Forex, CFDs, Stocks & AI Trading Bots | Start Trading for Guaranteed Profit | Since 2021</title>
     <link rel="shortcut icon" href="{{asset('assets/images/logoIcon/favicon.png')}}" type="image/x-icon">
     <link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png">
     <!-- Stylesheet -->

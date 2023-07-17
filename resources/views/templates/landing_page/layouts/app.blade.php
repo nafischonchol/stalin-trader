@@ -34,6 +34,14 @@
     <script src="{{asset('assets/templates/trending/js/vendors/uikit.min.js')}}"></script>
     <script src="{{asset('assets/templates/trending/js/vendors/indonez.min.js')}}"></script>
     <script src="{{asset('assets/templates/trending/js/config-theme.js')}}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // $(document).ready(function() {
+        //     $(".close-modal-link").click(function(){
+        //         $("#modal-full").removeClass("uk-open");
+        //     })
+        // });
+    </script>
 </body>
 
 </html>

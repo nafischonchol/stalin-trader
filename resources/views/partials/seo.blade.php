@@ -9,9 +9,12 @@
     }else{
         $seoContents = null;
     }
+
+    $meta_title = "Stalin Finance: Crypto, Forex, CFDs, Stocks & AI Trading Bots | Start Trading for Guaranteed Profit | Since 2021";
 @endphp
 
-<meta name="title" Content="{{ $general->sitename(__($pageTitle)) }}">
+<title>{{ $meta_title }}</title>
+<meta name="title" Content="{{$meta_title}}">
 
 @if($seoContents)
     <meta name="description" content="{{ $seoContents->meta_description??$seoContents->description }}">
@@ -22,9 +25,9 @@
     <link rel="apple-touch-icon" href="{{ asset('assets/images/logoIcon/logo.png') }}">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="{{ $general->sitename($pageTitle) }}">
+    <meta name="apple-mobile-web-app-title" content="{{ $meta_title }}">
     {{--<!-- Google / Search Engine Tags -->--}}
-    <meta itemprop="name" content="{{ $general->sitename($pageTitle) }}">
+    <meta itemprop="name" content="{{ $meta_title }}">
     <meta itemprop="description" content="{{ $seoContents->description }}">
     <meta itemprop="image" content="{{ $seoContents->image }}">
     {{--<!-- Facebook Meta Tags -->--}}

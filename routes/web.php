@@ -38,6 +38,8 @@ Route::controller('SiteController')->group(function () {
     Route::get('blog/{slug}/{id}', 'blogDetails')->name('blog.details');
 
     Route::get('policy/{slug}/{id}', 'policyPages')->name('policy.pages');
+    Route::get('policy', 'policyPages')->name('policy.pages');
+
 
     Route::get('plan', 'plan')->name('plan');
     Route::post('planCalculator', 'planCalculator')->name('planCalculator');

@@ -20,11 +20,11 @@
                     </div>
                     <div class="uk-navbar-right uk-width-expand uk-flex uk-flex-right">
                         <ul class="uk-navbar-nav uk-visible@m">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#roadmap">Roadmap</a></li>
-                            <li><a href="#market">Market</a></li>
-                            <li><a href="#about">About Us</a></li>
-                            <li><a href="#contact">Contact Us</a></li>
+                            <li class="close-modal-link"><a href="{{config('custom.main_domain').'#'}}">Home</a></li>
+                            <li class="close-modal-link"><a href="{{config('custom.main_domain').'#roadmap'}}">Roadmap</a></li>
+                            <li class="close-modal-link"><a href="{{config('custom.main_domain').'#market'}}">Market</a></li>
+                            <li class="close-modal-link"><a href="{{config('custom.main_domain').'#about'}}">About Us</a></li>
+                            <li class="close-modal-link"><a href="{{ url('#contact') }}">Contact Us</a></li>
                         </ul>
                         <div class="uk-navbar-item uk-visible@m in-optional-nav">
                             @if (auth()->check())
@@ -94,7 +94,7 @@
                                     <li><a href="https://find-and-update.company-information.service.gov.uk/company/14994499" target="_blank">Regulated Certificate</a></li>
                                     <li><a href="https://find-and-update.company-information.service.gov.uk/company/14994499/filing-history/MzM4NTgwODEwMmFkaXF6a2N4/document?format=pdf&download=0" target="_blank">Certificate PDF</a></li>
                                     <li><a href="#">Contact us</a></li>
-                                    <li><a href="#">Partners</a></li>
+                                    <li><a href="https://drive.google.com/file/d/1vCKFARcObRHTW02giV6kktw69SnwobLD/view?usp=drive_link" target="_blank">Business PDF</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -174,7 +174,7 @@
                             <li><a href="#">Regulations</a></li>
                             <li><a href="#">Legal documents</a></li>
                             <li><a href="#">Important information</a></li>
-                            <li><a href="#">Privacy</a></li>
+                            <li><a href="{{route('policy.pages')}}">Privacy</a></li>
                             <li><a href="#">Public relations</a></li>
                             <li><a href="#">Careers</a></li>
                         </ul>

@@ -9,6 +9,7 @@ use App\Models\Holiday;
 use App\Models\Referral;
 use App\Models\Transaction;
 use App\Models\AdminNotification;
+use Log;
 
 class HyipLab
 {
@@ -195,61 +196,72 @@ class HyipLab
      */
     public static function levelCommission($user, $amount, $commissionType, $trx, $setting)
     {
-        $meUser       = $user;
-        $i            = 1;
-        $level        = Referral::where('commission_type', $commissionType)->count();
-        $transactions = [];
-        while ($i <= $level) {
-            $me    = $meUser;
-            $refer = $me->referrer;
-            if ($refer == "") {
-                break;
-            }
-
-            $commission = Referral::where('commission_type', $commissionType)->where('level', $i)->first();
-            if (!$commission) {
-                break;
-            }
-
-            $com = ($amount * $commission->percent) / 100;
-            $refer->interest_wallet += $com;
-            $refer->save();
-
-            $transactions[] = [
-                'user_id'      => $refer->id,
-                'amount'       => $com,
-                'post_balance' => $refer->interest_wallet,
-                'charge'       => 0,
-                'trx_type'     => '+',
-                'details'      => 'level ' . $i . ' Referral Commission From ' . $user->username,
-                'trx'          => $trx,
-                'wallet_type'  => 'interest_wallet',
-                'remark'       => 'referral_commission',
-                'created_at'   => now(),
-            ];
-
-            if ($commissionType == 'deposit_commission') {
-                $comType = 'Deposit';
-            } elseif ($commissionType == 'interest_commission') {
-                $comType = 'Interest';
-            } else {
-                $comType = 'Invest';
-            }
-
-            notify($refer, 'REFERRAL_COMMISSION', [
-                'amount'       => showAmount($com),
-                'post_balance' => showAmount($refer->interest_wallet),
-                'trx'          => $trx,
-                'level'        => ordinal($i),
-                'type'         => $comType,
-            ]);
-
-            $meUser = $refer;
-            $i++;
+        if($commissionType=="deposit_commission" && $user->deposite_commission_time >1 )
+        {
+           return 0;
         }
+        else
+        {
+            //this is for one time deposte referal bonus
+            $user->deposite_commission_time = 2;
+            $user->save();
 
-        if (!empty($transactions)) {
-            Transaction::insert($transactions);
+            $meUser       = $user;
+            $i            = 1;
+            $level        = Referral::where('commission_type', $commissionType)->count();
+            $transactions = [];
+            while ($i <= $level) {
+                $me    = $meUser;
+                $refer = $me->referrer;
+                if ($refer == "") {
+                    break;
+                }
+    
+                $commission = Referral::where('commission_type', $commissionType)->where('level', $i)->first();
+                if (!$commission) {
+                    break;
+                }
+    
+                $com = ($amount * $commission->percent) / 100;
+                $refer->interest_wallet += $com;
+                $refer->save();
+    
+                $transactions[] = [
+                    'user_id'      => $refer->id,
+                    'amount'       => $com,
+                    'post_balance' => $refer->interest_wallet,
+                    'charge'       => 0,
+                    'trx_type'     => '+',
+                    'details'      => 'level ' . $i . ' Referral Commission From ' . $user->username,
+                    'trx'          => $trx,
+                    'wallet_type'  => 'interest_wallet',
+                    'remark'       => 'referral_commission',
+                    'created_at'   => now(),
+                ];
+    
+                if ($commissionType == 'deposit_commission') {
+                    $comType = 'Deposit';
+                } elseif ($commissionType == 'interest_commission') {
+                    $comType = 'Interest';
+                } else {
+                    $comType = 'Invest';
+                }
+    
+                notify($refer, 'REFERRAL_COMMISSION', [
+                    'amount'       => showAmount($com),
+                    'post_balance' => showAmount($refer->interest_wallet),
+                    'trx'          => $trx,
+                    'level'        => ordinal($i),
+                    'type'         => $comType,
+                ]);
+    
+                $meUser = $refer;
+                $i++;
+            }
+    
+            if (!empty($transactions)) {
+                Transaction::insert($transactions);
+            }
         }
     }
 }

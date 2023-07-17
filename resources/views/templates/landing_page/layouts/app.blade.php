@@ -2,7 +2,7 @@
 <html lang="zxx" dir="ltr">
 
 <head>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     @include("partials.seo")
     <!-- Critical preload -->
     <link rel="preload" href="{{asset('assets/templates/trending/js/vendors/uikit.min.js')}}" as="script">

@@ -4,9 +4,7 @@
 <head>
     <!-- Standard Meta -->
     <meta charset="utf-8">
-    <meta name="description" content="Premium HTML5 Template by Indonez">
-    <meta name="keywords" content="blockit, uikit3, indonez, handlebars, scss, vanilla javascript">
-    <meta name="author" content="Indonez">
+  
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#191C24" />
     <!-- Site Properties -->

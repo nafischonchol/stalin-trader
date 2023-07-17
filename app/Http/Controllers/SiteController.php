@@ -23,7 +23,6 @@ class SiteController extends Controller
 {
     public function index()
     {
-        
         $reference = @$_GET['reference'];
         if ($reference) {
             session()->put('reference', $reference);
@@ -93,7 +92,7 @@ class SiteController extends Controller
         return to_route('ticket.view', [$ticket->ticket])->withNotify($notify);
     }
 
-    public function policyPages($slug="", $id=1)
+     public function policyPages($slug="", $id=1)
     {
         $policy    = Frontend::where('template_name', activeTemplateName())->where('data_keys', 'policy_pages.element')->firstOrFail();
         $pageTitle = $policy->data_values->title;
@@ -219,7 +218,7 @@ class SiteController extends Controller
         $imgWidth  = explode('x', $size)[0];
         $imgHeight = explode('x', $size)[1];
         $text      = $imgWidth . '×' . $imgHeight;
-        $fontFile  = realpath('assets/font/RobotoMono-Regular.ttf');
+        $fontFile  = realpath('public/assets/font/RobotoMono-Regular.ttf');
         $fontSize  = round(($imgWidth - 50) / 8);
         if ($fontSize <= 9) {
             $fontSize = 9;

@@ -9,7 +9,6 @@ use App\Models\Holiday;
 use App\Models\Referral;
 use App\Models\Transaction;
 use App\Models\AdminNotification;
-use Log;
 
 class HyipLab
 {
@@ -205,7 +204,7 @@ class HyipLab
             //this is for one time deposte referal bonus
             $user->deposite_commission_time = 2;
             $user->save();
-
+            
             $meUser       = $user;
             $i            = 1;
             $level        = Referral::where('commission_type', $commissionType)->count();

@@ -4,6 +4,8 @@
 <head>
     <!-- Standard Meta -->
     <meta charset="utf-8">
+    <meta name="description" content="Register with Stalin Finance: Unlock Your Trading Potential">
+  
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#191C24" />
     <!-- Site Properties -->
@@ -106,11 +108,10 @@
                                                     placeholder="Confirm Password">
                                             </div>
                                             <div class="uk-width-1-2@s uk-inline"></div>
-                                            <div class="uk-margin-small uk-width-auto uk-text-small text-left">
+                                            <div class="uk-margin-small uk-width-auto uk-text-small">
                                                 <label><input type="checkbox" id="agree"
                                                         @checked(old('agree')) name="agree"
                                                         class="form-check-input" required> I agree with <a href="{{route("policy.pages")}}">Privacy Policy</a>
-                                                   
                                             </div>
                                             <div class="uk-margin-small uk-width-1-1">
                                                 <button

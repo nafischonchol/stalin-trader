@@ -20,11 +20,11 @@
                     </div>
                     <div class="uk-navbar-right uk-width-expand uk-flex uk-flex-right">
                         <ul class="uk-navbar-nav uk-visible@m">
-                            <li class="close-modal-link"><a href="{{config('custom.main_domain').'#'}}">Home</a></li>
+                             <li class="close-modal-link"><a href="{{config('custom.main_domain').'#'}}">Home</a></li>
                             <li class="close-modal-link"><a href="{{config('custom.main_domain').'#roadmap'}}">Roadmap</a></li>
                             <li class="close-modal-link"><a href="{{config('custom.main_domain').'#market'}}">Market</a></li>
                             <li class="close-modal-link"><a href="{{config('custom.main_domain').'#about'}}">About Us</a></li>
-                            <li class="close-modal-link"><a href="{{ url('#contact') }}">Contact Us</a></li>
+                            <li class="close-modal-link"><a href="{{config('custom.main_domain').'#contact'}}">Contact Us</a></li>
                         </ul>
                         <div class="uk-navbar-item uk-visible@m in-optional-nav">
                             @if (auth()->check())
@@ -64,10 +64,9 @@
                         <img class="uk-margin-small-right in-margin-top-30@s" src="img/in-lazy.gif"
                             data-src="img/in-logo-2.svg" alt="wave" width="134" height="23" data-uk-img>
                         <p class="uk-text-large uk-margin-small-top">Trade with financial thinking.</p>
-                        <p class="uk-visible@m">Imperium Tower (Headquarters)<br>
-                            Jl. Prof Dr Satrio, Kuningan<br>
-                            12920<br>
-                            Jakarta - Indonesia
+                        <p class="uk-visible@m">Kensington Close Hotel, Wrights Lane, London, United Kingdom, W8 5SP<br>
+                            W8 5SP<br>
+                            United Kingdom
                         </p>
                     </div>
                     <div class="uk-width-3-5@m">

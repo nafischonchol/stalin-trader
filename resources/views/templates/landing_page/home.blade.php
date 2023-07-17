@@ -102,7 +102,7 @@
                             </div>
                             <div class="uk-width-expand">
                                 <p>Add Fund</p>
-                                <p style="font-size: 12px;">Create an account providing your valid information</p>
+                                <p style="font-size: 12px;">Add funds to start trading</p>
                             </div>
                         </div>
                     </div>
@@ -114,8 +114,8 @@
                                     alt="wave-icon" width="48" height="48" data-uk-img>
                             </div>
                             <div class="uk-width-expand">
-                                <p>Invest to Plan</p>
-                                <p style="font-size: 12px;">Make investment to get profit from our system</p>
+                                <p>Trade to Earn</p>
+                                <p style="font-size: 12px;">Make Trade to get profit from our system</p>
                             </div>
                         </div>
                     </div>
@@ -128,7 +128,7 @@
                             </div>
                             <div class="uk-width-expand">
                                 <p>Withdraw Profit</p>
-                                <p style="font-size: 12px;">Withdraw your profit which you've got from the investment</p>
+                                <p style="font-size: 12px;">Withdraw your profit which you've got from the Trading</p>
                             </div>
                         </div>
                     </div>
@@ -204,7 +204,7 @@
                             <span
                                 class="uk-label uk-text-small uk-text-uppercase uk-border-pill uk-margin-small-right">Start
                                 trade</span>
-                            Lorem ipsum dolor sit amet consectetur adipisicing reprehen elit. <a href="#">Join
+                            Join now and experience the comprehensive trading services offered by Stalin Finance Inc, including crypto trading, Forex, CFDs, stocks, and AI Trading Bots. <a href="#">Join
                                 now!</a>
                         </div>
                         <div class="uk-grid-collapse uk-grid-divider uk-child-width-1-3@s uk-child-width-1-3@m uk-text-center uk-margin-top uk-margin-small-bottom"
@@ -219,7 +219,7 @@
                             </div>
                             <div>
                                 <i class="fas fa-history fa-lg uk-margin-small-right uk-text-primary"></i>
-                                <p class="uk-margin-remove uk-text-small uk-text-uppercase">30 years experience</p>
+                                <p class="uk-margin-remove uk-text-small uk-text-uppercase">3 years experience</p>
                             </div>
                         </div>
                     </div>
@@ -371,8 +371,8 @@
                     <div class="uk-width-1-1">
                         <div class="uk-width-3-5@m">
                             <h1 class="uk-margin-small-bottom">Putting our clients first <span class="in-highlight">since
-                                    1986</span></h1>
-                            <p class="uk-text-lead uk-text-muted uk-margin-remove-top">For more than 30 years, we’ve been
+                                    2021</span></h1>
+                            <p class="uk-text-lead uk-text-muted uk-margin-remove-top">For more than 3 years, we’ve been
                                 empowering clients by helping them take control of their financial lives.</p>
                         </div>
                     </div>
@@ -382,10 +382,14 @@
                                 <i class="fas fa-leaf fa-lg in-icon-wrap primary-color"></i>
                             </div>
                             <div>
-                                <h3>Philosophy</h3>
-                                <p>At vero eos etme accusamus iusto odio ent dignissimos deleniti atque corrupti quos
-                                    ducimus
-                                    moll quilla blanditiis expedita est distinctio.</p>
+                                <h3>About Company</h3>
+                                <p>Stalin Finance Inc is a renowned trading brokerage firm that specializes in a wide range of financial instruments, including crypto trading, Forex, CFDs, and stocks. Since its establishment in 2021, the company has been dedicated to providing innovative and reliable trading solutions to its clients.
+At Stalin Finance, we pride ourselves on introducing cutting-edge technology to the trading world. Our flagship products, the Crypto AI Bot FC-98 and Forex AI Bot NS-5, are revolutionary inventions powered by artificial intelligence. These state-of-the-art bots are designed to assist investors in maximizing their profits while navigating the complexities of the financial markets.
+Our team of experienced professionals and researchers has carefully developed and fine-tuned our AI bots to ensure optimum performance. The Crypto AI Bot FC-98 is specifically tailored for cryptocurrency trading, while the Forex AI Bot NS-5 focuses on the Forex market. These bots leverage advanced algorithms and machine learning techniques to analyze vast amounts of market data, identify trends, and execute trades with precision.
+One of the key advantages of our AI bots is their ability to provide investors with a remarkable profit potential. While we strive to optimize performance, it's important to note that trading always carries inherent risks, and no strategy can guarantee a fixed profit percentage. We highly recommend that our clients exercise caution, conduct their own research, and seek professional advice when making investment decisions.
+Stalin Finance Inc operates with a strong commitment to transparency, security, and customer satisfaction. Our platform offers a user-friendly interface, robust security measures, and a dedicated support team to assist clients throughout their trading journey.
+Join Stalin Finance Inc today and experience the future of trading with our AI-powered solutions. Empower your investments, diversify your portfolio, and explore new opportunities in the financial markets.
+</p>
                             </div>
                         </div>
                         <div class="uk-flex uk-flex-left">
@@ -393,10 +397,8 @@
                                 <i class="fas fa-hourglass-end fa-lg in-icon-wrap primary-color"></i>
                             </div>
                             <div>
-                                <h3>History</h3>
-                                <p>At vero eos etme accusamus iusto odio ent dignissimos deleniti atque corrupti quos
-                                    ducimus
-                                    moll quilla blanditiis expedita est distinctio.</p>
+                                <h3>Forex AI BOT</h3>
+                                <p>The Forex AI Bot NS-5, created by Stalin Finance Inc, is an innovative artificial intelligence-driven trading bot designed specifically for the Forex market. This advanced bot harnesses powerful algorithms and machine learning capabilities to analyze vast amounts of market data and identify potential trading opportunities in the dynamic Forex market. With its automated trading functionality, the Forex AI Bot NS-5 aims to assist investors in maximizing their profit potential. However, it's important to note that trading carries inherent risks, and no trading strategy or bot can guarantee a fixed profit percentage. Traders should exercise caution, conduct their own research, and understand the risks associated with Forex trading before making any investment decisions.</p>
                             </div>
                         </div>
                         <div class="uk-flex uk-flex-left">
@@ -404,10 +406,8 @@
                                 <i class="fas fa-flag fa-lg in-icon-wrap primary-color"></i>
                             </div>
                             <div>
-                                <h3>Culture</h3>
-                                <p>At vero eos etme accusamus iusto odio ent dignissimos deleniti atque corrupti quos
-                                    ducimus
-                                    moll quilla blanditiis expedita est distinctio.</p>
+                                <h3>Crypto AI BOT</h3>
+                                <p>The Crypto AI Bot FC-98, developed by Stalin Finance Inc, is an innovative artificial intelligence-powered trading bot designed specifically for cryptocurrency trading. This advanced bot utilizes cutting-edge algorithms and machine learning techniques to analyze vast amounts of market data and identify potential trading opportunities in the dynamic crypto market. With its automated trading capabilities, the Crypto AI Bot FC-98 aims to assist investors in maximizing their profit potential. However, it is important to note that while the bot may strive for high-profit margins, no trading strategy or bot can guarantee a fixed profit percentage. Traders should exercise caution, conduct their own research, and assess the risks associated with crypto trading.</p>
                             </div>
                         </div>
                     </div>
@@ -466,7 +466,7 @@
                                     <div class="uk-flex">
                                         <i class="fas fa-clipboard-check fa-lg in-icon-wrap"></i>
                                         <div class="in-timeline-title uk-flex uk-flex-middle">
-                                            <h4 class="uk-margin-remove-bottom">Q4 2019</h4>
+                                            <h4 class="uk-margin-remove-bottom">Q2 2023</h4>
                                             <span
                                                 class="uk-label uk-label-success uk-text-small uk-border-rounded">completed</span>
                                         </div>
@@ -475,9 +475,28 @@
                                 <div class="uk-box-shadow-small uk-width-expand">
                                     <div class="uk-card uk-card-default uk-card-body uk-card-small uk-border-rounded">
                                         <ul class="uk-list uk-list-bullet in-list-check">
-                                            <li>Wireframe</li>
-                                            <li>Design</li>
-                                            <li>Documentation</li>
+                                            <li>Crypto AI Bot FC-98</li>
+                                            <li>Forex AI Bot NS-5</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                    <div>
+                                <div class="in-timeline-branch">
+                                    <div class="uk-flex">
+                                        <i class="fas fa-clipboard-check fa-lg in-icon-wrap"></i>
+                                        <div class="in-timeline-title uk-flex uk-flex-middle">
+                                            <h4 class="uk-margin-remove-bottom">Q3 2023</h4>
+                                            <span
+                                                class="uk-label uk-label-success uk-text-small uk-border-rounded">completed</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="uk-box-shadow-small uk-width-expand">
+                                    <div class="uk-card uk-card-default uk-card-body uk-card-small uk-border-rounded">
+                                        <ul class="uk-list uk-list-bullet in-list-check">
+                                            <li>Stalin Crypto & Bitcoin Wallet</li>
+                                            <li>REGULATED BY THE GOV.UK</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -487,7 +506,7 @@
                                     <div class="uk-flex">
                                         <i class="fas fa-cog fa-lg in-icon-wrap"></i>
                                         <div class="in-timeline-title uk-flex uk-flex-middle">
-                                            <h4 class="uk-margin-remove-bottom">Q2 2020</h4>
+                                            <h4 class="uk-margin-remove-bottom">Q1 2024</h4>
                                             <span class="uk-label uk-text-small uk-border-rounded">on progress</span>
                                         </div>
                                     </div>
@@ -495,10 +514,10 @@
                                 <div class="uk-box-shadow-small uk-width-expand">
                                     <div class="uk-card uk-card-default uk-card-body uk-card-small uk-border-rounded">
                                         <ul class="uk-list uk-list-bullet in-list-check">
-                                            <li>Chart with base functional</li>
-                                            <li>Launching plans and billings</li>
+                                            <li>OPTION TRADING</li>
+                                            <li>MT4/MT5 Support</li>
                                             <li>Improvement of the rest of the functions of the Chart</li>
-                                            <li>Availability panel</li>
+                                            <li>Wallet Exchange</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -508,7 +527,7 @@
                                     <div class="uk-flex">
                                         <i class="fas fa-flask fa-lg in-icon-wrap"></i>
                                         <div class="in-timeline-title uk-flex uk-flex-middle">
-                                            <h4 class="uk-margin-remove-bottom">Q3 2020</h4>
+                                            <h4 class="uk-margin-remove-bottom">Q2 2024</h4>
                                             <span
                                                 class="uk-label uk-label-warning uk-text-small uk-border-rounded">planned</span>
                                         </div>
@@ -518,12 +537,33 @@
                                     <div class="uk-card uk-card-default uk-card-body uk-card-small uk-border-rounded">
                                         <ul class="uk-list uk-list-bullet in-list-check">
                                             <li>Extensions for other popular browsers</li>
-                                            <li>List View for your tasks</li>
                                             <li>Apps for iOS &amp; Android</li>
                                             <li>New cool skin for Default View</li>
                                             <li>Community formation and the subsequent cyclic completion of the product
                                                 based on
                                                 the wishes of customers</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="in-timeline-branch">
+                                    <div class="uk-flex">
+                                        <i class="fas fa-flask fa-lg in-icon-wrap"></i>
+                                        <div class="in-timeline-title uk-flex uk-flex-middle">
+                                            <h4 class="uk-margin-remove-bottom">Q3 2024</h4>
+                                            <span
+                                                class="uk-label uk-label-warning uk-text-small uk-border-rounded">planned</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="uk-box-shadow-small uk-width-expand">
+                                    <div class="uk-card uk-card-default uk-card-body uk-card-small uk-border-rounded">
+                                        <ul class="uk-list uk-list-bullet in-list-check">
+                                            <li>Crypto Exchanges</li>
+                                            <li>Exchanges Apps for iOS & Android</li>
+                                            <li>P2P Exchange</li>
+                                            <li>Web Trading System</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -547,10 +587,9 @@
                         <div class="uk-grid uk-grid-large" data-uk-grid>
                             <div class="uk-width-1-3@m">
                                 <h4 class="uk-margin-remove-bottom">Visit our office</h4>
-                                <p class="uk-margin-small-top">Satrio Tower 16th Floor, Jl. Prof Dr Satrio Kuningan,
-                                    Jakarta</p>
+                                <p class="uk-margin-small-top">Kensington Close Hotel, Wrights Lane, London, United Kingdom, W8 5SP</p>
                                 <h4 class="uk-margin-medium-top uk-margin-remove-bottom">Message us</h4>
-                                <p class="uk-margin-small-top">hello@company.com<br>(888)234-5686</p>
+                                <p class="uk-margin-small-top">support@stalinfinance.com<br>+44 7883 295313</p>
                                 <div class="uk-margin-medium-top in-contact-socials">
                                     <a href="#" class="fab fa-facebook-square fa-lg uk-margin-right"></a>
                                     <a href="#" class="fab fa-twitter fa-lg uk-margin-right"></a>

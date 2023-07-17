@@ -111,7 +111,8 @@ class InvestController extends Controller
         $pageTitle = 'User Ranking';
         $userRankings = UserRanking::active()->get();
         $user = auth()->user()->load('userRanking', 'referrals');
-
+//   echo $user->user_ranking_id;
+//         die;
         return view($this->activeTemplate.'user.user_ranking', compact('pageTitle','userRankings', 'user'));
     }
 

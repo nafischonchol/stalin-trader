@@ -23,11 +23,10 @@ class Plan extends Model
 
     public function investsWithUserId()
     {
+       
         $userId = auth()->user()->id;
-        Log::info($userId);
-        $now = Carbon::now()->utc();
+         $now = Carbon::now()->utc();
         $formattedTime = $now->format('Y-m-d H:i:s');
-        // Log::info($formattedTime);
         // ei id ghula invest korte parbe na, have current invest
         return $this->hasMany(Invest::class)
         ->where("status",1)

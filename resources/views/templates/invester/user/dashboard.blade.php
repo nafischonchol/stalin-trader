@@ -153,13 +153,13 @@
                 <div id="chart"></div>
             </div>
         </div>
-
-        <div class="card mt-4 mb-4">
+        
+          <div class="card mt-4 mb-4">
             <div class="card-body">
                 <div style="text-align:center;padding:1em 0;"> <h4><a style="text-decoration:none;" href="https://www.zeitverschiebung.net/en/city/2643743"><span style="color:gray;">Current local time in</span><br />London, United Kingdom</a></h4> <iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=small&timezone=Europe%2FLondon" width="100%" height="90" frameborder="0" seamless></iframe> </div>
             </div>
         </div>
-
+        
     </div>
 
 </div>

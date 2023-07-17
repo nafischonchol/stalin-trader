@@ -9,12 +9,12 @@
     }else{
         $seoContents = null;
     }
-
+    
+   
     $meta_title = "Stalin Finance: Crypto, Forex, CFDs, Stocks & AI Trading Bots | Start Trading for Guaranteed Profit | Since 2021";
 @endphp
-
-<title>{{ $meta_title }}</title>
-<meta name="title" Content="{{$meta_title}}">
+ <title>{{ $meta_title }}</title>
+<meta name="title" Content="{{ $meta_title }}">
 
 @if($seoContents)
     <meta name="description" content="{{ $seoContents->meta_description??$seoContents->description }}">

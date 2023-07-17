@@ -275,6 +275,7 @@ function menuActive($routeName, $type = null, $param = null)
 
 function fileUploader($file, $location, $size = null, $old = null, $thumb = null)
 {
+    Log::info($location);
     $fileManager        = new FileManager($file);
     $fileManager->path  = $location;
     $fileManager->size  = $size;
